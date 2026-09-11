@@ -2,3 +2,6 @@ date,ticker,name,conf,predicted_dayhigh,predicted_dayend,prior_close,actual_dayh
 2026-09-11,IFX.DE,Infineon,Med,58.8,57.98,56.95,58.74,56.95,MISS,-0.1,Day-high fell short of estimate.
 2026-09-11,VOW3.DE,Volkswagen pref,High,84.13,83.05,81.7,83.16,81.7,MISS,-1.15,Day-high fell short of estimate.
 2026-09-11,BAYN.DE,Bayer,High,50.14,49.75,49.26,49.68,49.26,MISS,-0.92,Day-high fell short of estimate.
+2026-09-11,IFX.DE,Infineon,Med,58.8,57.98,56.95,58.74,56.95,MISS,-0.1,Day-high fell short of estimate.
+2026-09-11,VOW3.DE,Volkswagen pref,High,84.13,83.05,81.7,83.16,81.7,MISS,-1.15,Day-high fell short of estimate.
+2026-09-11,BAYN.DE,Bayer,High,50.14,49.75,49.26,49.68,49.26,MISS,-0.92,Day-high fell short of estimate.
