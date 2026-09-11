@@ -1,4 +1,5 @@
-# find_symbols.py — one-time helper: list German (XETRA) stocks your Twelve Data key can access.
+# find_symbols.py — find the exact symbol/mic_code your plan exposes for each target company,
+# then verify a time_series call actually returns data for the best match.
 import os, json, urllib.request, urllib.parse
 
 API_KEY = os.environ.get("TWELVE_DATA_KEY","").strip()
@@ -10,29 +11,40 @@ def get(path, params):
     with urllib.request.urlopen(url, timeout=30) as r:
         return json.loads(r.read().decode())
 
-# 1) Confirm which endpoints your plan allows, and check a few names by ISIN + by symbol.
-tests = [
-    ("SAP by symbol+country", {"symbol":"SAP","country":"Germany"}),
-    ("SAP by mic XETR",       {"symbol":"SAP","mic_code":"XETR"}),
-    ("SAP by exchange XETRA", {"symbol":"SAP","exchange":"XETRA"}),
-    ("Telekom by ISIN",       {"symbol":"","isin":"DE0005557508"}),
-]
-for label, extra in tests:
-    p = {"interval":"1day","outputsize":3}; p.update(extra)
-    p = {k:v for k,v in p.items() if v != ""}
-    try:
-        d = get("time_series", p)
-        ok = "values" in d
-        print(f"[{label}] -> {'OK, last close='+d['values'][0]['close'] if ok else d.get('message', d)}")
-    except Exception as e:
-        print(f"[{label}] -> EXCEPTION {e}")
+# Companies we want, matched by ISIN (unique + reliable).
+targets = {
+    "SAP SE":            "DE0007164600",
+    "Deutsche Telekom":  "DE0005557508",
+    "Deutsche Bank":     "DE0005140008",
+    "Commerzbank":       "DE000CBK1001",
+    "Lufthansa":         "DE0008232125",
+    "Infineon":          "DE0006231004",
+    "RWE":               "DE0007037129",
+    "E.ON":              "DE000ENAG999",
+    "Volkswagen pref":   "DE0007664039",
+    "Bayer":             "DE000BAY0017",
+}
 
-# 2) Ask the catalog which German stocks exist on your plan (first 25).
-try:
-    lst = get("stocks", {"country":"Germany"})
-    data = lst.get("data", []) if isinstance(lst, dict) else []
-    print(f"\nGerman stocks in catalog: {len(data)} (showing first 25)")
-    for row in data[:25]:
-        print(f"  {row.get('symbol'):10} {row.get('mic_code'):6} {row.get('exchange'):8} {row.get('name')}")
-except Exception as e:
-    print("stocks list error:", e)
+pref_mic = ["XFRA","XETR","XSTU","XMUN","XDUS"]  # preference order
+
+for name, isin in targets.items():
+    try:
+        res = get("stocks", {"isin": isin})
+        rows = res.get("data", []) if isinstance(res, dict) else []
+        if not rows:
+            print(f"{name} ({isin}) -> NOT in catalog"); continue
+        # choose preferred exchange listing
+        rows.sort(key=lambda r: pref_mic.index(r.get("mic_code")) if r.get("mic_code") in pref_mic else 99)
+        best = rows[0]
+        sym, mic = best.get("symbol"), best.get("mic_code")
+        # verify time_series returns data for this symbol+mic
+        p = {"symbol": sym, "mic_code": mic, "interval":"1day", "outputsize":3}
+        try:
+            d = get("time_series", p)
+            ok = "values" in d
+            close = d["values"][0]["close"] if ok else None
+            print(f"{name:20} sym={sym:8} mic={mic:6} -> {'OK close='+close if ok else d.get('message', d)}")
+        except Exception as e:
+            print(f"{name:20} sym={sym:8} mic={mic:6} -> time_series EXCEPTION {e}")
+    except Exception as e:
+        print(f"{name:20} ({isin}) -> stocks lookup EXCEPTION {e}")
