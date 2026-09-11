@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swing Agent Dashboard</title>
+  <style>
+    body { font-family: -apple-system, Arial, sans-serif; margin: 0; background:#0f1115; color:#e8e8e8; }
+    header { background:#161a22; padding:16px 20px; border-bottom:1px solid #262b36; }
+    h1 { margin:0; font-size:20px; }
+    .sub { color:#9aa4b2; font-size:13px; margin-top:4px; }
+    .wrap { padding:16px 20px; max-width:900px; margin:0 auto; }
+    .disclaimer { background:#2a1f00; border:1px solid #6b5200; color:#ffd479; padding:12px; border-radius:8px; font-size:13px; margin:14px 0; }
+    .card { background:#161a22; border:1px solid #262b36; border-radius:10px; padding:16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px 0; }
+    .muted { color:#9aa4b2; font-size:13px; }
+    .conf { display:inline-block; padding:2px 8px; border-radius:6px; font-size:12px; font-weight:600; }
+    .low{background:#3a1f22;color:#ff9aa2}.med{background:#3a3320;color:#ffd479}.high{background:#1f3a2a;color:#8affb0}
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th,td { text-align:left; padding:8px; border-bottom:1px solid #262b36; }
+    footer { color:#6b7280; font-size:12px; padding:20px; text-align:center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📈 Swing Agent Dashboard</h1>
+    <div class="sub">Suggest-only research • German stocks (XETRA) • Short swing (2h–5 days)</div>
+    <div class="sub">Last updated: <span id="updated">— (placeholder, no run yet)</span></div>
+  </header>
+
+  <div class="wrap">
+    <div class="disclaimer">
+      ⚠️ <b>Research/education only — NOT financial advice.</b> You place all trades manually and are responsible for them.
+      Market data is <b>~15-min delayed</b> (free feed) and must not be treated as live.
+    </div>
+
+    <h2>Today's Picks</h2>
+    <div id="picks">
+      <div class="card"><h3>Pick 1 — <span class="muted">(waiting for first run)</span></h3><p class="muted">Reasoning, buy zone, target, stop-loss, sell time, sources will appear here.</p></div>
+      <div class="card"><h3>Pick 2 — <span class="muted">(waiting for first run)</span></h3><p class="muted">…</p></div>
+      <div class="card"><h3>Pick 3 — <span class="muted">(waiting for first run)</span></h3><p class="muted">…</p></div>
+    </div>
+
+    <h2>Performance Log</h2>
+    <div class="card">
+      <table id="perf">
+        <thead><tr><th>Date</th><th>Pick</th><th>Predicted</th><th>Actual</th><th>Hit/Miss</th><th>Notes</th></tr></thead>
+        <tbody><tr><td colspan="6" class="muted">No history yet — fills after first end-of-day review.</td></tr></tbody>
+      </table>
+    </div>
+
+    <h2>Lessons Learned (Strategy Memory)</h2>
+    <div class="card" id="lessons"><p class="muted">The agent will record why each miss happened and how it adjusts. Empty for now.</p></div>
+  </div>
+
+  <footer>Swing Agent • €0 free-tier data • Built on GitHub Pages</footer>
+</body>
+</html>
