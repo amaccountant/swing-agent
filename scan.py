@@ -18,16 +18,21 @@ def http_get(path, params):
 
 def get_series(symbol, outputsize=60):
     try:
-        d = http_get("time_series", {"symbol": symbol, "interval": "1day",
-                                     "outputsize": outputsize, "timezone": "Europe/Berlin"})
-        if "values" not in d: return None
+        d = http_get("time_series", {"symbol": symbol, "mic_code": "XETR",
+                                     "interval": "1day", "outputsize": outputsize,
+                                     "timezone": "Europe/Berlin"})
+        if "values" not in d:
+            # print the API's message so we can see the real reason
+            print(f"    [skip] {symbol}: {d.get('message', d)}")
+            return None
         vals = list(reversed(d["values"]))
         closes = [float(v["close"]) for v in vals]
         highs  = [float(v["high"])  for v in vals]
         lows   = [float(v["low"])   for v in vals]
         vols   = [float(v.get("volume") or 0) for v in vals]
         return {"closes": closes, "highs": highs, "lows": lows, "vols": vols}
-    except Exception:
+    except Exception as e:
+        print(f"    [error] {symbol}: {e}")
         return None
 
 def sma(x, n):
@@ -122,11 +127,13 @@ def sell_condition():
             "Hard stop-loss protects capital if price falls to the stop.")
 
 def main():
+    import time
     picks = []
     with open("watchlist.csv") as f:
         for row in csv.DictReader(f):
             res = analyze(row["symbol"], row["name"])
             if res: picks.append(res)
+            time.sleep(8)   # stay under free-tier ~8 requests/min
     picks.sort(key=lambda x: (x["worthwhile"], x["score"]), reverse=True)
     top = picks[:3]
     actionable = [p for p in top if p["worthwhile"] and p["conf"] in ("Med","High")]
@@ -140,8 +147,8 @@ def main():
 
     print(f"[{stamp}] scanned {len(picks)} names; top {len(top)}; actionable {len(actionable)}")
     for p in top:
-        print(f"  {p['symbol']:12} {p['conf']:4} score {p['score']:5}  €{p['price']:8}  "
-              f"{p['shares']}sh €{p['cost']:7}  tgt {p['tgt_move_pct']}%  worthwhile={p['worthwhile']}")
-
+        print(f"  {p['symbol']:8} {p['conf']:4} score {p['score']:5}  EUR{p['price']:8}  "
+              f"{p['shares']}sh EUR{p['cost']:7}  tgt {p['tgt_move_pct']}%  worthwhile={p['worthwhile']}")
+        
 if __name__ == "__main__":
     main()
