@@ -13,13 +13,24 @@ MIN_GROSS_MOVE_PCT = 3.0
 def get_series(ticker):
     try:
         h = yf.Ticker(ticker).history(period="4mo", interval="1d", auto_adjust=False)
-        if h is None or len(h) < 20:
-            print(f"    [skip] {ticker}: not enough data ({0 if h is None else len(h)} rows)")
+        if h is None or len(h) == 0:
+            print(f"    [skip] {ticker}: no data returned")
+            return None
+        # keep only the OHLCV columns, drop any rows with missing values
+        h = h[["Open","High","Low","Close","Volume"]].dropna()
+        # drop rows where price is zero or non-positive (bad ticks)
+        h = h[h["Close"] > 0]
+        if len(h) < 20:
+            print(f"    [skip] {ticker}: only {len(h)} clean rows after cleaning")
             return None
         closes = [float(x) for x in h["Close"].tolist()]
         highs  = [float(x) for x in h["High"].tolist()]
         lows   = [float(x) for x in h["Low"].tolist()]
         vols   = [float(x) for x in h["Volume"].tolist()]
+        # final guard: last close must be a real number
+        if closes[-1] != closes[-1]:  # NaN check
+            print(f"    [skip] {ticker}: last close is NaN after cleaning")
+            return None
         return {"closes": closes, "highs": highs, "lows": lows, "vols": vols}
     except Exception as e:
         print(f"    [error] {ticker}: {e}")
