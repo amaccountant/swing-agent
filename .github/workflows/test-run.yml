@@ -1,6 +1,8 @@
 name: Test Run
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -11,5 +13,16 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install yfinance
-      - name: Run scan
+      - name: Morning scan
         run: python scan.py
+      - name: Build dashboard
+        run: python build_dashboard.py
+      - name: End-of-day review
+        run: python review.py
+      - name: Commit results
+        run: |
+          git config user.name "swing-agent"
+          git config user.email "bot@users.noreply.github.com"
+          git add index.html picks_today.json performance_log.csv strategy_memory.md
+          git commit -m "Update picks + dashboard + review" || echo "nothing to commit"
+          git push
