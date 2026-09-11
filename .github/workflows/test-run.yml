@@ -12,4 +12,4 @@ jobs:
       - name: Run scan
         env:
           TWELVE_DATA_KEY: ${{ secrets.TWELVE_DATA_KEY }}
-        run: python scan.py
+        run: python find_symbols.py
