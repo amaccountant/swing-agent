@@ -1,6 +1,6 @@
 name: Test Run
 on:
-  workflow_dispatch:        # lets you run it manually with a button
+  workflow_dispatch:
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install dependencies
+        run: pip install yfinance
       - name: Run scan
-        env:
-          TWELVE_DATA_KEY: ${{ secrets.TWELVE_DATA_KEY }}
-        run: python find_symbols.py
+        run: python scan.py
