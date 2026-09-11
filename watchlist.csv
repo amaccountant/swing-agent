@@ -1,11 +1,11 @@
 symbol,name,note
-SAP:XETRA,SAP SE,DAX large-cap tech (higher price)
-DTE:XETRA,Deutsche Telekom,DAX low-price liquid
-DBK:XETRA,Deutsche Bank,DAX low-price liquid
-CBK:XETRA,Commerzbank,MDAX/DAX low-price liquid
-LHA:XETRA,Lufthansa,liquid low-price
-IFX:XETRA,Infineon,DAX semis mid-price
-RWE:XETRA,RWE,DAX utility mid-price
-EOAN:XETRA,E.ON,DAX low-price liquid
-VOW3:XETRA,Volkswagen pref,auto liquid
-BAYN:XETRA,Bayer,DAX low-price liquid
+SAP,SAP SE,DAX large-cap tech (higher price)
+DTE,Deutsche Telekom,DAX low-price liquid
+DBK,Deutsche Bank,DAX low-price liquid
+CBK,Commerzbank,low-price liquid
+LHA,Lufthansa,liquid low-price
+IFX,Infineon,DAX semis mid-price
+RWE,RWE,DAX utility mid-price
+EOAN,E.ON,DAX low-price liquid
+VOW3,Volkswagen pref,auto liquid
+BAYN,Bayer,DAX low-price liquid
