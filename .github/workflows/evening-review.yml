@@ -1,0 +1,29 @@
+name: Evening Review
+on:
+  schedule:
+    - cron: '30 17 * * 1-5'   # 18:30 CET (winter, UTC+1), Mon-Fri
+    - cron: '30 16 * * 1-5'   # 18:30 CEST (summer, UTC+2), Mon-Fri
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install yfinance
+      - name: End-of-day review
+        run: python review.py
+      - name: Rebuild dashboard with results
+        run: python build_dashboard.py
+      - name: Commit results
+        run: |
+          git config user.name "swing-agent"
+          git config user.email "bot@users.noreply.github.com"
+          git add performance_log.csv strategy_memory.md index.html
+          git commit -m "Evening review + updated dashboard" || echo "nothing to commit"
+          git push
