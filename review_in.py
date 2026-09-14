@@ -25,6 +25,17 @@ def main():
     picks=data.get("picks",[])
     if not picks:
         print("India: no picks to review."); return
+
+    # avoid duplicate rows if the review runs more than once for the same date
+    already = set()
+    if os.path.exists("performance_log.csv"):
+        with open("performance_log.csv") as _f:
+            for _r in csv.DictReader(_f):
+                already.add((_r.get("date"), _r.get("ticker")))
+    picks = [p for p in picks if (data.get("date"), p["ticker"]) not in already]
+    if not picks:
+        print("All of today's picks already reviewed - skipping.")
+        return
     exists=os.path.exists("performance_log_in.csv")
     f=open("performance_log_in.csv","a",newline=""); w=csv.writer(f)
     if not exists:
