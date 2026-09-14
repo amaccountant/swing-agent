@@ -1,11 +1,9 @@
-- name: Refresh watchlist (intelligent)
-        run: python refresh_watchlist.py
-- name: Morning Scan
+name: Morning Scan
 on:
   schedule:
-    - cron: '0 7 * * 1-5'    # 08:00 CET (winter, UTC+1), Mon-Fri
-    - cron: '0 6 * * 1-5'    # 08:00 CEST (summer, UTC+2), Mon-Fri
-  workflow_dispatch:          # also allows manual run anytime
+    - cron: '0 7 * * 1-5'
+    - cron: '0 6 * * 1-5'
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -18,6 +16,8 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install yfinance
+      - name: Refresh watchlist (intelligent)
+        run: python refresh_watchlist.py
       - name: Morning scan
         run: python scan.py
       - name: Build dashboard
