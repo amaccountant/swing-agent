@@ -33,3 +33,10 @@
   - VOW3.DE (High): predicted high EUR83.65, actual EUR82.52 (-1.35% vs estimate) -> MISS. Day-high fell short of estimate.
   - RWE.DE (High): predicted high EUR61.09, actual EUR59.7 (-2.28% vs estimate) -> MISS. Day-high fell short of estimate.
 - LESSON: Day-high estimates ran high today (several shortfalls). Next run: treat estimates as optimistic; favour higher-liquidity, lower-volatility names and keep the 3% worthwhile bar strict.
+
+## Review 2026-09-14 (logged 2026-09-14 17:35 UTC)
+- Picks reviewed: 3 | Day-high estimate reached: 0 | Fell short: 3
+  - IFX.DE (High): predicted high EUR60.51, actual EUR55.93 (-7.57% vs estimate) -> MISS. Day-high fell short of estimate.
+  - VOW3.DE (High): predicted high EUR83.65, actual EUR82.52 (-1.35% vs estimate) -> MISS. Day-high fell short of estimate.
+  - RWE.DE (High): predicted high EUR61.09, actual EUR59.7 (-2.28% vs estimate) -> MISS. Day-high fell short of estimate.
+- LESSON: Day-high estimates ran high today (several shortfalls). Next run: treat estimates as optimistic; favour higher-liquidity, lower-volatility names and keep the 3% worthwhile bar strict.
