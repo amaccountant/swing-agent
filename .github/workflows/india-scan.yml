@@ -1,10 +1,8 @@
-- name: Refresh India watchlist (intelligent)
-        run: python refresh_watchlist_in.py
-- name: India Scan
+name: India Scan
 on:
   schedule:
-    - cron: '50 3 * * 1-5'    # ~04:50 CET (winter), just after NSE open
-    - cron: '50 2 * * 1-5'    # ~04:50 CEST (summer)
+    - cron: '50 3 * * 1-5'
+    - cron: '50 2 * * 1-5'
   workflow_dispatch:
 permissions:
   contents: write
@@ -14,14 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
-      - name: Install
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
         run: pip install yfinance
+      - name: Refresh India watchlist (intelligent)
+        run: python refresh_watchlist_in.py
       - name: India scan
         run: python scan_in.py
       - name: Build dashboard
         run: python build_dashboard.py
-      - name: Commit
+      - name: Commit results
         run: |
           git config user.name "swing-agent"
           git config user.email "bot@users.noreply.github.com"
