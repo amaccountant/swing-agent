@@ -1,4 +1,6 @@
-name: Morning Scan
+- name: Refresh watchlist (intelligent)
+        run: python refresh_watchlist.py
+- name: Morning Scan
 on:
   schedule:
     - cron: '0 7 * * 1-5'    # 08:00 CET (winter, UTC+1), Mon-Fri
@@ -24,6 +26,6 @@ jobs:
         run: |
           git config user.name "swing-agent"
           git config user.email "bot@users.noreply.github.com"
-          git add index.html picks_today.json
+          git add index.html picks_today.json watchlist.csv
           git commit -m "Morning picks + dashboard" || echo "nothing to commit"
           git push
