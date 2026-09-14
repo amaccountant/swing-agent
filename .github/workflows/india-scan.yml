@@ -1,4 +1,6 @@
-name: India Scan
+- name: Refresh India watchlist (intelligent)
+        run: python refresh_watchlist_in.py
+- name: India Scan
 on:
   schedule:
     - cron: '50 3 * * 1-5'    # ~04:50 CET (winter), just after NSE open
@@ -23,6 +25,6 @@ jobs:
         run: |
           git config user.name "swing-agent"
           git config user.email "bot@users.noreply.github.com"
-          git add index.html picks_today_in.json
+          git add index.html picks_today_in.json watchlist_in.csv
           git commit -m "India morning picks" || echo "nothing to commit"
           git push
