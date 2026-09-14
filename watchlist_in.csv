@@ -1,0 +1,15 @@
+ticker,name,note
+RELIANCE.NS,Reliance Industries,large-cap mover
+TCS.NS,Tata Consultancy,IT large-cap
+INFY.NS,Infosys,IT large-cap
+HDFCBANK.NS,HDFC Bank,banking large-cap
+ICICIBANK.NS,ICICI Bank,banking large-cap
+SBIN.NS,State Bank of India,PSU bank mover
+TATAMOTORS.NS,Tata Motors,high-beta mover
+AXISBANK.NS,Axis Bank,banking
+LT.NS,Larsen & Toubro,infra large-cap
+ITC.NS,ITC,FMCG liquid
+TATASTEEL.NS,Tata Steel,metals mover
+HINDALCO.NS,Hindalco,metals mover
+BAJFINANCE.NS,Bajaj Finance,high-beta NBFC
+ADANIENT.NS,Adani Enterprises,high-volatility mover
