@@ -79,11 +79,29 @@ def analyze(ticker, name):
     score = max(0, min(100, score))
     conf = "High" if score >= 72 else ("Med" if score >= 60 else "Low")
 
+# --- Evidence-based targets: use this stock's OWN recent behaviour ---
+    # How far above the PRIOR close did the daily HIGH actually reach, historically?
+    up_moves = []
+    for i in range(1, len(c)):
+        up = (s["highs"][i] / c[i-1] - 1) * 100   # high vs previous close, in %
+        if up == up:  # not NaN
+            up_moves.append(max(up, 0))
+    up_moves.sort()
+    def pctl(data, q):
+        if not data: return 0.0
+        k = (len(data)-1) * q
+        lo = int(k); hi = min(lo+1, len(data)-1)
+        return data[lo] + (data[hi]-data[lo])*(k-lo)
+    typ_up = pctl(up_moves, 0.50)     # median daily high-above-prior-close
+    real_up = pctl(up_moves, 0.60)    # slightly optimistic but achievable target
+    stretch_up = pctl(up_moves, 0.80) # "good day" high (context only)
+
     buy_low  = round(price*(1-0.003),2); buy_high = round(price*(1+0.004),2)
-    est_dayhigh = round(price*(1+(a/100)*0.9),2)
-    est_dayend  = round(price*(1+(a/100)*0.5),2)
-    stop        = round(price*(1-(a/100)*1.1),2)
-    tgt_move_pct = (est_dayhigh/price-1)*100
+    est_dayend  = round(price*(1 + typ_up/100), 2)      # realistic day-end-ish
+    est_dayhigh = round(price*(1 + real_up/100), 2)     # realistic, reachable target
+    day_stretch = round(price*(1 + stretch_up/100), 2)  # optimistic scenario (context)
+    stop        = round(price*(1 - (a/100)*1.1), 2)     # stop still ATR-based
+    tgt_move_pct = round(real_up, 2)
 
     max_alloc = min(ACCOUNT_EUR-ROUNDTRIP_FEE, ACCOUNT_EUR*0.95)
     shares = int(max_alloc//price) if price <= max_alloc else 0
@@ -95,7 +113,7 @@ def analyze(ticker, name):
             "rsi":round(r,1),"atr_pct":round(a,2),"sma5":round(sma5,2),"sma20":round(sma20,2),
             "avgvol":int(avgvol),"buy_low":buy_low,"buy_high":buy_high,"est_dayhigh":est_dayhigh,
             "est_dayend":est_dayend,"stop":stop,"tgt_move_pct":round(tgt_move_pct,2),
-            "shares":shares,"cost":cost,"fee_drag_pct":fee_drag_pct,"worthwhile":worthwhile,
+            "shares":shares,"cost":cost,"fee_drag_pct":fee_drag_pct,"day_stretch": day_stretch,"worthwhile":worthwhile,
             "affordable":affordable}
 
 def main():
