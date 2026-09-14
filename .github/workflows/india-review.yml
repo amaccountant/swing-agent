@@ -1,0 +1,28 @@
+name: India Review
+on:
+  schedule:
+    - cron: '15 10 * * 1-5'   # ~11:15 CET (winter), after NSE close 15:30 IST
+    - cron: '15 9 * * 1-5'    # ~11:15 CEST (summer)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install
+        run: pip install yfinance
+      - name: India review
+        run: python review_in.py
+      - name: Rebuild dashboard
+        run: python build_dashboard.py
+      - name: Commit
+        run: |
+          git config user.name "swing-agent"
+          git config user.email "bot@users.noreply.github.com"
+          git add performance_log_in.csv strategy_memory_in.md index.html
+          git commit -m "India review + dashboard" || echo "nothing to commit"
+          git push
