@@ -26,3 +26,10 @@
   - TATASTEEL.NS (High): predicted INR187.53, actual INR185.4 (-1.14%) -> MISS. Day-high fell short of estimate.
   - AXISBANK.NS (Med): predicted INR1267.54, actual INR1252.5 (-1.19%) -> MISS. Day-high fell short of estimate.
 - LESSON: India day-high estimates ran high; favour steadier high-liquidity names, keep the 1.5% bar strict.
+
+## India Review 2026-09-16 (logged 2026-09-16 11:24 CET)
+- Picks reviewed: 3 | Reached: 0 | Fell short: 3
+  - ADANIPORTS.NS (High): predicted INR1766.15, actual INR1737.9 (-1.60%) -> MISS. Day-high fell short of estimate.
+  - COALINDIA.NS (High): predicted INR428.97, actual INR423.45 (-1.29%) -> MISS. Day-high fell short of estimate.
+  - HDFCBANK.NS (High): predicted INR733.93, actual INR725.4 (-1.16%) -> MISS. Day-high fell short of estimate.
+- LESSON: India day-high estimates ran high; favour steadier high-liquidity names, keep the 1.5% bar strict.
