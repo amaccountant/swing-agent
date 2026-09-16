@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # review_in.py — India end-of-day review + learning loop. Times shown in CET.
 # Suggest-only, research/education. Data ~15-min delayed. NOT financial advice.
 
