@@ -1,0 +1,12 @@
+{
+  "name": "Swing Agent — Stock Ideas",
+  "short_name": "Swing Agent",
+  "description": "Beginner-friendly short-swing stock research (Germany & India). Not financial advice.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "icons": [
+    {"src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c8.png", "sizes": "72x72", "type": "image/png"}
+  ]
+}
