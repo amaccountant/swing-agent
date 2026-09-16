@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # scan_in.py — India (NSE) morning scan. Suggest-only, research/education.
 # Data: yfinance (~15-min delayed). Prices in INR; ~EUR shown for reference. Times displayed in CET.
 # NOT live. NOT financial advice.
