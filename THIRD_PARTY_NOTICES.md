@@ -36,13 +36,10 @@ Last reviewed: 2026-09
 - **Note:** Machine translation may be imprecise. Risk disclaimers on the
   dashboard are marked `translate="no"` so they remain in original English.
 
-## 4. Twemoji (PWA icon in `manifest.json`)
-- **Use:** App icon referenced from jsDelivr
-- **Source:** https://github.com/twitter/twemoji
-- **License:** Graphics under CC-BY 4.0; code under MIT
-- **Copyright / attribution:** Copyright Twitter, Inc and other contributors.
-  Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
-- **Note:** Attribution provided here to satisfy CC-BY 4.0.
+## 4. Application icon
+- **Use:** Favicon and PWA app icon (`icon.svg`)
+- **Origin:** Original artwork created for this project by Malviyaarjun
+- **License:** MIT (same as this project) — no third-party attribution required
 
 ## 5. Emoji glyphs used in the interface
 - Rendered by the end user's own operating system font. Not bundled or
