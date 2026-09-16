@@ -111,6 +111,12 @@ def main():
     with open("picks_today_in.json","w") as f:
         json.dump({"date":now.strftime("%Y-%m-%d"),"generated":stamp,"eurinr":round(rate,2),
                    "picks":top,"actionable_count":len(actionable)},f,indent=2)
+    with open("analysed_all_in.json","w") as f:
+        slim=[{"ticker":p["ticker"],"name":p["name"],"price":p["price"],"conf":p["conf"],
+               "score":p["score"],"atr_pct":p["atr_pct"],"rsi":p["rsi"],
+               "worthwhile":p["worthwhile"],"tgt_move_pct":p["tgt_move_pct"],
+               "shares":p["shares"],"spark":p.get("spark",[]),"cost_eur":p.get("cost_eur")} for p in picks]
+        json.dump({"date":now.strftime("%Y-%m-%d"),"market":"IN","items":slim}, f, indent=2)
     print("["+stamp+"] INDIA scanned "+str(len(picks))+"; top "+str(len(top))+
           "; actionable "+str(len(actionable))+"; EURINR "+str(round(rate,2)))
     for p in top:
