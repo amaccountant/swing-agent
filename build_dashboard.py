@@ -1,5 +1,5 @@
-# build_dashboard.py — SPA dashboard (Drop 2 complete): Overview, Ideas, Analytics,
-# Watchlist (full universe), Learnings, About. All times CET. NOT financial advice.
+# build_dashboard.py — SPA dashboard (polished): fixed gauge, no search/sort, floating translate,
+# thousands separators, weak-R:R flag, "Crafted by Malviyaarjun". NOT financial advice.
 
 import json, os, csv, datetime
 
@@ -48,15 +48,13 @@ def lessons_text(f):
 def main():
     de=load_json("picks_today.json",{"picks":[],"date":"-","generated":"—","actionable_count":0})
     ind=load_json("picks_today_in.json",{"picks":[],"date":"-","generated":"—","actionable_count":0,"eurinr":"?"})
-    uni_de=load_json("analysed_all.json",{"items":[]})
-    uni_in=load_json("analysed_all_in.json",{"items":[]})
+    uni_de=load_json("analysed_all.json",{"items":[]}); uni_in=load_json("analysed_all_in.json",{"items":[]})
     today=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).strftime("%Y-%m-%d")
     picks_all=collect(de.get("picks",[]),"€",False)+collect(ind.get("picks",[]),"₹",True)
     dh,dt=perf_stats("performance_log.csv"); ih,it=perf_stats("performance_log_in.csv")
     payload={"generatedDE":de.get("generated","—"),"generatedIN":ind.get("generated","—"),
         "dateDE":de.get("date"),"dateIN":ind.get("date"),"today":today,"eurinr":ind.get("eurinr","?"),
-        "picks":picks_all,
-        "uni":{"DE":uni_de.get("items",[]),"IN":uni_in.get("items",[])},
+        "picks":picks_all,"uni":{"DE":uni_de.get("items",[]),"IN":uni_in.get("items",[])},
         "perf":{"deHit":dh,"deTot":dt,"inHit":ih,"inTot":it,
             "deSeries":perf_series("performance_log.csv"),"inSeries":perf_series("performance_log_in.csv")},
         "lessonsDE":lessons_text("strategy_memory.md"),"lessonsIN":lessons_text("strategy_memory_in.md"),
@@ -83,12 +81,13 @@ body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:rad
 .nav b .ic{font-size:18px;width:22px;text-align:center}.nav b:hover{background:var(--glass);color:var(--txt)}
 .nav b.active{background:linear-gradient(135deg,rgba(108,140,255,.22),rgba(154,108,255,.16));color:var(--txt);border-color:var(--line)}
 .sideft{color:var(--mut);font-size:11px;padding:12px 10px;position:absolute;bottom:8px;width:212px}
+.sideft .by{color:var(--txt);font-weight:700;margin-bottom:4px}
 .collapseBtn{margin:8px;background:var(--glass);border:1px solid var(--line);color:var(--mut);border-radius:10px;padding:7px;cursor:pointer;width:calc(100% - 16px)}
 .main{flex:1;min-width:0;display:flex;flex-direction:column}
 .topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:rgba(10,13,20,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 [data-theme="light"] .topbar{background:rgba(255,255,255,.6)}
-.vt{font-size:18px;font-weight:700}.ctrls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.ctrls select,.ctrls input,.ctrls button{background:var(--glass);color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px}
+.vt{font-size:18px;font-weight:700}.ctrls{display:flex;gap:8px;align-items:center}
+.ctrls button{background:var(--glass);color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer}
 .content{padding:20px;max-width:1100px;width:100%;margin:0 auto}
 .view{display:none;animation:fade .45s}.view.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -105,7 +104,7 @@ body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:rad
 .pcard{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:16px;backdrop-filter:blur(8px);transition:.25s}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.32)}
 .pcard.act{border-top:3px solid var(--good)}.pcard.skp{border-top:3px solid var(--bad)}
-.pchead{display:flex;justify-content:space-between;gap:10px}.pchead h3{margin:0;font-size:16px}.ticker{color:var(--acc);font-size:12px;font-weight:600}
+.pchead{display:flex;justify-content:space-between;gap:10px;align-items:center}.pchead h3{margin:0;font-size:16px}.ticker{color:var(--acc);font-size:12px;font-weight:600}
 .badge{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:800}
 .badge.go{background:rgba(57,217,138,.15);color:var(--good)}.badge.skip{background:rgba(255,93,115,.15);color:var(--bad)}
 .plain{color:var(--txt);font-size:13px;opacity:.92}.spark{width:100%;height:40px;margin:6px 0}
@@ -116,13 +115,16 @@ body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:rad
 .scalelegend{display:flex;justify-content:space-between;color:var(--mut);font-size:10px}
 .rrbar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:8px 0}.rrrisk{background:var(--bad)}.rrreward{background:var(--good)}
 .rrlabels{display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px}
+.weakrr{color:var(--warn);font-size:11px;margin:2px 0 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
 .kv{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12px}.kv span{color:var(--mut);font-size:11px;display:block}.kv b{font-size:14px}
 .tip{border-bottom:1px dotted var(--acc);cursor:help;position:relative}
 .tip .tt{visibility:hidden;opacity:0;transition:.15s;position:absolute;bottom:130%;left:0;z-index:9;background:#0a0f18;color:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;width:200px;font-size:11px}
 .tip:hover .tt{visibility:visible;opacity:1}
 .sellrule{background:var(--bg2);border:1px dashed var(--line);border-radius:10px;padding:9px;font-size:12px;margin-top:6px}
-.src{color:var(--mut);font-size:10px;margin-top:6px}.gauge{width:96px;height:58px;flex:none}
+.src{color:var(--mut);font-size:10px;margin-top:6px}
+.ring{width:74px;height:74px;flex:none;position:relative}.ring .lbl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .lbl .n{font-size:20px;font-weight:800}.ring .lbl .c{font-size:8px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
 .alert{background:rgba(255,93,115,.12);border:1px solid var(--bad);color:var(--bad);padding:11px 14px;border-radius:12px;margin:0 0 12px;font-size:13px}
 .disc{background:rgba(255,200,107,.10);border:1px solid var(--warn);color:var(--warn);padding:11px 14px;border-radius:12px;margin:12px 0;font-size:12px}
 .soon{color:var(--mut);text-align:center;padding:50px 20px}.guide ol{margin:8px 0 0 18px;font-size:14px}.guide li{margin:6px 0}
@@ -130,9 +132,11 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}tab
 .pill{padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700}.pill.hit{background:rgba(57,217,138,.15);color:var(--good)}.pill.miss{background:rgba(255,93,115,.15);color:var(--bad)}
 .lessons{white-space:pre-wrap;font-family:inherit;color:var(--txt);font-size:13px;margin:0}
 .tag2{padding:2px 8px;border-radius:8px;font-size:11px;font-weight:700}.tag2.h{background:rgba(57,217,138,.15);color:var(--good)}.tag2.m{background:rgba(255,200,107,.15);color:var(--warn)}.tag2.l{background:rgba(255,93,115,.15);color:var(--bad)}
-#gt{display:inline-block}.goog-te-gadget{font-size:0!important}.goog-te-gadget .goog-te-combo{color:#111;font-size:13px;padding:6px;border-radius:8px}
+#gtfloat{position:fixed;bottom:16px;right:16px;z-index:70;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:8px 10px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+#gtfloat .lab{font-size:10px;color:var(--mut);margin-bottom:4px}.goog-te-gadget{font-size:0!important}.goog-te-gadget .goog-te-combo{color:#111;font-size:13px;padding:6px;border-radius:8px}
 .bottomnav{display:none}
 @media(max-width:820px){.side{display:none}.cards{grid-template-columns:1fr}.bento{grid-template-columns:repeat(2,1fr)}.hero{grid-column:span 2}.span2{grid-column:span 2}.span4{grid-column:span 2}.content{padding:14px 12px 90px}
+#gtfloat{bottom:76px}
 .bottomnav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(10,13,20,.9);backdrop-filter:blur(12px);border-top:1px solid var(--line);justify-content:space-around;padding:8px 4px}
 [data-theme="light"] .bottomnav{background:rgba(255,255,255,.9)}
 .bottomnav b{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--mut);font-size:10px;font-weight:600;cursor:pointer;padding:4px 8px;border-radius:10px}.bottomnav b.active{color:var(--acc)}.bottomnav b .ic{font-size:20px}}
@@ -149,14 +153,11 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}tab
       <b data-v="about"><span class="ic">ℹ️</span><span>About</span></b>
     </nav>
     <button class="collapseBtn" onclick="toggleSide()">⇔</button>
-    <div class="sideft" translate="no">Research/education only — not financial advice. Data ~15-min delayed.</div>
+    <div class="sideft"><div class="by">Crafted by Malviyaarjun</div><span translate="no">Research/education only — not financial advice. Data ~15-min delayed.</span></div>
   </aside>
   <div class="main">
     <div class="topbar"><div class="vt" id="viewTitle">Overview</div>
-      <div class="ctrls"><div id="gt"></div>
-        <input id="search" placeholder="🔎 Search…" oninput="applyFilters()">
-        <select id="sortsel" onchange="applyFilters()"><option value="score">Confidence</option><option value="reward">Reward %</option><option value="move">Movement</option></select>
-        <button id="themeBtn" onclick="toggleTheme()">☀️</button></div>
+      <div class="ctrls"><button id="themeBtn" onclick="toggleTheme()">☀️</button></div>
     </div>
     <div class="content"><div id="staleBox"></div>
       <section class="view active" id="v-overview">
@@ -189,7 +190,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}tab
           <div class="glass"><h3 style="margin:0 0 8px">🇩🇪 Germany hit-rate</h3><canvas id="deDonut" height="150"></canvas></div>
           <div class="glass"><h3 style="margin:0 0 8px">🇮🇳 India hit-rate</h3><canvas id="inDonut" height="150"></canvas></div>
           <div class="glass span4"><h3 style="margin:0 0 8px">Predicted vs actual (recent)</h3><canvas id="devChart" height="140"></canvas>
-            <p class="plain" style="color:var(--mut);margin-top:8px">Bars above 0 = target reached (HIT); below 0 = fell short (MISS). Helps see if estimates lean optimistic.</p></div>
+            <p class="plain" style="color:var(--mut);margin-top:8px">Bars above 0 = target reached (HIT); below 0 = fell short (MISS).</p></div>
         </div>
       </section>
       <section class="view" id="v-watchlist">
@@ -204,10 +205,11 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}tab
       </section>
       <section class="view" id="v-about">
         <div class="glass"><h3 style="margin-top:0">How it works</h3>
-          <p class="plain">Each morning the agent auto-builds a watchlist of liquid, affordable movers, scores them on trend, momentum (RSI), volatility (ATR) and liquidity, then sets a <b>history-based realistic target</b>, a stop-loss and a cost-aware “worthwhile” check. Germany needs ≥3% expected move (fees ~1%), India ≥1.5% (costs ~0.35%). After market close it logs actual vs predicted and writes lessons that adjust future picks.</p></div>
+          <p class="plain">Each morning the agent auto-builds a watchlist of liquid, affordable movers, scores them on trend, momentum (RSI), volatility (ATR) and liquidity, then sets a <b>history-based realistic target</b>, a stop-loss and a cost-aware “worthwhile” check. Germany needs ≥3% expected move (fees ~1%), India ≥1.5% (costs ~0.35%). After close it logs actual vs predicted and writes lessons that adjust future picks.</p></div>
         <div class="glass"><h3 style="margin-top:0">Data &amp; reliability</h3>
           <p class="plain">Prices via Yahoo Finance (yfinance), <b>~15-min delayed, based on prior close</b> — reliability medium-high; always confirm live in your broker. No rumor/forum sources used.</p></div>
-        <div class="disc" translate="no"><b>Risk &amp; responsibility:</b> This is research/education, <b>NOT financial advice</b>. Markets are risky; you can lose money. India costs are estimates — confirm on your contract note. You are responsible for every trade and for tax/regulatory compliance (BaFin/MiFID in EU; SEBI/STT in India).</div>
+        <div class="glass"><h3 style="margin-top:0">Credits</h3><p class="plain">Designed &amp; built by <b>Malviyaarjun</b> · powered by free, open tools.</p></div>
+        <div class="disc" translate="no"><b>Risk &amp; responsibility:</b> Research/education, <b>NOT financial advice</b>. Markets are risky; you can lose money. India costs are estimates — confirm on your contract note. You are responsible for every trade and for tax/regulatory compliance (BaFin/MiFID in EU; SEBI/STT in India).</div>
       </section>
     </div>
   </div>
@@ -219,30 +221,31 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}tab
   <b data-v="watchlist"><span class="ic">📋</span>List</b>
   <b data-v="about"><span class="ic">ℹ️</span>Info</b>
 </nav>
+<div id="gtfloat"><div class="lab" translate="no">🌐 Language</div><div id="gt"></div></div>
 <script>
 const DATA=__DATA__;const TITLES={overview:'Overview',ideas:'Today’s Ideas',analytics:'Analytics',watchlist:'Watchlist',learnings:'Learnings',about:'About & Methodology'};
 let _charts={};window._filter='all';window._wfilter='all';
-function loadPrefs(){document.documentElement.setAttribute('data-theme',localStorage.getItem('sa_theme')||'dark');window._filter=localStorage.getItem('sa_filter')||'all';document.getElementById('sortsel').value=localStorage.getItem('sa_sort')||'score';if(localStorage.getItem('sa_side')==='1')document.getElementById('side').classList.add('collapsed');}
+function fmt(n){return (typeof n==='number'?n:parseFloat(n)||0).toLocaleString('en-US');}
+function loadPrefs(){document.documentElement.setAttribute('data-theme',localStorage.getItem('sa_theme')||'dark');window._filter=localStorage.getItem('sa_filter')||'all';if(localStorage.getItem('sa_side')==='1')document.getElementById('side').classList.add('collapsed');}
 function toggleTheme(){const c=document.documentElement.getAttribute('data-theme'),n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sa_theme',n);document.getElementById('themeBtn').textContent=n==='light'?'🌙':'☀️';}
 function toggleSide(){document.getElementById('side').classList.toggle('collapsed');localStorage.setItem('sa_side',document.getElementById('side').classList.contains('collapsed')?'1':'0');}
 function nav(v){document.querySelectorAll('.view').forEach(s=>s.classList.remove('active'));document.getElementById('v-'+v).classList.add('active');document.querySelectorAll('#nav b,#bnav b').forEach(b=>b.classList.toggle('active',b.dataset.v===v));document.getElementById('viewTitle').textContent=TITLES[v];window.scrollTo({top:0,behavior:'smooth'});if(v==='analytics')buildAnalytics();if(v==='watchlist')buildWatch();}
-function gauge(s){const p=Math.max(0,Math.min(100,s))/100,a=180*p,r=(180-a)*Math.PI/180,x=48+40*Math.cos(r),y=48-40*Math.sin(r),c=s>=72?'var(--good)':s>=60?'var(--warn)':'var(--bad)',L=a>90?1:0;return `<svg class="gauge" viewBox="0 0 96 58"><path d="M8 48 A40 40 0 0 1 88 48" fill="none" stroke="var(--line)" stroke-width="8"/><path d="M8 48 A40 40 0 ${L} 1 ${x.toFixed(1)} ${y.toFixed(1)}" fill="none" stroke="${c}" stroke-width="8" stroke-linecap="round"/><text x="48" y="44" text-anchor="middle" fill="var(--txt)" font-size="16" font-weight="800">${Math.round(s)}</text></svg>`;}
+function ring(s){const c=s>=72?'var(--good)':s>=60?'var(--warn)':'var(--bad)',C=2*Math.PI*30,off=C*(1-Math.max(0,Math.min(100,s))/100);return `<div class="ring"><svg width="74" height="74" viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" fill="none" stroke="var(--line)" stroke-width="7"/><circle cx="37" cy="37" r="30" fill="none" stroke="${c}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 37 37)"/></svg><div class="lbl"><div class="n" style="color:${c}">${Math.round(s)}</div><div class="c">conf</div></div></div>`;}
 function spark(a){if(!a||a.length<2)return'';const w=300,h=40,mn=Math.min(...a),mx=Math.max(...a),sp=(mx-mn)||1,pts=a.map((v,i)=>`${(i/(a.length-1)*w).toFixed(1)},${(h-((v-mn)/sp)*h).toFixed(1)}`).join(' '),up=a[a.length-1]>=a[0];return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="${up?'var(--good)':'var(--bad)'}" stroke-width="2"/></svg>`;}
 function scale(p){const lo=Math.min(p.stop,p.buy_low),hi=Math.max(p.target,p.buy_high),sp=(hi-lo)||1,P=v=>((v-lo)/sp*100).toFixed(1);return `<div class="scaletrack"><div class="marker stopm" style="left:${P(p.stop)}%"></div><div class="zone" style="left:${P(p.buy_low)}%;width:${Math.max(P(p.buy_high)-P(p.buy_low),2)}%"></div><div class="marker pricem" style="left:${P(p.price)}%"></div><div class="marker tgtm" style="left:${P(p.target)}%"></div></div><div class="scalelegend"><span>🛑 Stop</span><span>🟦 Buy</span><span>● Now</span><span>🎯 Target</span></div>`;}
-function rr(p){const rk=Math.max(p.price-p.stop,1e-4),rw=Math.max(p.target-p.price,1e-4),t=rk+rw,W=Math.round(100*rw/t),R=100-W,ra=(rw/rk).toFixed(1);return `<div class="rrlabels"><span style="color:var(--bad)">Risk</span><span style="color:var(--good)">Reward (${ra}:1)</span></div><div class="rrbar"><div class="rrrisk" style="width:${R}%"></div><div class="rrreward" style="width:${W}%"></div></div>`;}
+function rr(p){const rk=Math.max(p.price-p.stop,1e-4),rw=Math.max(p.target-p.price,1e-4),t=rk+rw,W=Math.round(100*rw/t),R=100-W,ra=(rw/rk).toFixed(1);const weak=(rw/rk)<1?'<div class="weakrr">⚠ Reward is smaller than risk (below 1:1) — weaker setup.</div>':'';return `<div class="rrlabels"><span style="color:var(--bad)">Risk</span><span style="color:var(--good)">Reward (${ra}:1)</span></div><div class="rrbar"><div class="rrrisk" style="width:${R}%"></div><div class="rrreward" style="width:${W}%"></div></div>${weak}`;}
 function tip(t,e){return `<span class="tip" translate="no">${t}<span class="tt">${e}</span></span>`;}
-function reason(p){const tr=p.sma5>p.sma20?'in a short-term uptrend':'not in a clear uptrend',m=(p.rsi>=45&&p.rsi<=68)?'with balanced momentum':(p.rsi>68?'looking overbought':'with weak momentum'),v=p.worthwhile?'Worth considering.':'Likely move too small to beat costs — probably skip.';return `${p.name} is ${tr} ${m}. Realistic target ~${p.cur}${p.target} (about ${p.tgt_move_pct}% above last close ${p.cur}${p.price}). ${v}`;}
-function card(p){const tag=p.actionable?'<span class="badge go">✓ ACTIONABLE</span>':'<span class="badge skip">✕ WATCH / SKIP</span>',eur=p.india&&p.cost_eur!=null?` <span style="color:var(--mut)">(~€${p.cost_eur})</span>`:'';return `<div class="pcard ${p.actionable?'act':'skp'}"><div class="pchead"><div><h3>${p.name} <span class="ticker" translate="no">${p.ticker}</span></h3>${tag}</div>${gauge(p.score)}</div><p class="plain">${reason(p)}</p>${spark(p.spark)}${scale(p)}${rr(p)}<div class="grid2"><div class="kv"><span>${tip('Buy zone','Enter only if live price is here.')}</span><b class="num">${p.cur}${p.buy_low}–${p.cur}${p.buy_high}</b></div><div class="kv"><span>${tip('Target','Realistic sell aim, from history. Estimate.')}</span><b class="num">${p.cur}${p.target}</b></div><div class="kv"><span>${tip('Stop-loss','Safety exit. Set right after buying.')}</span><b class="num">${p.cur}${p.stop}</b></div><div class="kv"><span>${tip('Position','Whole shares fitting budget.')}</span><b class="num">${p.shares} sh ≈ ${p.cur}${p.cost}${eur}</b></div></div><div class="sellrule">🕒 <b>Sell:</b> aim for target (before mid-session). Else exit by Day 3 (max 5). Stop-loss protects you.</div><div class="src">Yahoo Finance (~15-min delayed) · confirm live price in broker.</div></div>`;}
+function reason(p){const tr=p.sma5>p.sma20?'in a short-term uptrend':'not in a clear uptrend',m=(p.rsi>=45&&p.rsi<=68)?'with balanced momentum':(p.rsi>68?'looking overbought':'with weak momentum'),v=p.worthwhile?'Worth considering.':'Likely move too small to beat costs — probably skip.';return `${p.name} is ${tr} ${m}. Realistic target ~${p.cur}${fmt(p.target)} (about ${p.tgt_move_pct}% above last close ${p.cur}${fmt(p.price)}). ${v}`;}
+function card(p){const tag=p.actionable?'<span class="badge go">✓ ACTIONABLE</span>':'<span class="badge skip">✕ WATCH / SKIP</span>',eur=p.india&&p.cost_eur!=null?` <span style="color:var(--mut)">(~€${fmt(p.cost_eur)})</span>`:'';return `<div class="pcard ${p.actionable?'act':'skp'}"><div class="pchead"><div><h3>${p.name} <span class="ticker" translate="no">${p.ticker}</span></h3>${tag}</div>${ring(p.score)}</div><p class="plain">${reason(p)}</p>${spark(p.spark)}${scale(p)}${rr(p)}<div class="grid2"><div class="kv"><span>${tip('Buy zone','Enter only if live price is here.')}</span><b class="num">${p.cur}${fmt(p.buy_low)}–${p.cur}${fmt(p.buy_high)}</b></div><div class="kv"><span>${tip('Target','Realistic sell aim, from history. Estimate.')}</span><b class="num">${p.cur}${fmt(p.target)}</b></div><div class="kv"><span>${tip('Stop-loss','Safety exit. Set right after buying.')}</span><b class="num">${p.cur}${fmt(p.stop)}</b></div><div class="kv"><span>${tip('Position','Whole shares fitting budget.')}</span><b class="num">${p.shares} sh ≈ ${p.cur}${fmt(p.cost)}${eur}</b></div></div><div class="sellrule">🕒 <b>Sell:</b> aim for target (before mid-session). Else exit by Day 3 (max 5). Stop-loss protects you.</div><div class="src">Yahoo Finance (~15-min delayed) · confirm live price in broker.</div></div>`;}
 function setFilter(el){document.querySelectorAll('#v-ideas .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');window._filter=el.dataset.f;localStorage.setItem('sa_filter',window._filter);applyFilters();}
-function applyFilters(){const q=(document.getElementById('search').value||'').toLowerCase(),s=document.getElementById('sortsel').value;localStorage.setItem('sa_sort',s);let a=[...DATA.picks];a.sort((x,y)=>s==='reward'?y.tgt_move_pct-x.tgt_move_pct:s==='move'?y.atr_pct-x.atr_pct:y.score-x.score);const f=window._filter;a=a.filter(p=>{if(f==='actionable'&&!p.actionable)return false;if(f==='de'&&p.india)return false;if(f==='in'&&!p.india)return false;if(f==='high'&&p.conf!=='High')return false;if(q&&!(p.name+' '+p.ticker).toLowerCase().includes(q))return false;return true;});document.getElementById('cards').innerHTML=a.length?a.map(card).join(''):'<div class="pcard skp"><p class="plain">No ideas match. Cash is a valid, cost-free choice.</p></div>';}
+function applyFilters(){let a=[...DATA.picks].sort((x,y)=>y.score-x.score);const f=window._filter;a=a.filter(p=>{if(f==='actionable'&&!p.actionable)return false;if(f==='de'&&p.india)return false;if(f==='in'&&!p.india)return false;if(f==='high'&&p.conf!=='High')return false;return true;});document.getElementById('cards').innerHTML=a.length?a.map(card).join(''):'<div class="pcard skp"><p class="plain">No ideas match. Cash is a valid, cost-free choice.</p></div>';}
 function setWFilter(el){document.querySelectorAll('#v-watchlist .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');window._wfilter=el.dataset.w;buildWatch();}
-function buildWatch(){let items=[];if(window._wfilter!=='IN')items=items.concat(DATA.uni.DE.map(x=>({...x,m:'🇩🇪'})));if(window._wfilter!=='DE')items=items.concat(DATA.uni.IN.map(x=>({...x,m:'🇮🇳'})));items.sort((a,b)=>b.score-a.score);if(!items.length){document.getElementById('uniTable').innerHTML='<p class="soon">No universe data yet — run the morning scan after adding Step 1.</p>';return;}const rows=items.map(x=>{const cl=x.conf==='High'?'h':x.conf==='Med'?'m':'l';return `<tr><td>${x.m}</td><td><b>${x.name}</b><br><span class="ticker" translate="no">${x.ticker}</span></td><td class="num">${x.price}</td><td><span class="tag2 ${cl}">${x.conf} ${x.score}</span></td><td class="num">${x.atr_pct}%</td><td class="num">${x.rsi}</td><td>${x.worthwhile?'<span class="pill hit">✓</span>':'<span class="pill miss">skip</span>'}</td><td style="width:120px">${spark(x.spark)}</td></tr>`;}).join('');document.getElementById('uniTable').innerHTML=`<table class="tbl"><thead><tr><th></th><th>Stock</th><th>Price</th><th>Confidence</th><th>Move(ATR)</th><th>RSI</th><th>Tradable</th><th>30-day</th></tr></thead><tbody>${rows}</tbody></table>`;}
-function tblHTML(s){if(!s.length)return'<p class="soon">No history yet.</p>';const r=[...s].reverse().map(x=>`<tr><td>${x.date}</td><td translate="no">${x.ticker}</td><td class="num">${x.pred}</td><td class="num">${x.actual}</td><td><span class="pill ${x.hit?'hit':'miss'}">${x.hm}</span></td></tr>`).join('');return `<table class="tbl"><thead><tr><th>Date</th><th>Stock</th><th>Predicted</th><th>Actual</th><th>Result</th></tr></thead><tbody>${r}</tbody></table>`;}
+function buildWatch(){let items=[];if(window._wfilter!=='IN')items=items.concat(DATA.uni.DE.map(x=>({...x,m:'🇩🇪'})));if(window._wfilter!=='DE')items=items.concat(DATA.uni.IN.map(x=>({...x,m:'🇮🇳'})));items.sort((a,b)=>b.score-a.score);if(!items.length){document.getElementById('uniTable').innerHTML='<p class="soon">No universe data yet — run the morning scan once.</p>';return;}const rows=items.map(x=>{const cl=x.conf==='High'?'h':x.conf==='Med'?'m':'l';return `<tr><td>${x.m}</td><td><b>${x.name}</b><br><span class="ticker" translate="no">${x.ticker}</span></td><td class="num">${fmt(x.price)}</td><td><span class="tag2 ${cl}">${x.conf} ${x.score}</span></td><td class="num">${x.atr_pct}%</td><td class="num">${x.rsi}</td><td>${x.worthwhile?'<span class="pill hit">✓</span>':'<span class="pill miss">skip</span>'}</td><td style="width:120px">${spark(x.spark)}</td></tr>`;}).join('');document.getElementById('uniTable').innerHTML=`<table class="tbl"><thead><tr><th></th><th>Stock</th><th>Price</th><th>Confidence</th><th>Move(ATR)</th><th>RSI</th><th>Tradable</th><th>30-day</th></tr></thead><tbody>${rows}</tbody></table>`;}
 function countUp(el,to){let n=0;const st=Math.max(1,Math.ceil(to/24)),t=setInterval(()=>{n+=st;if(n>=to){n=to;clearInterval(t);}el.textContent=n;},22);}
-function spotlight(){const acts=DATA.picks.filter(p=>p.actionable).sort((a,b)=>b.score-a.score),el=document.getElementById('spotlight');if(!acts.length){el.innerHTML='<b>🎯 Idea of the day</b><p class="plain" style="margin:8px 0 0">No actionable idea today. Cash is a valid position.</p>';return;}const p=acts[0];el.innerHTML=`<b>🎯 Idea of the day</b><h3 style="margin:8px 0 2px">${p.name} <span class="ticker" translate="no">${p.ticker}</span></h3><p class="plain" style="margin:0">Confidence ${p.conf} · target ${p.cur}${p.target} (~${p.tgt_move_pct}%)</p><p class="plain" style="margin:6px 0 0;color:var(--mut)">Open <b>Ideas</b> for full details.</p>`;}
-function mkLine(id,L,V){const c=document.getElementById(id);if(!L.length){c.replaceWith(Object.assign(document.createElement('div'),{className:'soon',textContent:'Chart appears after first reviews.'}));return;}_charts[id]&&_charts[id].destroy();_charts[id]=new Chart(c,{type:'line',data:{labels:L,datasets:[{label:'Cumulative accuracy %',data:V,borderColor:'#6c8cff',backgroundColor:'rgba(108,140,255,.15)',fill:true,tension:.3,pointRadius:2}]},options:{plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}},scales:{y:{min:0,max:100,ticks:{color:'#8b95a7'}},x:{ticks:{color:'#8b95a7'}}}}});}
-function mkDonut(id,hit,tot){const c=document.getElementById(id);_charts[id]&&_charts[id].destroy();_charts[id]=new Chart(c,{type:'doughnut',data:{labels:['Hit','Miss'],datasets:[{data:[hit,Math.max(tot-hit,0)],backgroundColor:['#39d98a','#ff5d73'],borderWidth:0}]},options:{cutout:'68%',plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}}}});}
-function buildAnalytics(){const all=[...DATA.perf.deSeries,...DATA.perf.inSeries].sort((a,b)=>a.date.localeCompare(b.date));const L=[],V=[];let h=0,t=0;all.forEach(r=>{t++;h+=r.hit;L.push(r.date);V.push(Math.round(100*h/t));});mkLine('accChart',L,V);mkDonut('deDonut',DATA.perf.deHit,DATA.perf.deTot);mkDonut('inDonut',DATA.perf.inHit,DATA.perf.inTot);const dev=all.slice(-14);const c=document.getElementById('devChart');if(!dev.length){c.replaceWith(Object.assign(document.createElement('div'),{className:'soon',textContent:'Deviation chart appears after first reviews.'}));return;}_charts['dev']&&_charts['dev'].destroy();_charts['dev']=new Chart(c,{type:'bar',data:{labels:dev.map(d=>d.ticker),datasets:[{label:'Actual − Predicted %',data:dev.map(d=>d.pred?+(100*(d.actual-d.pred)/d.pred).toFixed(2):0),backgroundColor:dev.map(d=>d.hit?'#39d98a':'#ff5d73')}]},options:{plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}},scales:{y:{ticks:{color:'#8b95a7'}},x:{ticks:{color:'#8b95a7'}}}}});}
+function spotlight(){const acts=DATA.picks.filter(p=>p.actionable).sort((a,b)=>b.score-a.score),el=document.getElementById('spotlight');if(!acts.length){el.innerHTML='<b>🎯 Idea of the day</b><p class="plain" style="margin:8px 0 0">No actionable idea today. Cash is a valid position.</p>';return;}const p=acts[0];el.innerHTML=`<b>🎯 Idea of the day</b><h3 style="margin:8px 0 2px">${p.name} <span class="ticker" translate="no">${p.ticker}</span></h3><p class="plain" style="margin:0">Confidence ${p.conf} · target ${p.cur}${fmt(p.target)} (~${p.tgt_move_pct}%)</p><p class="plain" style="margin:6px 0 0;color:var(--mut)">Open <b>Ideas</b> for full details.</p>`;}
+function mkLine(id,L,V){const c=document.getElementById(id);if(!c)return;if(!L.length){c.replaceWith(Object.assign(document.createElement('div'),{className:'soon',textContent:'Chart appears after first reviews.'}));return;}_charts[id]&&_charts[id].destroy();_charts[id]=new Chart(c,{type:'line',data:{labels:L,datasets:[{label:'Cumulative accuracy %',data:V,borderColor:'#6c8cff',backgroundColor:'rgba(108,140,255,.15)',fill:true,tension:.3,pointRadius:2}]},options:{plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}},scales:{y:{min:0,max:100,ticks:{color:'#8b95a7'}},x:{ticks:{color:'#8b95a7'}}}}});}
+function mkDonut(id,hit,tot){const c=document.getElementById(id);if(!c)return;_charts[id]&&_charts[id].destroy();_charts[id]=new Chart(c,{type:'doughnut',data:{labels:['Hit','Miss'],datasets:[{data:[hit,Math.max(tot-hit,0)],backgroundColor:['#39d98a','#ff5d73'],borderWidth:0}]},options:{cutout:'68%',plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}}}});}
+function buildAnalytics(){const all=[...DATA.perf.deSeries,...DATA.perf.inSeries].sort((a,b)=>a.date.localeCompare(b.date));const L=[],V=[];let h=0,t=0;all.forEach(r=>{t++;h+=r.hit;L.push(r.date);V.push(Math.round(100*h/t));});mkLine('accChart',L,V);mkDonut('deDonut',DATA.perf.deHit,DATA.perf.deTot);mkDonut('inDonut',DATA.perf.inHit,DATA.perf.inTot);const dev=all.slice(-14),c=document.getElementById('devChart');if(!c)return;if(!dev.length){c.replaceWith(Object.assign(document.createElement('div'),{className:'soon',textContent:'Deviation chart appears after first reviews.'}));return;}_charts['dev']&&_charts['dev'].destroy();_charts['dev']=new Chart(c,{type:'bar',data:{labels:dev.map(d=>d.ticker),datasets:[{label:'Actual − Predicted %',data:dev.map(d=>d.pred?+(100*(d.actual-d.pred)/d.pred).toFixed(2):0),backgroundColor:dev.map(d=>d.hit?'#39d98a':'#ff5d73')}]},options:{plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}},scales:{y:{ticks:{color:'#8b95a7'}},x:{ticks:{color:'#8b95a7'}}}}});}
 function miniAcc(){const all=[...DATA.perf.deSeries,...DATA.perf.inSeries].sort((a,b)=>a.date.localeCompare(b.date)),L=[],V=[];let h=0,t=0;all.forEach(r=>{t++;h+=r.hit;L.push(r.date);V.push(Math.round(100*h/t));});mkLine('miniAcc',L,V);}
 function stale(){const w=[];if(DATA.dateDE!==DATA.today&&DATA.dateDE!=='-')w.push('Germany ('+DATA.dateDE+')');if(DATA.dateIN!==DATA.today&&DATA.dateIN!=='-')w.push('India ('+DATA.dateIN+')');if(w.length)document.getElementById('staleBox').innerHTML='<div class="alert">⚠️ Some data isn’t from today ('+DATA.today+' CET): '+w.join(', ')+'. Run the scan to refresh.</div>';}
 function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,de,hi,fr,es,zh-CN,ar,ru,it,pt',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'gt');}
@@ -251,8 +254,7 @@ document.addEventListener('DOMContentLoaded',init);
 </script></body></html>"""
     doc = doc.replace("__DATA__", data_json).replace("__BUILD__", datetime.datetime.now(datetime.timezone.utc).isoformat())
     with open("index.html","w") as f: f.write(doc)
-    print("SPA dashboard (Drop 2 complete) written: " + str(len(picks_all)) + " picks; universe DE=" +
-          str(len(uni_de.get('items',[]))) + " IN=" + str(len(uni_in.get('items',[]))))
+    print("Polished dashboard written: " + str(len(picks_all)) + " picks")
 
 if __name__ == "__main__":
     main()
