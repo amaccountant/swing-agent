@@ -26,6 +26,7 @@ jobs:
         run: |
           git config user.name "swing-agent"
           git config user.email "bot@users.noreply.github.com"
-          git add git add index.html picks_today.json analysed_all.json watchlist.csv
+          git add -A
           git commit -m "Morning picks + dashboard" || echo "nothing to commit"
-          git push
+          git pull --rebase --autostash origin main || true
+          git push || echo "push skipped"
