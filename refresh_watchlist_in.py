@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # refresh_watchlist_in.py — daily intelligent watchlist for India (NSE .NS).
 # Same tradability scoring, INR pool. Research/education. NOT financial advice.
 
