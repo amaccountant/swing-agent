@@ -83,7 +83,8 @@ def main():
 
     # ---------- HTML ----------
     doc = """<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta name="last-build" content="__BUILD__">
 <title>Swing Agent — Stock Ideas</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0b0e14">
@@ -367,6 +368,7 @@ document.addEventListener('DOMContentLoaded',init);
 </body></html>"""
 
     doc = doc.replace("__DATA__", data_json)
+    doc = doc.replace("__BUILD__", datetime.datetime.now(datetime.timezone.utc).isoformat())
     with open("index.html", "w") as f:
         f.write(doc)
     print("Premium dashboard written: " + str(len(picks_all)) + " picks total")
