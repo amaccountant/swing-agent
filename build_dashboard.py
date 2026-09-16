@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # build_dashboard.py — Premium SPA: drill-down modals, language switcher, editorial copy, rich visuals.
 # By Malviyaarjun. All times CET. Research/education. NOT financial advice.
 
