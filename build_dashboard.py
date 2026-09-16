@@ -155,4 +155,106 @@ def main():
         w = []
         if de_stale: w.append("Germany (" + str(de.get("date")) + ")")
         if in_stale: w.append("India (" + str(ind.get("date")) + ")")
-        stale = '<div class="alert">⚠️ Some data isn\'t from today (' + today + ' CET): ' + ", ".join(w) + '. Run
+        stale = '<div class="alert">⚠️ Some data isn\'t from today (' + today + ' CET): ' + ", ".join(w) + '. Run the scan workflow to refresh before acting.</div>'
+
+    dh, dt = perf_stats("performance_log.csv")
+    ih, it = perf_stats("performance_log_in.csv")
+    tot_act = de.get("actionable_count",0) + ind.get("actionable_count",0)
+    all_hit, all_tot = dh + ih, dt + it
+
+    css = """
+    *{box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;margin:0;background:#0b0e14;color:#e8e8e8;line-height:1.5}
+    .top{background:linear-gradient(135deg,#1a2233,#0f1420);padding:26px 20px;border-bottom:1px solid #262b36}
+    .top h1{margin:0;font-size:24px;letter-spacing:.3px}.top .tag{color:#9aa4b2;font-size:13px;margin-top:6px}
+    .wrap{max-width:1000px;margin:0 auto;padding:20px}
+    .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+    .tile{background:#141a26;border:1px solid #262b36;border-radius:14px;padding:16px;text-align:center}
+    .tile .big{font-size:28px;font-weight:800;color:#7aa2ff}.tile .lbl{color:#9aa4b2;font-size:12px;margin-top:4px}
+    .alert{background:#3a1f22;border:1px solid #6b1f2a;color:#ff9aa2;padding:12px 14px;border-radius:10px;margin:12px 0;font-size:14px}
+    .disc{background:#241b00;border:1px solid #6b5200;color:#ffd479;padding:12px 14px;border-radius:10px;margin:12px 0;font-size:13px}
+    .guide{background:#101725;border:1px solid #262b36;border-radius:14px;padding:16px;margin:12px 0}
+    .guide h3{margin:0 0 8px}.guide ol{margin:8px 0 0 18px;padding:0;color:#c7d0dc;font-size:14px}
+    .guide li{margin:5px 0}
+    .mkt{display:flex;align-items:center;gap:10px;margin:26px 0 6px;font-size:20px;font-weight:700}
+    .flag{font-size:26px}.sub{color:#9aa4b2;font-size:13px;margin-bottom:10px}
+    .pcard{background:#141a26;border:1px solid #262b36;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+    .pcard.act{border-left:4px solid #8affb0}.pcard.skp{border-left:4px solid #ff9aa2;opacity:.92}
+    .pchead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .pchead h3{margin:0;font-size:18px}.ticker{color:#7aa2ff;font-size:13px;font-weight:600}
+    .badge{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700}
+    .badge.go{background:#12331f;color:#8affb0;border:1px solid #1f5133}.badge.skip{background:#331416;color:#ff9aa2;border:1px solid #5a1f24}
+    .plain{color:#d5dde8;font-size:14px}
+    .scale{margin:14px 0}.scaletrack{position:relative;height:14px;background:#1c2432;border-radius:8px;margin:6px 0}
+    .zone{position:absolute;top:0;height:14px;background:rgba(122,162,255,.35);border:1px solid #7aa2ff;border-radius:4px}
+    .marker{position:absolute;top:-3px;width:2px;height:20px}
+    .stopm{background:#ff6b78}.tgtm{background:#8affb0}.pricem{width:10px;height:10px;top:2px;border-radius:50%;background:#fff;transform:translateX(-4px)}
+    .scalelegend{display:flex;justify-content:space-between;color:#9aa4b2;font-size:11px}
+    .rrwrap{margin:12px 0}.rrlabels{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px}
+    .rrbar{display:flex;height:12px;border-radius:6px;overflow:hidden}.rrrisk{background:#ff6b78}.rrreward{background:#5fd18e}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+    .kv{background:#0f1622;border:1px solid #222a38;border-radius:10px;padding:8px 10px;font-size:13px;display:flex;flex-direction:column;gap:2px}
+    .kv span{color:#9aa4b2;font-size:12px}.kv b{font-size:15px}
+    .sellrule{background:#0f1622;border:1px dashed #2c3648;border-radius:10px;padding:10px;font-size:13px;color:#cdd6e0;margin-top:6px}
+    .src{color:#6b7280;font-size:11px;margin-top:8px}
+    .tip{border-bottom:1px dotted #7aa2ff;cursor:help;position:relative}
+    .tip .tiptext{visibility:hidden;opacity:0;transition:.15s;position:absolute;bottom:130%;left:0;z-index:9;background:#0a0f18;color:#e8e8e8;border:1px solid #3a4render;border-radius:8px;padding:8px 10px;width:220px;font-size:12px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+    .tip:hover .tiptext{visibility:visible;opacity:1}
+    .panel{background:#141a26;border:1px solid #262b36;border-radius:16px;padding:18px;margin:14px 0}
+    .perfhead{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    table.perf{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+    table.perf th,table.perf td{text-align:left;padding:8px;border-bottom:1px solid #222a38}
+    .pill{padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700}.pill.hit{background:#12331f;color:#8affb0}.pill.miss{background:#331416;color:#ff9aa2}
+    .lessons{white-space:pre-wrap;font-family:inherit;color:#c7d0dc;font-size:13px;margin:0}
+    .muted{color:#9aa4b2;font-size:13px}
+    footer{color:#6b7280;font-size:12px;text-align:center;padding:26px}
+    """.replace("3a4render", "3a4658")
+
+    doc = (
+      '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">'
+      '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+      '<title>Swing Agent — Stock Ideas Dashboard</title><style>' + css + '</style></head><body>'
+      '<div class="top"><h1>📈 Swing Agent</h1>'
+      '<div class="tag">Beginner-friendly stock research · Germany 🇩🇪 &amp; India 🇮🇳 · Short-term ideas (hours to 5 days) · All times CET</div></div>'
+      '<div class="wrap">'
+      + stale +
+      '<div class="disc"><b>Please read:</b> This is research &amp; education, <b>not financial advice</b>. '
+      'Numbers are estimates from data that is ~15-min delayed (based on the previous close). '
+      'You decide and place every trade yourself, and you are responsible for it.</div>'
+      '<div class="tiles">'
+      '<div class="tile"><div class="big">' + str(tot_act) + '</div><div class="lbl">Actionable ideas today</div></div>'
+      '<div class="tile"><div class="big">' + str(len(de.get("picks",[])) + len(ind.get("picks",[]))) + '</div><div class="lbl">Stocks analysed today</div></div>'
+      '<div class="tile"><div class="big">' + (str(round(100*all_hit/all_tot)) + '%' if all_tot else '—') + '</div><div class="lbl">Overall target accuracy</div></div>'
+      '<div class="tile"><div class="big">2</div><div class="lbl">Markets covered</div></div>'
+      '</div>'
+      '<div class="guide"><h3>🧭 How to read this (no experience needed)</h3><ol>'
+      '<li><b>Look for a green “✓ ACTIONABLE” tag.</b> Grey/red “WATCH / SKIP” means don’t trade it today.</li>'
+      '<li><b>Check the confidence dial</b> (top-right of each card) — higher = stronger signal.</li>'
+      '<li><b>The coloured bar</b> shows Risk vs Reward. More green than red is better.</li>'
+      '<li><b>The line scale</b> shows the safety exit (🛑), buy zone (🟦), price now (●) and target (🎯).</li>'
+      '<li><b>Hover any underlined word</b> for a plain-English explanation.</li>'
+      '<li><b>Always check the live price in your broker</b> before buying — our data is ~15 min delayed.</li>'
+      '</ol></div>'
+      '<div class="mkt"><span class="flag">🇩🇪</span> Germany <span class="muted" style="font-weight:400;font-size:13px">· trade via Trade Republic (€)</span></div>'
+      + section(de, "€") +
+      '<div class="mkt"><span class="flag">🇮🇳</span> India <span class="muted" style="font-weight:400;font-size:13px">· trade via Ventura (₹) · NSE open ~05:45–12:00 CET</span></div>'
+      + section(ind, "₹", True) +
+      '<div class="mkt">📊 Track Record</div>'
+      '<div class="panel"><div class="perfhead">' + donut(all_hit, all_tot) +
+      '<div><p class="plain">This shows how often the estimated target was actually reached. '
+      'A low score early on is normal — the system learns and recalibrates over time. '
+      'It measures <i>estimate accuracy</i>, not your profit.</p>'
+      '<p class="muted">🇩🇪 Germany: ' + str(dh) + '/' + str(dt) + ' · 🇮🇳 India: ' + str(ih) + '/' + str(it) + '</p></div></div></div>'
+      '<div class="panel"><h3 style="margin-top:0">🇩🇪 Germany — recent results</h3>' + perf_table("performance_log.csv") + '</div>'
+      '<div class="panel"><h3 style="margin-top:0">🇮🇳 India — recent results</h3>' + perf_table("performance_log_in.csv") + '</div>'
+      '<div class="mkt">🧠 What the system learned</div>'
+      '<div class="panel"><h3 style="margin-top:0">🇩🇪 Germany</h3>' + lessons("strategy_memory.md") + '</div>'
+      '<div class="panel"><h3 style="margin-top:0">🇮🇳 India</h3>' + lessons("strategy_memory_in.md") + '</div>'
+      '</div><footer>Swing Agent · built on free tools · times in CET · research/education only, not financial advice</footer>'
+      '</body></html>')
+    with open("index.html", "w") as f:
+        f.write(doc)
+    print("Pro dashboard written: DE " + str(len(de.get('picks',[]))) + " picks, IN " +
+          str(len(ind.get('picks',[]))) + " picks")
+
+if __name__ == "__main__":
+    main()
