@@ -1,11 +1,13 @@
 ticker,name,note
-SAP.DE,SAP SE,DAX large-cap tech
-DTE.DE,Deutsche Telekom,DAX low-price liquid
-DBK.DE,Deutsche Bank,DAX low-price liquid
-CBK.DE,Commerzbank,low-price liquid
-LHA.DE,Lufthansa,liquid low-price
-IFX.DE,Infineon,DAX semis mid-price
-RWE.DE,RWE,DAX utility mid-price
-EOAN.DE,E.ON,DAX low-price liquid
-VOW3.DE,Volkswagen pref,auto liquid
-BAYN.DE,Bayer,DAX low-price liquid
+SAP.DE,SAP SE,auto: ATR 3.43% score 453.1
+IFX.DE,Infineon,auto: ATR 4.33% score 347.6
+DBK.DE,Deutsche Bank,auto: ATR 2.53% score 297.9
+DTE.DE,Deutsche Telekom,auto: ATR 2.06% score 261.1
+BAYN.DE,Bayer,auto: ATR 2.23% score 239.6
+VOW3.DE,Volkswagen pref,auto: ATR 3.75% score 239.0
+CBK.DE,Commerzbank,auto: ATR 2.22% score 238.5
+MBG.DE,Mercedes-Benz,auto: ATR 2.48% score 236.7
+BMW.DE,BMW,auto: ATR 2.86% score 235.5
+BAS.DE,BASF,auto: ATR 2.16% score 230.3
+RWE.DE,RWE,auto: ATR 2.58% score 221.8
+ADS.DE,Adidas,auto: ATR 2.5% score 197.5
