@@ -87,7 +87,7 @@ def analyze(ticker,name,rate):
     fee_drag_pct=ROUNDTRIP_FEE_PCT if cost>0 else None
     worthwhile=(shares>=1) and (tgt_move_pct>=MIN_GROSS_MOVE_PCT)
 
-    return {"ticker":ticker,"name":name,"price":round(price,2),"conf":conf,"score":round(score,1),
+    return {"spark": [round(x, 2) for x in c[-30:]],"ticker":ticker,"name":name,"price":round(price,2),"conf":conf,"score":round(score,1),
             "rsi":round(r,1),"atr_pct":round(a,2),"sma5":round(sma5,2),"sma20":round(sma20,2),
             "avgvol":int(avgvol),"buy_low":buy_low,"buy_high":buy_high,"est_dayhigh":est_dayhigh,
             "est_dayend":est_dayend,"stop":stop,"tgt_move_pct":round(tgt_move_pct,2),
