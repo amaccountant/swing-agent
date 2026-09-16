@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # refresh_watchlist.py — daily intelligent watchlist for Germany (XETRA .DE).
 # Scores a broad universe by movement + liquidity + momentum + affordability,
 # keeps the top ~12 "most tradable movers" -> writes watchlist.csv.
