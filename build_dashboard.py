@@ -345,6 +345,21 @@ function keyHelp(){document.getElementById('modalBody').innerHTML='<div class="m
 document.addEventListener('keydown',function(e){if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA'))return;const map={'1':'overview','2':'ideas','3':'analytics','4':'watchlist','5':'learnings','6':'about'};const k=e.key.toLowerCase();if(map[e.key]){nav(map[e.key]);}else if(k==='e'){exportCSV();}else if(k==='t'){toggleTheme();}else if(k==='l'){toggleLang();}else if(e.key==='?'){keyHelp();}});
 /* ===== backtest view (original) ===== */
 window._btM='DE';window._btS='baseline';
+function wfCard(s,m){const tr=s.train_summary,te=s.test_summary;if(!tr||!te)return'';
+ const verdict=(te.trades_n<10)?['Inconclusive','var(--warn)','Too few unseen trades to judge. Treat as unknown.']
+  :(te.profit_factor>=1.3&&te.total_return_pct>0&&te.total_return_pct>(m.benchmark_test_pct||0))?['Edge survived','var(--good)','It held up on data it never saw, and beat buy-and-hold. Still needs live paper-testing.']
+  :(te.total_return_pct>0)?['Weak / unproven','var(--warn)','Slightly positive but not convincingly better than simply holding.']
+  :['No edge','var(--bad)','It failed on unseen data. Do not trade this live.'];
+ return '<div class="glass span4"><h3 style="margin:0 0 4px">🔬 Walk-forward validation</h3>'
+ +'<p class="plain" style="color:var(--mut);margin:0 0 10px">The honest test: rules were applied to an <b>unseen</b> later period. Good training results mean nothing if the test period fails.</p>'
+ +'<div style="overflow:auto"><table class="tbl"><thead><tr><th>Window</th><th>Trades</th><th>Win%</th><th>Return</th><th>Profit factor</th><th>Max DD</th></tr></thead><tbody>'
+ +'<tr><td>Training (older 70%)</td><td class="num">'+tr.trades_n+'</td><td class="num">'+tr.win_rate+'%</td><td class="num" style="color:'+(tr.total_return_pct>0?'var(--good)':'var(--bad)')+'">'+tr.total_return_pct+'%</td><td class="num">'+tr.profit_factor+'</td><td class="num">-'+tr.max_dd_pct+'%</td></tr>'
+ +'<tr><td><b>Test (unseen 30%)</b></td><td class="num">'+te.trades_n+'</td><td class="num">'+te.win_rate+'%</td><td class="num" style="color:'+(te.total_return_pct>0?'var(--good)':'var(--bad)')+'"><b>'+te.total_return_pct+'%</b></td><td class="num"><b>'+te.profit_factor+'</b></td><td class="num">-'+te.max_dd_pct+'%</td></tr>'
+ +'<tr><td>Buy &amp; hold, test window</td><td>—</td><td>—</td><td class="num">'+(m.benchmark_test_pct||0)+'%</td><td>—</td><td>—</td></tr>'
+ +'</tbody></table></div>'
+ +'<div style="margin-top:12px;padding:12px;border-radius:12px;border:1px solid '+verdict[1]+';background:var(--glass)"><b style="color:'+verdict[1]+'">Verdict: '+verdict[0]+'</b><div class="plain" style="color:var(--mut);margin-top:4px">'+verdict[2]+'</div></div>'
+ +(s.diag?'<p class="plain" style="color:var(--mut);margin-top:10px">Filters at work: <b>'+s.diag.blocked_regime+'</b> signals blocked by the market-trend filter · <b>'+s.diag.skipped_cost+'</b> skipped because fees would eat too much · <b>'+s.diag.skipped_size+'</b> skipped as unaffordable.</p>':'')
+ +'</div>';}
 function setBT(kind,val,el){if(kind==='m')window._btM=val;else window._btS=val;el.parentNode.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');renderBT();}
 function btKPI(lab,val,col,note){return '<div class="glass kpi"><div class="k num" style="color:'+(col||'var(--acc)')+'">'+val+'</div><div class="l">'+lab+'</div>'+(note?'<div class="l" style="opacity:.7">'+note+'</div>':'')+'</div>';}
 function renderBT(){const bt=DATA.bt||{},host=document.getElementById('btBody');
@@ -365,7 +380,7 @@ function renderBT(){const bt=DATA.bt||{},host=document.getElementById('btBody');
   +btKPI('Avg hold',s.avg_hold_days+' d','var(--txt)',s.trades_per_year+' trades/yr')
   +'<div class="glass span4"><h3 style="margin:0 0 8px">Simulated equity curve</h3><canvas id="btChart" height="150"></canvas>'
   +'<p class="plain" style="color:var(--mut);margin-top:8px">Benchmark: simply holding the average stock in this universe returned <b>'+m.benchmark_pct+'%</b> over the same window. If the strategy can\'t beat that, buying and holding was the better use of your money.</p></div>'
-  +'<div class="glass span4"><h3 style="margin:0 0 8px">Last trades</h3><div style="overflow:auto"><table class="tbl"><thead><tr><th>Stock</th><th>In</th><th>Out</th><th>Exit</th><th>Days</th><th>Return</th><th>P&amp;L</th></tr></thead><tbody>'
+  +wfCard(s,m)+'<div class="glass span4"><h3 style="margin:0 0 8px">Last trades</h3><div style="overflow:auto"><table class="tbl"><thead><tr><th>Stock</th><th>In</th><th>Out</th><th>Exit</th><th>Days</th><th>Return</th><th>P&amp;L</th></tr></thead><tbody>'
   +s.trades.slice().reverse().map(t=>'<tr><td translate="no">'+t.t+'</td><td>'+t.in+'</td><td>'+t.out+'</td><td><span class="pill '+(t.why==='target'?'hit':'miss')+'">'+t.why+'</span></td><td class="num">'+t.days+'</td><td class="num" style="color:'+(t.ret_pct>0?'var(--good)':'var(--bad)')+'">'+(t.ret_pct>0?'+':'')+t.ret_pct+'%</td><td class="num">'+cur+fmt(t.pnl)+'</td></tr>').join('')
   +'</tbody></table></div></div></div>'
   +'<p class="plain" style="color:var(--mut);margin-top:10px">Run '+ (bt.generated||'') +' · entry '+(bt.config?bt.config.entry:'')+' · slippage '+(bt.config?bt.config.slippage_pct_each_side:'')+'% each side · max hold '+(bt.config?bt.config.max_hold_days:'')+' days</p>';
