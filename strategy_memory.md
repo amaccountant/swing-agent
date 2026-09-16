@@ -40,3 +40,10 @@
   - VOW3.DE (High): predicted high EUR83.65, actual EUR82.52 (-1.35% vs estimate) -> MISS. Day-high fell short of estimate.
   - RWE.DE (High): predicted high EUR61.09, actual EUR59.7 (-2.28% vs estimate) -> MISS. Day-high fell short of estimate.
 - LESSON: Day-high estimates ran high today (several shortfalls). Next run: treat estimates as optimistic; favour higher-liquidity, lower-volatility names and keep the 3% worthwhile bar strict.
+
+## Review 2026-09-16 (logged 2026-09-16 16:44 UTC)
+- Picks reviewed: 3 | Day-high estimate reached: 2 | Fell short: 1
+  - DTE.DE (High): predicted high EUR29.17, actual EUR28.96 (-0.72% vs estimate) -> MISS. Day-high fell short of estimate.
+  - CBK.DE (High): predicted high EUR42.09, actual EUR43.37 (+3.04% vs estimate) -> HIT. Move happened but we correctly skipped (fees). No loss.
+  - VOW3.DE (High): predicted high EUR79.89, actual EUR81.12 (+1.54% vs estimate) -> HIT. Move happened but we correctly skipped (fees). No loss.
+- LESSON: Day-high estimates ran high today (several shortfalls). Next run: treat estimates as optimistic; favour higher-liquidity, lower-volatility names and keep the 3% worthwhile bar strict.
