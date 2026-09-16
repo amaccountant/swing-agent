@@ -51,6 +51,7 @@ def main():
     de=load_json("picks_today.json",{"picks":[],"date":"-","generated":"—","actionable_count":0})
     ind=load_json("picks_today_in.json",{"picks":[],"date":"-","generated":"—","actionable_count":0,"eurinr":"?"})
     uni_de=load_json("analysed_all.json",{"items":[]}); uni_in=load_json("analysed_all_in.json",{"items":[]})
+    bt=load_json("backtest_results.json",{})
     today=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).strftime("%Y-%m-%d")
     picks_all=collect(de.get("picks",[]),"€",False)+collect(ind.get("picks",[]),"₹",True)
     dh,dt=perf_stats("performance_log.csv"); ih,it=perf_stats("performance_log_in.csv")
@@ -60,7 +61,7 @@ def main():
         "perf":{"deHit":dh,"deTot":dt,"inHit":ih,"inTot":it,
             "deSeries":perf_series("performance_log.csv"),"inSeries":perf_series("performance_log_in.csv")},
         "lessonsDE":lessons_text("strategy_memory.md"),"lessonsIN":lessons_text("strategy_memory_in.md"),
-        "actionableToday":de.get("actionable_count",0)+ind.get("actionable_count",0)}
+        "actionableToday":de.get("actionable_count",0)+ind.get("actionable_count",0),"bt":bt}
     data_json=json.dumps(payload)
 
     doc = r"""<!DOCTYPE html><html lang="en" data-theme="dark"><head>
@@ -194,6 +195,7 @@ body{background:#fff!important;color:#000!important}.view{display:none!important
       <b data-v="analytics"><span class="ic">📊</span><span>Analytics</span></b>
       <b data-v="watchlist"><span class="ic">📋</span><span>Watchlist</span></b>
       <b data-v="learnings"><span class="ic">🧠</span><span>Learnings</span></b>
+      <b data-v="backtest"><span class="ic">📉</span><span>Backtest</span></b>
       <b data-v="about"><span class="ic">ℹ️</span><span>About</span></b>
     </nav>
     <button class="collapseBtn" onclick="toggleSide()">⇔</button>
@@ -254,6 +256,13 @@ body{background:#fff!important;color:#000!important}.view{display:none!important
         <div class="glass"><h3 style="margin-top:0">🇩🇪 Germany — strategy memory</h3><pre class="lessons" id="lessonsDE"></pre></div>
         <div class="glass"><h3 style="margin-top:0">🇮🇳 India — strategy memory</h3><pre class="lessons" id="lessonsIN"></pre></div>
       </section>
+      <section class="view" id="v-backtest">
+        <div class="sectionhead"><div class="shicon">📉</div><div><h2>Proof, not promises.</h2><p>Two years of history, replayed honestly — next-day entries, slippage, real fees.</p></div></div>
+        <div class="toolbar"><span class="chip active" onclick="setBT('m','DE',this)">🇩🇪 Germany</span><span class="chip" onclick="setBT('m','IN',this)">🇮🇳 India</span></div>
+        <div class="toolbar"><span class="chip active" onclick="setBT('s','baseline',this)">Baseline</span><span class="chip" onclick="setBT('s','momentum',this)">Momentum</span><span class="chip" onclick="setBT('s','meanrev',this)">Mean-reversion</span><span class="chip" onclick="setBT('s','breakout',this)">Breakout</span></div>
+        <div id="btBody"></div>
+        <div class="disc" translate="no"><b>Read this before trusting any number above.</b> A backtest is a simulation, not a track record. Known limits: the test universe is today's list (delisted names are missing), dividends are ignored, fills assume you always got the price shown, only one position is held at a time, and comparing four strategies invites cherry-picking the luckiest one. <b>Past results never guarantee future results.</b></div>
+      </section>
       <section class="view" id="v-about">
         <div class="sectionhead"><div class="shicon">ℹ️</div><div><h2>Built on transparency.</h2><p>No black boxes. Here's exactly how it thinks.</p></div></div>
         <div class="glass"><h3 style="margin-top:0">The method, in plain English</h3>
@@ -279,13 +288,13 @@ body{background:#fff!important;color:#000!important}.view{display:none!important
 <div class="langpop" id="langpop"><div class="lh" translate="no">Choose language</div><div class="langgrid" id="langgrid"></div></div>
 <div id="gt"></div>
 <script>
-const DATA=__DATA__;const TITLES={overview:['Overview',"Today's edge, distilled."],ideas:["Today's Ideas","Opportunities, hand-picked."],analytics:['Analytics','The numbers behind the calls.'],watchlist:['Watchlist','Every stock we watched.'],learnings:['Learnings','How the system gets smarter.'],about:['About','Built on transparency.']};
+const DATA=__DATA__;const TITLES={overview:['Overview',"Today's edge, distilled."],ideas:["Today's Ideas","Opportunities, hand-picked."],analytics:['Analytics','The numbers behind the calls.'],watchlist:['Watchlist','Every stock we watched.'],learnings:['Learnings','How the system gets smarter.'],backtest:['Backtest','Proof, not promises.'],about:['About','Built on transparency.']};
 let _charts={};window._filter='all';window._wfilter='all';
 function fmt(n){return (typeof n==='number'?n:parseFloat(n)||0).toLocaleString('en-US');}
 function loadPrefs(){document.documentElement.setAttribute('data-theme',localStorage.getItem('sa_theme')||'dark');window._filter=localStorage.getItem('sa_filter')||'all';if(localStorage.getItem('sa_side')==='1')document.getElementById('side').classList.add('collapsed');}
 function toggleTheme(){const c=document.documentElement.getAttribute('data-theme'),n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('sa_theme',n);document.getElementById('themeBtn').textContent=n==='light'?'🌙':'☀️';}
 function toggleSide(){document.getElementById('side').classList.toggle('collapsed');localStorage.setItem('sa_side',document.getElementById('side').classList.contains('collapsed')?'1':'0');}
-function nav(v){document.querySelectorAll('.view').forEach(s=>s.classList.remove('active'));document.getElementById('v-'+v).classList.add('active');document.querySelectorAll('#nav b,#bnav b').forEach(b=>b.classList.toggle('active',b.dataset.v===v));document.getElementById('viewTitle').childNodes[0].nodeValue=TITLES[v][0];document.getElementById('viewSub').textContent=TITLES[v][1];window.scrollTo({top:0,behavior:'smooth'});if(v==='analytics')buildAnalytics();if(v==='watchlist')buildWatch();}
+function nav(v){document.querySelectorAll('.view').forEach(s=>s.classList.remove('active'));document.getElementById('v-'+v).classList.add('active');document.querySelectorAll('#nav b,#bnav b').forEach(b=>b.classList.toggle('active',b.dataset.v===v));document.getElementById('viewTitle').childNodes[0].nodeValue=TITLES[v][0];document.getElementById('viewSub').textContent=TITLES[v][1];window.scrollTo({top:0,behavior:'smooth'});if(v==='analytics')buildAnalytics();if(v==='watchlist')buildWatch();if(v==='backtest')renderBT();}
 function ring(s){const c=s>=72?'var(--good)':s>=60?'var(--warn)':'var(--bad)',C=2*Math.PI*30,off=C*(1-Math.max(0,Math.min(100,s))/100);return `<div class="ring"><svg width="74" height="74" viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" fill="none" stroke="var(--line)" stroke-width="7"/><circle cx="37" cy="37" r="30" fill="none" stroke="${c}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 37 37)"/></svg><div class="lbl"><div class="n" style="color:${c}">${Math.round(s)}</div><div class="c">conf</div></div></div>`;}
 function spark(a){if(!a||a.length<2)return'';const w=300,h=40,mn=Math.min(...a),mx=Math.max(...a),sp=(mx-mn)||1,pts=a.map((v,i)=>`${(i/(a.length-1)*w).toFixed(1)},${(h-((v-mn)/sp)*h).toFixed(1)}`).join(' '),up=a[a.length-1]>=a[0];return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="${up?'var(--good)':'var(--bad)'}" stroke-width="2"/></svg>`;}
 function scale(p){const lo=Math.min(p.stop,p.buy_low),hi=Math.max(p.target,p.buy_high),sp=(hi-lo)||1,P=v=>((v-lo)/sp*100).toFixed(1);return `<div class="scaletrack"><div class="marker stopm" style="left:${P(p.stop)}%"></div><div class="zone" style="left:${P(p.buy_low)}%;width:${Math.max(P(p.buy_high)-P(p.buy_low),2)}%"></div><div class="marker pricem" style="left:${P(p.price)}%"></div><div class="marker tgtm" style="left:${P(p.target)}%"></div></div><div class="scalelegend"><span>🛑 Stop</span><span>🟦 Buy</span><span>● Now</span><span>🎯 Target</span></div>`;}
@@ -334,6 +343,36 @@ function calcSizer(tk){const p=pickByTicker(tk);if(!p)return;const key=p.india?'
 function exportCSV(){const rows=[['market','ticker','name','status','confidence','score','prior_close','buy_low','buy_high','target','stop','est_move_pct','shares','cost']];DATA.picks.forEach(p=>rows.push([p.india?'IN':'DE',p.ticker,p.name,p.actionable?'ACTIONABLE':'WATCH-SKIP',p.conf,p.score,p.price,p.buy_low,p.buy_high,p.target,p.stop,p.tgt_move_pct,p.shares,p.cost]));const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');const b=new Blob([csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='swing-agent-picks-'+DATA.today+'.csv';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);toast('📥 CSV downloaded');}
 function keyHelp(){document.getElementById('modalBody').innerHTML='<div class="mh"><h3>⌨️ Keyboard shortcuts</h3><div class="x" onclick="closeModal()">✕</div></div><p class="plain" style="line-height:2.2"><kbd>1</kbd> Overview · <kbd>2</kbd> Ideas · <kbd>3</kbd> Analytics · <kbd>4</kbd> Watchlist · <kbd>5</kbd> Learnings · <kbd>6</kbd> About<br><kbd>E</kbd> export CSV · <kbd>T</kbd> theme · <kbd>L</kbd> language · <kbd>?</kbd> this help · <kbd>Esc</kbd> close</p><button class="mbtn" onclick="closeModal()">Got it</button>';document.getElementById('overlay').classList.add('show');}
 document.addEventListener('keydown',function(e){if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA'))return;const map={'1':'overview','2':'ideas','3':'analytics','4':'watchlist','5':'learnings','6':'about'};const k=e.key.toLowerCase();if(map[e.key]){nav(map[e.key]);}else if(k==='e'){exportCSV();}else if(k==='t'){toggleTheme();}else if(k==='l'){toggleLang();}else if(e.key==='?'){keyHelp();}});
+/* ===== backtest view (original) ===== */
+window._btM='DE';window._btS='baseline';
+function setBT(kind,val,el){if(kind==='m')window._btM=val;else window._btS=val;el.parentNode.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');renderBT();}
+function btKPI(lab,val,col,note){return '<div class="glass kpi"><div class="k num" style="color:'+(col||'var(--acc)')+'">'+val+'</div><div class="l">'+lab+'</div>'+(note?'<div class="l" style="opacity:.7">'+note+'</div>':'')+'</div>';}
+function renderBT(){const bt=DATA.bt||{},host=document.getElementById('btBody');
+ if(!bt.markets){host.innerHTML='<p class="soon">No backtest yet. Go to <b>Actions → Backtest → Run workflow</b> (takes a few minutes), then refresh.</p>';return;}
+ const m=bt.markets[window._btM];if(!m){host.innerHTML='<p class="soon">No data for this market.</p>';return;}
+ const s=m.strategies[window._btS];
+ if(!s||!s.trades_n){host.innerHTML='<div class="glass"><p class="plain">This strategy produced <b>no qualifying trades</b> in the test window. That is a genuine result, not a bug — the rules almost never cleared the cost hurdle. Try another strategy tab.</p></div>';return;}
+ const cur=s.cur==='INR'?'₹':'€';
+ const pos=s.total_return_pct>0;
+ host.innerHTML='<div class="bento">'
+  +btKPI('Total return',(pos?'+':'')+s.total_return_pct+'%',pos?'var(--good)':'var(--bad)',cur+fmt(s.start_equity)+' → '+cur+fmt(s.final_equity))
+  +btKPI('Win rate',s.win_rate+'%',s.win_rate>=50?'var(--good)':'var(--warn)',s.trades_n+' trades')
+  +btKPI('Profit factor',s.profit_factor,s.profit_factor>=1.3?'var(--good)':'var(--bad)','gross win ÷ gross loss')
+  +btKPI('Sharpe (est.)',s.sharpe,s.sharpe>=1?'var(--good)':'var(--warn)','risk-adjusted')
+  +btKPI('Max drawdown','-'+s.max_dd_pct+'%','var(--bad)','worst peak-to-trough')
+  +btKPI('Expectancy',(s.expectancy_pct>0?'+':'')+s.expectancy_pct+'%',s.expectancy_pct>0?'var(--good)':'var(--bad)','per trade, avg')
+  +btKPI('Avg win / loss',(s.avg_win_pct>0?'+':'')+s.avg_win_pct+'% / '+s.avg_loss_pct+'%','var(--txt)','per trade')
+  +btKPI('Avg hold',s.avg_hold_days+' d','var(--txt)',s.trades_per_year+' trades/yr')
+  +'<div class="glass span4"><h3 style="margin:0 0 8px">Simulated equity curve</h3><canvas id="btChart" height="150"></canvas>'
+  +'<p class="plain" style="color:var(--mut);margin-top:8px">Benchmark: simply holding the average stock in this universe returned <b>'+m.benchmark_pct+'%</b> over the same window. If the strategy can\'t beat that, buying and holding was the better use of your money.</p></div>'
+  +'<div class="glass span4"><h3 style="margin:0 0 8px">Last trades</h3><div style="overflow:auto"><table class="tbl"><thead><tr><th>Stock</th><th>In</th><th>Out</th><th>Exit</th><th>Days</th><th>Return</th><th>P&amp;L</th></tr></thead><tbody>'
+  +s.trades.slice().reverse().map(t=>'<tr><td translate="no">'+t.t+'</td><td>'+t.in+'</td><td>'+t.out+'</td><td><span class="pill '+(t.why==='target'?'hit':'miss')+'">'+t.why+'</span></td><td class="num">'+t.days+'</td><td class="num" style="color:'+(t.ret_pct>0?'var(--good)':'var(--bad)')+'">'+(t.ret_pct>0?'+':'')+t.ret_pct+'%</td><td class="num">'+cur+fmt(t.pnl)+'</td></tr>').join('')
+  +'</tbody></table></div></div></div>'
+  +'<p class="plain" style="color:var(--mut);margin-top:10px">Run '+ (bt.generated||'') +' · entry '+(bt.config?bt.config.entry:'')+' · slippage '+(bt.config?bt.config.slippage_pct_each_side:'')+'% each side · max hold '+(bt.config?bt.config.max_hold_days:'')+' days</p>';
+ const c=document.getElementById('btChart');
+ if(c&&s.equity&&s.equity.length){_charts['bt']&&_charts['bt'].destroy();
+  _charts['bt']=new Chart(c,{type:'line',data:{labels:s.equity.map(p=>p.d),datasets:[{label:'Equity ('+s.cur+')',data:s.equity.map(p=>p.v),borderColor:pos?'#39d98a':'#ff5d73',backgroundColor:pos?'rgba(57,217,138,.15)':'rgba(255,93,115,.15)',fill:true,tension:.25,pointRadius:0}]},options:{plugins:{legend:{labels:{color:getComputedStyle(document.body).color}}},scales:{y:{ticks:{color:'#8b95a7'}},x:{ticks:{color:'#8b95a7',maxTicksLimit:8}}}}});}
+}
 function init(){loadPrefs();buildLangGrid();document.getElementById('themeBtn').textContent=document.documentElement.getAttribute('data-theme')==='light'?'🌙':'☀️';document.querySelectorAll('#nav b,#bnav b').forEach(b=>b.onclick=()=>nav(b.dataset.v));const ah=DATA.perf.deHit+DATA.perf.inHit,at=DATA.perf.deTot+DATA.perf.inTot;countUp(document.getElementById('heroNum'),DATA.actionableToday);countUp(document.getElementById('kAnalysed'),DATA.picks.length);document.getElementById('kAccuracy').textContent=at?Math.round(100*ah/at)+'%':'—';countUp(document.getElementById('kDE'),DATA.picks.filter(p=>!p.india).length);countUp(document.getElementById('kIN'),DATA.picks.filter(p=>p.india).length);document.querySelectorAll('#v-ideas .chip').forEach(c=>c.classList.toggle('active',c.dataset.f===window._filter));applyFilters();spotlight();miniAcc();document.getElementById('lessonsDE').textContent=DATA.lessonsDE;document.getElementById('lessonsIN').textContent=DATA.lessonsIN;stale();const s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.head.appendChild(s);}
 document.addEventListener('DOMContentLoaded',init);
 </script></body></html>"""
