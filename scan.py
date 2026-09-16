@@ -130,6 +130,12 @@ def main():
     with open("picks_today.json","w") as f:
         json.dump({"date":now.strftime("%Y-%m-%d"),"generated":stamp,
                    "picks":top,"actionable_count":len(actionable)}, f, indent=2)
+    with open("analysed_all.json","w") as f:
+        slim=[{"ticker":p["ticker"],"name":p["name"],"price":p["price"],"conf":p["conf"],
+               "score":p["score"],"atr_pct":p["atr_pct"],"rsi":p["rsi"],
+               "worthwhile":p["worthwhile"],"tgt_move_pct":p["tgt_move_pct"],
+               "shares":p["shares"],"spark":p.get("spark",[])} for p in picks]
+        json.dump({"date":now.strftime("%Y-%m-%d"),"market":"DE","items":slim}, f, indent=2)
     print(f"[{stamp}] scanned {len(picks)} names; top {len(top)}; actionable {len(actionable)}")
     for p in top:
         print(f"  {p['ticker']:9} {p['conf']:4} score {p['score']:5}  EUR{p['price']:8}  "
