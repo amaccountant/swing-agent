@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # review.py — end-of-day review + learning loop. Suggest-only, research/education.
 # Fetches actual day-high/close for today's picks, logs deviations, updates strategy memory.
 # Data ~15-min delayed. NOT financial advice.
