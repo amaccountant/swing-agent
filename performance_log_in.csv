@@ -8,3 +8,6 @@ date,ticker,name,conf,predicted_dayhigh,predicted_dayend,prior_close,actual_dayh
 2026-09-14,ADANIENT.NS,Adani Enterprises,High,3148.08,3108.93,3060.0,3083.7,2928.6,MISS,-2.05,Day-high fell short of estimate.
 2026-09-14,TATASTEEL.NS,Tata Steel,High,187.53,185.52,183.0,186.49,183.65,MISS,-0.55,Day-high fell short of estimate.
 2026-09-14,AXISBANK.NS,Axis Bank,Med,1267.54,1257.97,1246.0,1254.0,1222.9,MISS,-1.07,Day-high fell short of estimate.
+2026-09-14,ADANIENT.NS,Adani Enterprises,High,3148.08,3108.93,3060.0,2972.9,2927.3,MISS,-5.56,Day-high fell short of estimate.
+2026-09-14,TATASTEEL.NS,Tata Steel,High,187.53,185.52,183.0,185.4,182.85,MISS,-1.14,Day-high fell short of estimate.
+2026-09-14,AXISBANK.NS,Axis Bank,Med,1267.54,1257.97,1246.0,1252.5,1245.3,MISS,-1.19,Day-high fell short of estimate.

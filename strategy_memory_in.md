@@ -19,3 +19,10 @@
   - TATASTEEL.NS (High): predicted INR187.53, actual INR186.49 (-0.55%) -> MISS. Day-high fell short of estimate.
   - AXISBANK.NS (Med): predicted INR1267.54, actual INR1254.0 (-1.07%) -> MISS. Day-high fell short of estimate.
 - LESSON: India day-high estimates ran high; favour steadier high-liquidity names, keep the 1.5% bar strict.
+
+## India Review 2026-09-14 (logged 2026-09-16 10:23 CET)
+- Picks reviewed: 3 | Reached: 0 | Fell short: 3
+  - ADANIENT.NS (High): predicted INR3148.08, actual INR2972.9 (-5.56%) -> MISS. Day-high fell short of estimate.
+  - TATASTEEL.NS (High): predicted INR187.53, actual INR185.4 (-1.14%) -> MISS. Day-high fell short of estimate.
+  - AXISBANK.NS (Med): predicted INR1267.54, actual INR1252.5 (-1.19%) -> MISS. Day-high fell short of estimate.
+- LESSON: India day-high estimates ran high; favour steadier high-liquidity names, keep the 1.5% bar strict.
