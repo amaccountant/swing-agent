@@ -1,15 +1,13 @@
 ticker,name,note
-RELIANCE.NS,Reliance Industries,large-cap mover
-TCS.NS,Tata Consultancy,IT large-cap
-INFY.NS,Infosys,IT large-cap
-HDFCBANK.NS,HDFC Bank,banking large-cap
-ICICIBANK.NS,ICICI Bank,banking large-cap
-SBIN.NS,State Bank of India,PSU bank mover
-TATAMOTORS.NS,Tata Motors,high-beta mover
-AXISBANK.NS,Axis Bank,banking
-LT.NS,Larsen & Toubro,infra large-cap
-ITC.NS,ITC,FMCG liquid
-TATASTEEL.NS,Tata Steel,metals mover
-HINDALCO.NS,Hindalco,metals mover
-BAJFINANCE.NS,Bajaj Finance,high-beta NBFC
-ADANIENT.NS,Adani Enterprises,high-volatility mover
+HDFCBANK.NS,HDFC Bank,auto: ATR 1.99% score 315.5
+RELIANCE.NS,Reliance,auto: ATR 1.67% score 243.6
+ICICIBANK.NS,ICICI Bank,auto: ATR 1.6% score 232.8
+INFY.NS,Infosys,auto: ATR 2.86% score 212.5
+ADANIENT.NS,Adani Ent,auto: ATR 3.21% score 204.5
+IDEA.NS,Vodafone Idea,auto: ATR 3.65% score 189.0
+SBIN.NS,SBI,auto: ATR 1.79% score 186.3
+COALINDIA.NS,Coal India,auto: ATR 2.1% score 181.1
+ADANIPORTS.NS,Adani Ports,auto: ATR 2.51% score 178.6
+AXISBANK.NS,Axis Bank,auto: ATR 2.0% score 177.5
+TCS.NS,TCS,auto: ATR 2.88% score 176.1
+TATASTEEL.NS,Tata Steel,auto: ATR 2.59% score 173.4
