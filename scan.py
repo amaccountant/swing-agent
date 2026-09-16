@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Malviyaarjun
 # scan.py — Swing Agent morning scan (suggest-only, research/education).
 # Data source: yfinance (Yahoo Finance), German XETRA/Frankfurt tickers like SAP.DE.
 # Data is ~15-min delayed. NOT live. NOT financial advice.
