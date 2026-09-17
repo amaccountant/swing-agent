@@ -1,19 +1,20 @@
 {
-  "date": "2026-09-16",
+  "date": "2026-09-17",
   "market": "IN",
   "items": [
     {
       "ticker": "ADANIPORTS.NS",
       "name": "Adani Ports",
-      "price": 1723.8,
+      "price": 1713.8,
       "conf": "High",
       "score": 100,
       "atr_pct": 2.52,
-      "rsi": 54.1,
+      "rsi": 51.4,
       "worthwhile": true,
       "tgt_move_pct": 2.27,
       "shares": 11,
       "spark": [
+        1706.7,
         1700.0,
         1695.0,
         1693.5,
@@ -42,10 +43,9 @@
         1768.0,
         1764.6,
         1764.6,
-        1713.8,
-        1723.8
+        1713.8
       ],
-      "cost_eur": 171.33
+      "cost_eur": 171.43
     },
     {
       "ticker": "COALINDIA.NS",
@@ -90,7 +90,7 @@
         419.25,
         422.25
       ],
-      "cost_eur": 175.5
+      "cost_eur": 176.63
     },
     {
       "ticker": "HDFCBANK.NS",
@@ -135,7 +135,7 @@
         716.55,
         721.5
       ],
-      "cost_eur": 176.02
+      "cost_eur": 177.15
     },
     {
       "ticker": "ADANIENT.NS",
@@ -180,7 +180,7 @@
         2928.6,
         2920.0
       ],
-      "cost_eur": 158.3
+      "cost_eur": 159.32
     },
     {
       "ticker": "AXISBANK.NS",
@@ -225,7 +225,7 @@
         1222.9,
         1241.0
       ],
-      "cost_eur": 168.2
+      "cost_eur": 169.28
     },
     {
       "ticker": "RELIANCE.NS",
@@ -270,7 +270,7 @@
         1235.3,
         1240.0
       ],
-      "cost_eur": 168.06
+      "cost_eur": 169.14
     },
     {
       "ticker": "INFY.NS",
@@ -315,7 +315,7 @@
         1077.0,
         1060.0
       ],
-      "cost_eur": 172.4
+      "cost_eur": 173.51
     },
     {
       "ticker": "IDEA.NS",
@@ -360,7 +360,7 @@
         14.45,
         14.26
       ],
-      "cost_eur": 177.04
+      "cost_eur": 178.17
     },
     {
       "ticker": "TCS.NS",
@@ -405,7 +405,7 @@
         2251.0,
         2188.8
       ],
-      "cost_eur": 158.22
+      "cost_eur": 159.23
     },
     {
       "ticker": "TATASTEEL.NS",
@@ -450,7 +450,7 @@
         183.65,
         183.0
       ],
-      "cost_eur": 176.93
+      "cost_eur": 178.06
     },
     {
       "ticker": "SBIN.NS",
@@ -495,7 +495,7 @@
         968.0,
         991.4
       ],
-      "cost_eur": 170.2
+      "cost_eur": 171.29
     },
     {
       "ticker": "ICICIBANK.NS",
@@ -540,7 +540,7 @@
         1350.4,
         1358.8
       ],
-      "cost_eur": 171.89
+      "cost_eur": 172.99
     }
   ]
 }
