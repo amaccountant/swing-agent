@@ -14,3 +14,6 @@ date,ticker,name,conf,predicted_dayhigh,predicted_dayend,prior_close,actual_dayh
 2026-09-16,ADANIPORTS.NS,Adani Ports,High,1766.15,1748.8,1727.1,1737.9,1723.8,MISS,-1.6,Day-high fell short of estimate.
 2026-09-16,COALINDIA.NS,Coal India,High,428.97,425.43,421.0,423.45,422.25,MISS,-1.29,Day-high fell short of estimate.
 2026-09-16,HDFCBANK.NS,HDFC Bank,High,733.93,728.19,721.0,725.4,721.5,MISS,-1.16,Day-high fell short of estimate.
+2026-09-17,HDFCBANK.NS,HDFC Bank,High,727.3,721.7,714.7,719.4,714.9,MISS,-1.09,Day-high fell short of estimate.
+2026-09-17,COALINDIA.NS,Coal India,High,428.58,425.21,421.0,422.8,418.85,MISS,-1.35,Day-high fell short of estimate.
+2026-09-17,ADANIPORTS.NS,Adani Ports,High,1772.67,1755.57,1734.2,1738.8,1730.6,MISS,-1.91,Day-high fell short of estimate.
