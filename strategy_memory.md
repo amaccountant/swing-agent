@@ -47,3 +47,10 @@
   - CBK.DE (High): predicted high EUR42.09, actual EUR43.37 (+3.04% vs estimate) -> HIT. Move happened but we correctly skipped (fees). No loss.
   - VOW3.DE (High): predicted high EUR79.89, actual EUR81.12 (+1.54% vs estimate) -> HIT. Move happened but we correctly skipped (fees). No loss.
 - LESSON: Day-high estimates ran high today (several shortfalls). Next run: treat estimates as optimistic; favour higher-liquidity, lower-volatility names and keep the 3% worthwhile bar strict.
+
+## Review 2026-09-17 (logged 2026-09-17 16:44 UTC)
+- Picks reviewed: 3 | Day-high estimate reached: 0 | Fell short: 3
+  - CBK.DE (High): predicted high EUR43.07, actual EUR41.81 (-2.93% vs estimate) -> MISS. Day-high fell short of estimate.
+  - VOW3.DE (High): predicted high EUR82.09, actual EUR82.04 (-0.06% vs estimate) -> MISS. Day-high fell short of estimate.
+  - MBG.DE (High): predicted high EUR47.09, actual EUR46.49 (-1.28% vs estimate) -> MISS. Day-high fell short of estimate.
+- LESSON: Day-high estimates ran high today (several shortfalls). Next run: treat estimates as optimistic; favour higher-liquidity, lower-volatility names and keep the 3% worthwhile bar strict.

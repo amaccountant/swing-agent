@@ -20,3 +20,6 @@ date,ticker,name,conf,predicted_dayhigh,predicted_dayend,prior_close,actual_dayh
 2026-09-16,DTE.DE,Deutsche Telekom,High,29.17,29.06,28.84,28.96,28.84,MISS,-0.72,Day-high fell short of estimate.
 2026-09-16,CBK.DE,Commerzbank,High,42.09,41.95,41.45,43.37,41.45,HIT,3.04,Move happened but we correctly skipped (fees). No loss.
 2026-09-16,VOW3.DE,Volkswagen pref,High,79.89,79.59,78.88,81.12,78.88,HIT,1.54,Move happened but we correctly skipped (fees). No loss.
+2026-09-17,CBK.DE,Commerzbank,High,43.07,42.98,42.47,41.81,41.72,MISS,-2.93,Day-high fell short of estimate.
+2026-09-17,VOW3.DE,Volkswagen pref,High,82.09,81.77,81.02,82.04,81.04,MISS,-0.06,Day-high fell short of estimate.
+2026-09-17,MBG.DE,Mercedes-Benz,High,47.09,46.98,46.56,46.49,46.19,MISS,-1.28,Day-high fell short of estimate.
