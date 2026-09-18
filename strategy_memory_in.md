@@ -54,3 +54,10 @@
   - COALINDIA.NS (High): predicted INR425.46, actual INR419.95 (-1.30%) -> MISS. Day-high fell short of estimate.
   - ADANIPORTS.NS (High): predicted INR1786.61, actual INR1779.6 (-0.39%) -> MISS. Day-high fell short of estimate.
 - LESSON: India day-high estimates ran high; favour steadier high-liquidity names, keep the 1.5% bar strict.
+
+## India Review 2026-09-18 (logged 2026-09-18 11:22 CET)
+- Picks reviewed: 3 | Reached: 2 | Fell short: 1
+  - HDFCBANK.NS (High): predicted INR727.3, actual INR733.8 (+0.89%) -> HIT. Target achievable; setup valid.
+  - COALINDIA.NS (High): predicted INR425.46, actual INR419.95 (-1.30%) -> MISS. Day-high fell short of estimate.
+  - ADANIPORTS.NS (High): predicted INR1786.61, actual INR1824.0 (+2.09%) -> HIT. Target achievable; setup valid.
+- LESSON: India day-high estimates ran high; favour steadier high-liquidity names, keep the 1.5% bar strict.
