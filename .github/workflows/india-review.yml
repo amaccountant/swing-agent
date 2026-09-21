@@ -16,7 +16,7 @@ jobs:
       - name: Install
         run: pip install yfinance
       - name: India review
-        run: python review_in.py
+        run: python track_review.py IN
       - name: Rebuild dashboard
         run: python build_dashboard.py
       - name: Commit
