@@ -14,12 +14,13 @@ def collect(picks, cur, is_india):
     out=[]
     for p in picks:
         act=p.get("worthwhile") and p.get("conf") in ("Med","High")
-        out.append("target_by": p.get("target_by"), "horizon_days": p.get("horizon_days", 5),{"ticker":p["ticker"],"name":p["name"],"cur":cur,"india":is_india,"conf":p["conf"],
+        out.append({"ticker":p["ticker"],"name":p["name"],"cur":cur,"india":is_india,"conf":p["conf"],
             "score":p["score"],"price":p["price"],"buy_low":p["buy_low"],"buy_high":p["buy_high"],
             "stop":p["stop"],"target":p["est_dayhigh"],"dayend":p["est_dayend"],"tgt_move_pct":p["tgt_move_pct"],
             "shares":p["shares"],"cost":p["cost"],"cost_eur":p.get("cost_eur"),"rsi":p["rsi"],
             "atr_pct":p["atr_pct"],"sma5":p["sma5"],"sma20":p["sma20"],"worthwhile":p["worthwhile"],
-            "actionable":bool(act),"spark":p.get("spark",[])})
+            "actionable":bool(act),"spark":p.get("spark",[]),
+            "target_by":p.get("target_by"),"horizon_days":p.get("horizon_days",5)})
     return out
 
 def perf_stats(f):
