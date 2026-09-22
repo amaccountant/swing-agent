@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated": "2026-09-22 06:02 UTC",
+  "generated": "2026-09-22 07:07 UTC",
   "picks": [
     {
       "target_by": "2026-09-29",
@@ -52,11 +52,11 @@
       "est_dayhigh": 61.34,
       "est_dayend": 61.14,
       "stop": 58.67,
-      "tgt_move_pct": 1.48,
+      "tgt_move_pct": 1.49,
       "shares": 3,
       "cost": 181.32,
       "fee_drag_pct": 1.1,
-      "day_stretch": 61.72,
+      "day_stretch": 61.75,
       "worthwhile": false,
       "affordable": true
     },
@@ -108,13 +108,13 @@
       "buy_low": 40.52,
       "buy_high": 40.8,
       "est_dayhigh": 41.17,
-      "est_dayend": 41.09,
+      "est_dayend": 41.08,
       "stop": 39.53,
-      "tgt_move_pct": 1.31,
+      "tgt_move_pct": 1.3,
       "shares": 4,
       "cost": 162.56,
       "fee_drag_pct": 1.23,
-      "day_stretch": 41.52,
+      "day_stretch": 41.53,
       "worthwhile": false,
       "affordable": true
     },
@@ -168,11 +168,11 @@
       "est_dayhigh": 77.48,
       "est_dayend": 77.19,
       "stop": 73.0,
-      "tgt_move_pct": 1.26,
+      "tgt_move_pct": 1.25,
       "shares": 2,
       "cost": 153.04,
       "fee_drag_pct": 1.31,
-      "day_stretch": 78.18,
+      "day_stretch": 78.25,
       "worthwhile": false,
       "affordable": true
     }
