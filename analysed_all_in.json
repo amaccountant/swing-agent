@@ -1,20 +1,19 @@
 {
-  "date": "2026-09-22",
+  "date": "2026-09-23",
   "market": "IN",
   "items": [
     {
       "ticker": "HDFCBANK.NS",
       "name": "HDFC Bank",
-      "price": 744.25,
+      "price": 738.6,
       "conf": "High",
       "score": 100,
-      "atr_pct": 1.73,
-      "rsi": 63.3,
+      "atr_pct": 1.71,
+      "rsi": 67.7,
       "worthwhile": true,
-      "tgt_move_pct": 1.56,
+      "tgt_move_pct": 1.54,
       "shares": 26,
       "spark": [
-        729.0,
         729.0,
         725.0,
         727.0,
@@ -43,68 +42,23 @@
         721.5,
         713.0,
         731.0,
-        744.25
+        739.5,
+        738.6
       ],
-      "cost_eur": 176.18
-    },
-    {
-      "ticker": "COALINDIA.NS",
-      "name": "Coal India",
-      "price": 422.8,
-      "conf": "High",
-      "score": 100,
-      "atr_pct": 2.24,
-      "rsi": 63.1,
-      "worthwhile": true,
-      "tgt_move_pct": 2.02,
-      "shares": 46,
-      "spark": [
-        412.6,
-        409.3,
-        410.5,
-        407.1,
-        408.45,
-        406.9,
-        400.0,
-        402.5,
-        405.2,
-        406.9,
-        404.0,
-        403.5,
-        400.0,
-        401.0,
-        401.75,
-        401.6,
-        417.85,
-        420.05,
-        415.35,
-        418.85,
-        420.25,
-        431.0,
-        432.0,
-        426.4,
-        426.4,
-        419.25,
-        422.25,
-        418.0,
-        409.9,
-        422.8
-      ],
-      "cost_eur": 177.07
+      "cost_eur": 175.67
     },
     {
       "ticker": "ADANIPORTS.NS",
       "name": "Adani Ports",
-      "price": 1805.1,
+      "price": 1795.0,
       "conf": "High",
-      "score": 88.0,
-      "atr_pct": 2.13,
-      "rsi": 72.9,
+      "score": 100,
+      "atr_pct": 2.17,
+      "rsi": 67.8,
       "worthwhile": true,
-      "tgt_move_pct": 1.92,
+      "tgt_move_pct": 1.95,
       "shares": 10,
       "spark": [
-        1668.2,
         1665.0,
         1658.0,
         1700.0,
@@ -133,23 +87,68 @@
         1723.8,
         1738.3,
         1824.0,
-        1805.1
+        1787.1,
+        1795.0
       ],
-      "cost_eur": 164.35
+      "cost_eur": 164.2
+    },
+    {
+      "ticker": "COALINDIA.NS",
+      "name": "Coal India",
+      "price": 428.0,
+      "conf": "High",
+      "score": 100,
+      "atr_pct": 1.95,
+      "rsi": 57.3,
+      "worthwhile": true,
+      "tgt_move_pct": 1.75,
+      "shares": 45,
+      "spark": [
+        409.3,
+        410.5,
+        407.1,
+        408.45,
+        406.9,
+        400.0,
+        402.5,
+        405.2,
+        406.9,
+        404.0,
+        403.5,
+        400.0,
+        401.0,
+        401.75,
+        401.6,
+        417.85,
+        420.05,
+        415.35,
+        418.85,
+        420.25,
+        431.0,
+        432.0,
+        426.4,
+        426.4,
+        419.25,
+        422.25,
+        418.0,
+        409.9,
+        414.7,
+        428.0
+      ],
+      "cost_eur": 176.19
     },
     {
       "ticker": "ADANIENT.NS",
       "name": "Adani Ent",
-      "price": 3007.1,
+      "price": 2997.0,
       "conf": "High",
       "score": 75.0,
-      "atr_pct": 2.47,
-      "rsi": 63.3,
+      "atr_pct": 2.45,
+      "rsi": 59.3,
       "worthwhile": true,
-      "tgt_move_pct": 2.22,
+      "tgt_move_pct": 2.2,
       "shares": 6,
       "spark": [
-        2995.5,
         2985.7,
         2964.9,
         3035.1,
@@ -178,23 +177,23 @@
         2920.0,
         2923.2,
         3020.0,
-        3007.1
+        2975.0,
+        2997.0
       ],
-      "cost_eur": 164.27
+      "cost_eur": 164.5
     },
     {
       "ticker": "IDEA.NS",
       "name": "Vodafone Idea",
-      "price": 13.81,
+      "price": 14.27,
       "conf": "Med",
       "score": 67.0,
-      "atr_pct": 3.32,
-      "rsi": 46.7,
+      "atr_pct": 3.21,
+      "rsi": 46.5,
       "worthwhile": true,
-      "tgt_move_pct": 2.97,
-      "shares": 1419,
+      "tgt_move_pct": 2.87,
+      "shares": 1373,
       "spark": [
-        12.89,
         13.5,
         13.51,
         14.11,
@@ -223,23 +222,23 @@
         14.26,
         14.22,
         13.92,
-        13.81
+        13.84,
+        14.27
       ],
-      "cost_eur": 178.42
+      "cost_eur": 179.23
     },
     {
       "ticker": "TATASTEEL.NS",
       "name": "Tata Steel",
-      "price": 183.9,
+      "price": 184.97,
       "conf": "Med",
       "score": 67.0,
-      "atr_pct": 2.39,
-      "rsi": 49.7,
+      "atr_pct": 2.41,
+      "rsi": 51.8,
       "worthwhile": true,
-      "tgt_move_pct": 2.15,
-      "shares": 106,
+      "tgt_move_pct": 2.17,
+      "shares": 105,
       "spark": [
-        188.25,
         186.2,
         184.85,
         183.5,
@@ -268,23 +267,23 @@
         183.0,
         187.29,
         185.54,
-        183.9
+        183.4,
+        184.97
       ],
-      "cost_eur": 177.48
+      "cost_eur": 177.67
     },
     {
       "ticker": "INFY.NS",
       "name": "Infosys",
-      "price": 1031.4,
+      "price": 1029.4,
       "conf": "Low",
       "score": 49.0,
-      "atr_pct": 2.68,
-      "rsi": 20.1,
+      "atr_pct": 2.57,
+      "rsi": 21.6,
       "worthwhile": true,
-      "tgt_move_pct": 2.41,
+      "tgt_move_pct": 2.31,
       "shares": 19,
       "spark": [
-        1190.7,
         1176.1,
         1175.0,
         1169.2,
@@ -313,23 +312,23 @@
         1060.0,
         1058.6,
         1051.4,
-        1031.4
+        1038.5,
+        1029.4
       ],
-      "cost_eur": 178.42
+      "cost_eur": 178.92
     },
     {
       "ticker": "TCS.NS",
       "name": "TCS",
-      "price": 2114.8,
+      "price": 2105.0,
       "conf": "Low",
       "score": 49.0,
-      "atr_pct": 2.82,
-      "rsi": 16.3,
+      "atr_pct": 2.87,
+      "rsi": 19.1,
       "worthwhile": true,
-      "tgt_move_pct": 2.53,
+      "tgt_move_pct": 2.58,
       "shares": 9,
       "spark": [
-        2445.7,
         2349.7,
         2375.0,
         2361.0,
@@ -358,23 +357,23 @@
         2188.8,
         2190.0,
         2105.0,
-        2114.8
+        2128.7,
+        2105.0
       ],
-      "cost_eur": 173.29
+      "cost_eur": 173.31
     },
     {
       "ticker": "AXISBANK.NS",
       "name": "Axis Bank",
-      "price": 1247.1,
+      "price": 1242.7,
       "conf": "Med",
       "score": 67.0,
-      "atr_pct": 1.6,
-      "rsi": 45.9,
+      "atr_pct": 1.61,
+      "rsi": 45.8,
       "worthwhile": false,
-      "tgt_move_pct": 1.44,
+      "tgt_move_pct": 1.45,
       "shares": 15,
       "spark": [
-        1229.8,
         1230.0,
         1221.8,
         1217.4,
@@ -403,23 +402,23 @@
         1241.0,
         1240.0,
         1257.0,
-        1247.1
+        1250.0,
+        1242.7
       ],
-      "cost_eur": 170.31
+      "cost_eur": 170.52
     },
     {
       "ticker": "SBIN.NS",
       "name": "SBI",
-      "price": 996.8,
+      "price": 987.0,
       "conf": "Low",
       "score": 55.0,
-      "atr_pct": 1.51,
-      "rsi": 35.3,
+      "atr_pct": 1.56,
+      "rsi": 36.3,
       "worthwhile": false,
-      "tgt_move_pct": 1.36,
+      "tgt_move_pct": 1.4,
       "shares": 19,
       "spark": [
-        1066.0,
         1082.0,
         1083.0,
         1067.7,
@@ -448,23 +447,23 @@
         991.4,
         988.7,
         996.2,
-        996.8
+        996.0,
+        987.0
       ],
-      "cost_eur": 172.43
+      "cost_eur": 171.55
     },
     {
       "ticker": "RELIANCE.NS",
       "name": "Reliance",
-      "price": 1245.4,
+      "price": 1240.4,
       "conf": "Low",
       "score": 49.0,
-      "atr_pct": 1.61,
-      "rsi": 30.8,
+      "atr_pct": 1.52,
+      "rsi": 28.7,
       "worthwhile": false,
-      "tgt_move_pct": 1.45,
+      "tgt_move_pct": 1.36,
       "shares": 15,
       "spark": [
-        1323.9,
         1329.0,
         1317.0,
         1310.0,
@@ -493,23 +492,23 @@
         1240.0,
         1243.9,
         1226.4,
-        1245.4
+        1247.4,
+        1240.4
       ],
-      "cost_eur": 170.08
+      "cost_eur": 170.2
     },
     {
       "ticker": "ICICIBANK.NS",
       "name": "ICICI Bank",
-      "price": 1343.9,
+      "price": 1339.6,
       "conf": "Low",
       "score": 49.0,
-      "atr_pct": 1.36,
-      "rsi": 15.5,
+      "atr_pct": 1.38,
+      "rsi": 17.0,
       "worthwhile": false,
-      "tgt_move_pct": 1.23,
+      "tgt_move_pct": 1.24,
       "shares": 14,
       "spark": [
-        1429.6,
         1431.7,
         1406.8,
         1417.0,
@@ -538,9 +537,10 @@
         1358.8,
         1347.6,
         1338.9,
-        1343.9
+        1345.0,
+        1339.6
       ],
-      "cost_eur": 171.3
+      "cost_eur": 171.56
     }
   ]
 }
