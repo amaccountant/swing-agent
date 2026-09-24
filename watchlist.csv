@@ -1,13 +1,13 @@
 ticker,name,note
-SAP.DE,SAP SE,auto: ATR 2.95% score 492.6
-IFX.DE,Infineon,auto: ATR 4.35% score 351.8
-DBK.DE,Deutsche Bank,auto: ATR 2.54% score 295.6
-VOW3.DE,Volkswagen pref,auto: ATR 4.21% score 279.9
-DTE.DE,Deutsche Telekom,auto: ATR 2.36% score 278.8
-CBK.DE,Commerzbank,auto: ATR 2.47% score 259.4
-BMW.DE,BMW,auto: ATR 2.91% score 244.3
-RWE.DE,RWE,auto: ATR 2.53% score 243.3
-BAYN.DE,Bayer,auto: ATR 2.58% score 235.7
-MBG.DE,Mercedes-Benz,auto: ATR 2.79% score 228.0
-BAS.DE,BASF,auto: ATR 2.17% score 215.0
-HEI.DE,Heidelberg Materials,auto: ATR 3.15% score 208.0
+SAP.DE,SAP SE,auto: ATR 3.03% score 492.4
+IFX.DE,Infineon,auto: ATR 4.32% score 372.1
+DBK.DE,Deutsche Bank,auto: ATR 2.6% score 293.1
+DTE.DE,Deutsche Telekom,auto: ATR 2.3% score 280.1
+VOW3.DE,Volkswagen pref,auto: ATR 4.13% score 265.3
+BAYN.DE,Bayer,auto: ATR 2.56% score 251.5
+RWE.DE,RWE,auto: ATR 2.43% score 244.0
+CBK.DE,Commerzbank,auto: ATR 2.49% score 242.4
+MBG.DE,Mercedes-Benz,auto: ATR 2.83% score 232.2
+BMW.DE,BMW,auto: ATR 3.01% score 230.6
+BAS.DE,BASF,auto: ATR 2.15% score 214.6
+HEI.DE,Heidelberg Materials,auto: ATR 3.12% score 210.5
