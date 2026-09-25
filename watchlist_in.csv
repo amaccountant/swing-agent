@@ -1,13 +1,13 @@
 ticker,name,note
-HDFCBANK.NS,HDFC Bank,auto: ATR 1.75% score 340.9
-RELIANCE.NS,Reliance,auto: ATR 1.53% score 252.3
-ICICIBANK.NS,ICICI Bank,auto: ATR 1.31% score 228.0
-INFY.NS,Infosys,auto: ATR 2.53% score 211.5
-ADANIENT.NS,Adani Ent,auto: ATR 2.59% score 202.9
-TATASTEEL.NS,Tata Steel,auto: ATR 2.3% score 192.1
-SBIN.NS,SBI,auto: ATR 1.57% score 183.7
-IDEA.NS,Vodafone Idea,auto: ATR 3.2% score 183.5
-TCS.NS,TCS,auto: ATR 2.75% score 182.9
-COALINDIA.NS,Coal India,auto: ATR 1.88% score 179.5
-ADANIPORTS.NS,Adani Ports,auto: ATR 2.14% score 179.4
-BAJFINANCE.NS,Bajaj Finance,auto: ATR 2.39% score 173.9
+HDFCBANK.NS,HDFC Bank,auto: ATR 1.77% score 337.7
+RELIANCE.NS,Reliance,auto: ATR 1.47% score 249.4
+ICICIBANK.NS,ICICI Bank,auto: ATR 1.31% score 223.4
+INFY.NS,Infosys,auto: ATR 2.42% score 204.2
+ADANIENT.NS,Adani Ent,auto: ATR 2.54% score 187.3
+TATASTEEL.NS,Tata Steel,auto: ATR 2.13% score 185.3
+SBIN.NS,SBI,auto: ATR 1.46% score 180.4
+IDEA.NS,Vodafone Idea,auto: ATR 2.94% score 178.1
+TCS.NS,TCS,auto: ATR 2.81% score 177.5
+ADANIPORTS.NS,Adani Ports,auto: ATR 2.09% score 174.5
+BAJFINANCE.NS,Bajaj Finance,auto: ATR 2.32% score 171.1
+COALINDIA.NS,Coal India,auto: ATR 1.8% score 166.6
