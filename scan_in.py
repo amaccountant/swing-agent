@@ -9,7 +9,7 @@ import yfinance as yf
 
 POOL_INR = 20000.0          # India capital pool (INR)
 ROUNDTRIP_FEE_PCT = 0.35    # all-in round-trip % (brokerage+STT+exch+GST+stamp) — ESTIMATE, confirm on contract note
-MIN_GROSS_MOVE_PCT = 1.5    # India worthwhile bar
+MIN_GROSS_MOVE_PCT = 999    # DISABLED: gross edge was negative before fees
 
 def eur_rate():
     try:
