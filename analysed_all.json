@@ -11,7 +11,7 @@
       "atr_pct": 2.78,
       "rsi": 54.7,
       "worthwhile": false,
-      "tgt_move_pct": 3.51,
+      "tgt_move_pct": 3.4,
       "shares": 1,
       "spark": [
         179.58,
@@ -55,7 +55,7 @@
       "atr_pct": 2.31,
       "rsi": 57.4,
       "worthwhile": false,
-      "tgt_move_pct": 3.77,
+      "tgt_move_pct": 3.72,
       "shares": 1,
       "spark": [
         282.3,
@@ -99,7 +99,7 @@
       "atr_pct": 2.48,
       "rsi": 58.8,
       "worthwhile": false,
-      "tgt_move_pct": 4.46,
+      "tgt_move_pct": 4.42,
       "shares": 8,
       "spark": [
         47.9,
@@ -143,7 +143,7 @@
       "atr_pct": 2.4,
       "rsi": 49.2,
       "worthwhile": false,
-      "tgt_move_pct": 3.32,
+      "tgt_move_pct": 3.27,
       "shares": 7,
       "spark": [
         59.08,
@@ -187,7 +187,7 @@
       "atr_pct": 1.92,
       "rsi": 58.1,
       "worthwhile": false,
-      "tgt_move_pct": 2.75,
+      "tgt_move_pct": 2.69,
       "shares": 1,
       "spark": [
         277.7,
@@ -231,7 +231,7 @@
       "atr_pct": 2.28,
       "rsi": 46.0,
       "worthwhile": false,
-      "tgt_move_pct": 3.95,
+      "tgt_move_pct": 3.97,
       "shares": 10,
       "spark": [
         39.61,
@@ -275,7 +275,7 @@
       "atr_pct": 4.38,
       "rsi": 41.5,
       "worthwhile": false,
-      "tgt_move_pct": 6.88,
+      "tgt_move_pct": 6.91,
       "shares": 4,
       "spark": [
         61.97,
@@ -319,7 +319,7 @@
       "atr_pct": 1.8,
       "rsi": 48.0,
       "worthwhile": false,
-      "tgt_move_pct": 2.36,
+      "tgt_move_pct": 2.31,
       "shares": 1,
       "spark": [
         516.8,
@@ -363,7 +363,7 @@
       "atr_pct": 2.33,
       "rsi": 35.5,
       "worthwhile": false,
-      "tgt_move_pct": 2.74,
+      "tgt_move_pct": 2.69,
       "shares": 15,
       "spark": [
         28.39,
@@ -407,7 +407,7 @@
       "atr_pct": 3.46,
       "rsi": 42.6,
       "worthwhile": false,
-      "tgt_move_pct": 4.28,
+      "tgt_move_pct": 4.31,
       "shares": 0,
       "spark": [
         1214.0,
@@ -451,7 +451,7 @@
       "atr_pct": 1.94,
       "rsi": 34.3,
       "worthwhile": false,
-      "tgt_move_pct": 2.37,
+      "tgt_move_pct": 2.35,
       "shares": 1,
       "spark": [
         438.6,
@@ -495,7 +495,7 @@
       "atr_pct": 3.04,
       "rsi": 26.4,
       "worthwhile": false,
-      "tgt_move_pct": 3.36,
+      "tgt_move_pct": 3.38,
       "shares": 10,
       "spark": [
         33.06,
