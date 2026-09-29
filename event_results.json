@@ -1,0 +1,2912 @@
+{
+  "generated": "2026-09-29 12:57 CET",
+  "config": {
+    "horizons": [
+      1,
+      5,
+      20
+    ],
+    "target_percentile": 0.6,
+    "min_reliable_n": 40,
+    "breakeven_ref": 0.43
+  },
+  "per_stock": [
+    {
+      "ticker": "SAP.DE",
+      "name": "SAP",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.3926,
+          "p_loss": 0.1333,
+          "p_none": 0.4741,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3797,
+          "p_loss": 0.4615,
+          "p_none": 0.1588,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2839,
+          "p_loss": 0.6683,
+          "p_none": 0.0477,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 5,
+          "p_win": 0.8,
+          "p_loss": 0.2,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 5,
+          "p_win": 0.4,
+          "p_loss": 0.2,
+          "p_none": 0.4,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 5,
+          "p_win": 0.8,
+          "p_loss": 0.2,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 14,
+          "p_win": 0.5,
+          "p_loss": 0.4286,
+          "p_none": 0.0714,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 14,
+          "p_win": 0.5714,
+          "p_loss": 0.4286,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 14,
+          "p_win": 0.5,
+          "p_loss": 0.4286,
+          "p_none": 0.0714,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "DTE.DE",
+      "name": "Deutsche Telekom",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4198,
+          "p_loss": 0.0988,
+          "p_none": 0.4815,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3896,
+          "p_loss": 0.4045,
+          "p_none": 0.206,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.3216,
+          "p_loss": 0.6181,
+          "p_none": 0.0603,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 13,
+          "p_win": 0.3846,
+          "p_loss": 0.3846,
+          "p_none": 0.2308,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 13,
+          "p_win": 0.3077,
+          "p_loss": 0.5385,
+          "p_none": 0.1538,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 13,
+          "p_win": 0.3077,
+          "p_loss": 0.6923,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 6,
+          "p_win": 0.5,
+          "p_loss": 0.3333,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 6,
+          "p_win": 0.5,
+          "p_loss": 0.3333,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "DBK.DE",
+      "name": "Deutsche Bank",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4272,
+          "p_loss": 0.1457,
+          "p_none": 0.4272,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3623,
+          "p_loss": 0.3896,
+          "p_none": 0.2481,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2965,
+          "p_loss": 0.6432,
+          "p_none": 0.0603,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 13,
+          "p_win": 0.4615,
+          "p_loss": 0.3846,
+          "p_none": 0.1538,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 13,
+          "p_win": 0.3077,
+          "p_loss": 0.5385,
+          "p_none": 0.1538,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 13,
+          "p_win": 0.3077,
+          "p_loss": 0.6923,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 6,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 6,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "CBK.DE",
+      "name": "Commerzbank",
+      "n_earnings": 18,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.3975,
+          "p_loss": 0.1309,
+          "p_none": 0.4716,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3648,
+          "p_loss": 0.3747,
+          "p_none": 0.2605,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2814,
+          "p_loss": 0.6131,
+          "p_none": 0.1055,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 7,
+          "p_win": 0.7143,
+          "p_loss": 0.0,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 7,
+          "p_win": 0.7143,
+          "p_loss": 0.0,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 7,
+          "p_win": 0.4286,
+          "p_loss": 0.4286,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 11,
+          "p_win": 0.3636,
+          "p_loss": 0.5455,
+          "p_none": 0.0909,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 11,
+          "p_win": 0.2727,
+          "p_loss": 0.7273,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 11,
+          "p_win": 0.1818,
+          "p_loss": 0.7273,
+          "p_none": 0.0909,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4593,
+          "p_loss": 0.1506,
+          "p_none": 0.3901,
+          "reliable": true,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3772,
+          "p_loss": 0.4318,
+          "p_none": 0.1911,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2915,
+          "p_loss": 0.6709,
+          "p_none": 0.0377,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 13,
+          "p_win": 0.6154,
+          "p_loss": 0.2308,
+          "p_none": 0.1538,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 13,
+          "p_win": 0.6154,
+          "p_loss": 0.2308,
+          "p_none": 0.1538,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 13,
+          "p_win": 0.4615,
+          "p_loss": 0.4615,
+          "p_none": 0.0769,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 6,
+          "p_win": 0.1667,
+          "p_loss": 0.5,
+          "p_none": 0.3333,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 6,
+          "p_win": 0.1667,
+          "p_loss": 0.6667,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "RWE.DE",
+      "name": "RWE",
+      "n_earnings": 18,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4074,
+          "p_loss": 0.1284,
+          "p_none": 0.4642,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3648,
+          "p_loss": 0.4218,
+          "p_none": 0.2134,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2814,
+          "p_loss": 0.6508,
+          "p_none": 0.0678,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.3,
+          "p_loss": 0.5,
+          "p_none": 0.2,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.3,
+          "p_loss": 0.7,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.2,
+          "p_loss": 0.7,
+          "p_none": 0.1,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 8,
+          "p_win": 0.75,
+          "p_loss": 0.125,
+          "p_none": 0.125,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 8,
+          "p_win": 0.625,
+          "p_loss": 0.125,
+          "p_none": 0.25,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 8,
+          "p_win": 0.625,
+          "p_loss": 0.375,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "EOAN.DE",
+      "name": "E.ON",
+      "n_earnings": 17,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4247,
+          "p_loss": 0.1457,
+          "p_none": 0.4296,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3424,
+          "p_loss": 0.4194,
+          "p_none": 0.2382,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2663,
+          "p_loss": 0.6633,
+          "p_none": 0.0704,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.2,
+          "p_loss": 0.8,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.1,
+          "p_loss": 0.9,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 7,
+          "p_win": 0.7143,
+          "p_loss": 0.1429,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 7,
+          "p_win": 0.5714,
+          "p_loss": 0.1429,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 7,
+          "p_win": 0.4286,
+          "p_loss": 0.4286,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "VOW3.DE",
+      "name": "Volkswagen pref",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4222,
+          "p_loss": 0.1111,
+          "p_none": 0.4667,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3648,
+          "p_loss": 0.4566,
+          "p_none": 0.1787,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2437,
+          "p_loss": 0.6935,
+          "p_none": 0.0628,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 8,
+          "p_win": 0.625,
+          "p_loss": 0.25,
+          "p_none": 0.125,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 8,
+          "p_win": 0.25,
+          "p_loss": 0.625,
+          "p_none": 0.125,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 8,
+          "p_win": 0.25,
+          "p_loss": 0.75,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 11,
+          "p_win": 0.1818,
+          "p_loss": 0.3636,
+          "p_none": 0.4545,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 11,
+          "p_win": 0.4545,
+          "p_loss": 0.4545,
+          "p_none": 0.0909,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 11,
+          "p_win": 0.4545,
+          "p_loss": 0.5455,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "BAYN.DE",
+      "name": "Bayer",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4494,
+          "p_loss": 0.1086,
+          "p_none": 0.442,
+          "reliable": true,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3821,
+          "p_loss": 0.4417,
+          "p_none": 0.1762,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.3216,
+          "p_loss": 0.6382,
+          "p_none": 0.0402,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 5,
+          "p_win": 0.6,
+          "p_loss": 0.4,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 5,
+          "p_win": 0.6,
+          "p_loss": 0.4,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 5,
+          "p_win": 0.0,
+          "p_loss": 1.0,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 14,
+          "p_win": 0.3571,
+          "p_loss": 0.3571,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 14,
+          "p_win": 0.2857,
+          "p_loss": 0.5714,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 14,
+          "p_win": 0.2143,
+          "p_loss": 0.6429,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "BMW.DE",
+      "name": "BMW",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.3951,
+          "p_loss": 0.121,
+          "p_none": 0.484,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3424,
+          "p_loss": 0.4218,
+          "p_none": 0.2357,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2789,
+          "p_loss": 0.6734,
+          "p_none": 0.0477,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.4,
+          "p_loss": 0.4,
+          "p_none": 0.2,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.4,
+          "p_loss": 0.6,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.3,
+          "p_loss": 0.7,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 9,
+          "p_win": 0.4444,
+          "p_loss": 0.0,
+          "p_none": 0.5556,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 9,
+          "p_win": 0.5556,
+          "p_loss": 0.2222,
+          "p_none": 0.2222,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 9,
+          "p_win": 0.4444,
+          "p_loss": 0.5556,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "MBG.DE",
+      "name": "Mercedes-Benz",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.3901,
+          "p_loss": 0.1358,
+          "p_none": 0.4741,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3747,
+          "p_loss": 0.4591,
+          "p_none": 0.1663,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2764,
+          "p_loss": 0.6859,
+          "p_none": 0.0377,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.0,
+          "p_none": 0.5,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.4,
+          "p_loss": 0.6,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 9,
+          "p_win": 0.6667,
+          "p_loss": 0.2222,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 9,
+          "p_win": 0.5556,
+          "p_loss": 0.4444,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 9,
+          "p_win": 0.1111,
+          "p_loss": 0.8889,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "n_earnings": 18,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4296,
+          "p_loss": 0.1407,
+          "p_none": 0.4296,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3945,
+          "p_loss": 0.3871,
+          "p_none": 0.2184,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2889,
+          "p_loss": 0.6281,
+          "p_none": 0.0829,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 9,
+          "p_win": 0.3333,
+          "p_loss": 0.3333,
+          "p_none": 0.3333,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 9,
+          "p_win": 0.2222,
+          "p_loss": 0.6667,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 9,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 9,
+          "p_win": 0.7778,
+          "p_loss": 0.1111,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 9,
+          "p_win": 0.4444,
+          "p_loss": 0.1111,
+          "p_none": 0.4444,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 9,
+          "p_win": 0.3333,
+          "p_loss": 0.5556,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "BAS.DE",
+      "name": "BASF",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4395,
+          "p_loss": 0.1235,
+          "p_none": 0.437,
+          "reliable": true,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3747,
+          "p_loss": 0.4516,
+          "p_none": 0.1737,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.304,
+          "p_loss": 0.6709,
+          "p_none": 0.0251,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.5,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 13,
+          "p_win": 0.3077,
+          "p_loss": 0.5385,
+          "p_none": 0.1538,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 13,
+          "p_win": 0.2308,
+          "p_loss": 0.6923,
+          "p_none": 0.0769,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 13,
+          "p_win": 0.1538,
+          "p_loss": 0.8462,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.437,
+          "p_loss": 0.1235,
+          "p_none": 0.4395,
+          "reliable": true,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3747,
+          "p_loss": 0.4194,
+          "p_none": 0.206,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2739,
+          "p_loss": 0.6608,
+          "p_none": 0.0653,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 12,
+          "p_win": 0.5,
+          "p_loss": 0.3333,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 12,
+          "p_win": 0.1667,
+          "p_loss": 0.4167,
+          "p_none": 0.4167,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 12,
+          "p_win": 0.3333,
+          "p_loss": 0.5,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 7,
+          "p_win": 0.5714,
+          "p_loss": 0.1429,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 7,
+          "p_win": 0.4286,
+          "p_loss": 0.4286,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 7,
+          "p_win": 0.1429,
+          "p_loss": 0.7143,
+          "p_none": 0.1429,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4222,
+          "p_loss": 0.1358,
+          "p_none": 0.442,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3623,
+          "p_loss": 0.3921,
+          "p_none": 0.2457,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2739,
+          "p_loss": 0.6432,
+          "p_none": 0.0829,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.3,
+          "p_none": 0.2,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.3,
+          "p_loss": 0.7,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 9,
+          "p_win": 0.6667,
+          "p_loss": 0.2222,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 9,
+          "p_win": 0.5556,
+          "p_loss": 0.4444,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 9,
+          "p_win": 0.3333,
+          "p_loss": 0.5556,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "ADS.DE",
+      "name": "Adidas",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.437,
+          "p_loss": 0.1383,
+          "p_none": 0.4247,
+          "reliable": true,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3573,
+          "p_loss": 0.4764,
+          "p_none": 0.1663,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2814,
+          "p_loss": 0.6759,
+          "p_none": 0.0427,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 7,
+          "p_win": 0.2857,
+          "p_loss": 0.4286,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 7,
+          "p_win": 0.1429,
+          "p_loss": 0.8571,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 7,
+          "p_win": 0.1429,
+          "p_loss": 0.8571,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 12,
+          "p_win": 0.25,
+          "p_loss": 0.6667,
+          "p_none": 0.0833,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 12,
+          "p_win": 0.1667,
+          "p_loss": 0.75,
+          "p_none": 0.0833,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 12,
+          "p_win": 0.1667,
+          "p_loss": 0.8333,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "DB1.DE",
+      "name": "Deutsche Boerse",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4173,
+          "p_loss": 0.1284,
+          "p_none": 0.4543,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3697,
+          "p_loss": 0.4417,
+          "p_none": 0.1886,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2789,
+          "p_loss": 0.6709,
+          "p_none": 0.0503,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.5,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 6,
+          "p_win": 0.3333,
+          "p_loss": 0.5,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 6,
+          "p_win": 0.1667,
+          "p_loss": 0.6667,
+          "p_none": 0.1667,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 13,
+          "p_win": 0.3846,
+          "p_loss": 0.5385,
+          "p_none": 0.0769,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 13,
+          "p_win": 0.2308,
+          "p_loss": 0.7692,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 13,
+          "p_win": 0.2308,
+          "p_loss": 0.7692,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "AIR.DE",
+      "name": "Airbus",
+      "n_earnings": 0,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4272,
+          "p_loss": 0.1111,
+          "p_none": 0.4617,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3722,
+          "p_loss": 0.4119,
+          "p_none": 0.2159,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.3015,
+          "p_loss": 0.6457,
+          "p_none": 0.0528,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 0,
+          "p_win": null,
+          "reliable": false
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 0,
+          "p_win": null,
+          "reliable": false
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 0,
+          "p_win": null,
+          "reliable": false
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 0,
+          "p_win": null,
+          "reliable": false
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 0,
+          "p_win": null,
+          "reliable": false
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 0,
+          "p_win": null,
+          "reliable": false
+        }
+      }
+    },
+    {
+      "ticker": "HEI.DE",
+      "name": "Heidelberg Materials",
+      "n_earnings": 4,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4099,
+          "p_loss": 0.1407,
+          "p_none": 0.4494,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3697,
+          "p_loss": 0.4268,
+          "p_none": 0.2035,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.299,
+          "p_loss": 0.6181,
+          "p_none": 0.0829,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 2,
+          "p_win": 0.0,
+          "p_loss": 0.5,
+          "p_none": 0.5,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 2,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 2,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 2,
+          "p_win": 0.0,
+          "p_loss": 1.0,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 2,
+          "p_win": 0.0,
+          "p_loss": 1.0,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 2,
+          "p_win": 0.0,
+          "p_loss": 1.0,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "RHM.DE",
+      "name": "Rheinmetall",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4123,
+          "p_loss": 0.1333,
+          "p_none": 0.4543,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3747,
+          "p_loss": 0.4094,
+          "p_none": 0.2159,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2337,
+          "p_loss": 0.6683,
+          "p_none": 0.098,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.4,
+          "p_none": 0.1,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.5,
+          "p_loss": 0.5,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 9,
+          "p_win": 0.4444,
+          "p_loss": 0.4444,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 9,
+          "p_win": 0.2222,
+          "p_loss": 0.5556,
+          "p_none": 0.2222,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 9,
+          "p_win": 0.0,
+          "p_loss": 0.8889,
+          "p_none": 0.1111,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "ZAL.DE",
+      "name": "Zalando",
+      "n_earnings": 19,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4074,
+          "p_loss": 0.1284,
+          "p_none": 0.4642,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3921,
+          "p_loss": 0.4417,
+          "p_none": 0.1663,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2714,
+          "p_loss": 0.6935,
+          "p_none": 0.0352,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 12,
+          "p_win": 0.3333,
+          "p_loss": 0.3333,
+          "p_none": 0.3333,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 12,
+          "p_win": 0.3333,
+          "p_loss": 0.6667,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 12,
+          "p_win": 0.1667,
+          "p_loss": 0.8333,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 7,
+          "p_win": 0.2857,
+          "p_loss": 0.2857,
+          "p_none": 0.4286,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 7,
+          "p_win": 0.2857,
+          "p_loss": 0.4286,
+          "p_none": 0.2857,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 7,
+          "p_win": 0.2857,
+          "p_loss": 0.7143,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    },
+    {
+      "ticker": "LHA.DE",
+      "name": "Lufthansa",
+      "n_earnings": 18,
+      "baseline": {
+        "1": {
+          "label": "baseline",
+          "days": 1,
+          "n": 405,
+          "p_win": 0.4,
+          "p_loss": 0.1333,
+          "p_none": 0.4667,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "5": {
+          "label": "baseline",
+          "days": 5,
+          "n": 403,
+          "p_win": 0.3747,
+          "p_loss": 0.4318,
+          "p_none": 0.1935,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "baseline",
+          "days": 20,
+          "n": 398,
+          "p_win": 0.2663,
+          "p_loss": 0.6759,
+          "p_none": 0.0578,
+          "reliable": true,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_up": {
+        "1": {
+          "label": "after positive reaction",
+          "days": 1,
+          "n": 10,
+          "p_win": 0.6,
+          "p_loss": 0.4,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after positive reaction",
+          "days": 5,
+          "n": 10,
+          "p_win": 0.4,
+          "p_loss": 0.6,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        },
+        "20": {
+          "label": "after positive reaction",
+          "days": 20,
+          "n": 10,
+          "p_win": 0.3,
+          "p_loss": 0.7,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      },
+      "pead_down": {
+        "1": {
+          "label": "after negative reaction",
+          "days": 1,
+          "n": 8,
+          "p_win": 0.625,
+          "p_loss": 0.25,
+          "p_none": 0.125,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "5": {
+          "label": "after negative reaction",
+          "days": 5,
+          "n": 8,
+          "p_win": 0.625,
+          "p_loss": 0.375,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": true,
+          "note": ""
+        },
+        "20": {
+          "label": "after negative reaction",
+          "days": 20,
+          "n": 8,
+          "p_win": 0.375,
+          "p_loss": 0.625,
+          "p_none": 0.0,
+          "reliable": false,
+          "beats_breakeven": false,
+          "note": ""
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "1": {
+      "baseline": {
+        "n": 8910,
+        "p_win": 0.4193,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_up": {
+        "n": 188,
+        "p_win": 0.4681,
+        "reliable": true,
+        "beats_breakeven": true
+      },
+      "pead_down": {
+        "n": 190,
+        "p_win": 0.4526,
+        "reliable": true,
+        "beats_breakeven": true
+      },
+      "pead_up_lift_pp": 4.88
+    },
+    "5": {
+      "baseline": {
+        "n": 8866,
+        "p_win": 0.371,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_up": {
+        "n": 188,
+        "p_win": 0.3723,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_down": {
+        "n": 190,
+        "p_win": 0.3947,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_up_lift_pp": 0.13
+    },
+    "20": {
+      "baseline": {
+        "n": 8756,
+        "p_win": 0.2825,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_up": {
+        "n": 188,
+        "p_win": 0.3085,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_down": {
+        "n": 190,
+        "p_win": 0.2895,
+        "reliable": true,
+        "beats_breakeven": false
+      },
+      "pead_up_lift_pp": 2.6
+    }
+  },
+  "overnight": {
+    "overnight": {
+      "avg_total_pct": 36.42,
+      "avg_mean_pct": 0.0286,
+      "avg_win_rate": 0.5326,
+      "avg_daily_sharpe": 0.0244,
+      "stocks": 22
+    },
+    "intraday": {
+      "avg_total_pct": 29.37,
+      "avg_mean_pct": 0.0231,
+      "avg_win_rate": 0.5099,
+      "avg_daily_sharpe": 0.0153,
+      "stocks": 22
+    },
+    "per_stock": [
+      {
+        "ticker": "SAP.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.04,
+          "sd_pct": 1.125,
+          "total_pct": -51.01,
+          "win_rate": 0.4662,
+          "sharpe_daily": -0.0356
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0916,
+          "sd_pct": 1.419,
+          "total_pct": 116.75,
+          "win_rate": 0.5416,
+          "sharpe_daily": 0.0646
+        }
+      },
+      {
+        "ticker": "DTE.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.028,
+          "sd_pct": 0.647,
+          "total_pct": 35.63,
+          "win_rate": 0.54,
+          "sharpe_daily": 0.0433
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0133,
+          "sd_pct": 1.151,
+          "total_pct": 17.01,
+          "win_rate": 0.5243,
+          "sharpe_daily": 0.0116
+        }
+      },
+      {
+        "ticker": "DBK.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0555,
+          "sd_pct": 1.238,
+          "total_pct": 70.64,
+          "win_rate": 0.5542,
+          "sharpe_daily": 0.0448
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0532,
+          "sd_pct": 1.851,
+          "total_pct": 67.81,
+          "win_rate": 0.5243,
+          "sharpe_daily": 0.0288
+        }
+      },
+      {
+        "ticker": "CBK.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0961,
+          "sd_pct": 1.29,
+          "total_pct": 122.42,
+          "win_rate": 0.5738,
+          "sharpe_daily": 0.0745
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0929,
+          "sd_pct": 2.156,
+          "total_pct": 118.32,
+          "win_rate": 0.5267,
+          "sharpe_daily": 0.0431
+        }
+      },
+      {
+        "ticker": "IFX.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.1081,
+          "sd_pct": 1.708,
+          "total_pct": 137.76,
+          "win_rate": 0.5322,
+          "sharpe_daily": 0.0633
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": -0.0286,
+          "sd_pct": 2.195,
+          "total_pct": -36.46,
+          "win_rate": 0.4819,
+          "sharpe_daily": -0.013
+        }
+      },
+      {
+        "ticker": "RWE.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0641,
+          "sd_pct": 0.749,
+          "total_pct": 81.61,
+          "win_rate": 0.5573,
+          "sharpe_daily": 0.0855
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0002,
+          "sd_pct": 1.516,
+          "total_pct": 0.29,
+          "win_rate": 0.4859,
+          "sharpe_daily": 0.0001
+        }
+      },
+      {
+        "ticker": "EOAN.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0355,
+          "sd_pct": 0.692,
+          "total_pct": 45.19,
+          "win_rate": 0.5542,
+          "sharpe_daily": 0.0512
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0112,
+          "sd_pct": 1.255,
+          "total_pct": 14.22,
+          "win_rate": 0.5126,
+          "sharpe_daily": 0.0089
+        }
+      },
+      {
+        "ticker": "VOW3.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0069,
+          "sd_pct": 1.121,
+          "total_pct": 8.81,
+          "win_rate": 0.5133,
+          "sharpe_daily": 0.0062
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": -0.0669,
+          "sd_pct": 1.588,
+          "total_pct": -85.29,
+          "win_rate": 0.4725,
+          "sharpe_daily": -0.0422
+        }
+      },
+      {
+        "ticker": "BAYN.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0239,
+          "sd_pct": 1.051,
+          "total_pct": 30.42,
+          "win_rate": 0.5086,
+          "sharpe_daily": 0.0227
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.002,
+          "sd_pct": 1.847,
+          "total_pct": 2.57,
+          "win_rate": 0.4992,
+          "sharpe_daily": 0.0011
+        }
+      },
+      {
+        "ticker": "BMW.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.0005,
+          "sd_pct": 1.167,
+          "total_pct": -0.58,
+          "win_rate": 0.544,
+          "sharpe_daily": -0.0004
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": -0.0137,
+          "sd_pct": 1.507,
+          "total_pct": -17.51,
+          "win_rate": 0.5,
+          "sharpe_daily": -0.0091
+        }
+      },
+      {
+        "ticker": "MBG.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.0034,
+          "sd_pct": 1.128,
+          "total_pct": -4.28,
+          "win_rate": 0.5322,
+          "sharpe_daily": -0.003
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": -0.0145,
+          "sd_pct": 1.474,
+          "total_pct": -18.5,
+          "win_rate": 0.4937,
+          "sharpe_daily": -0.0098
+        }
+      },
+      {
+        "ticker": "ALV.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0361,
+          "sd_pct": 0.769,
+          "total_pct": 46.05,
+          "win_rate": 0.5565,
+          "sharpe_daily": 0.047
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0331,
+          "sd_pct": 1.014,
+          "total_pct": 42.13,
+          "win_rate": 0.533,
+          "sharpe_daily": 0.0326
+        }
+      },
+      {
+        "ticker": "BAS.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.0094,
+          "sd_pct": 1.001,
+          "total_pct": -11.95,
+          "win_rate": 0.5235,
+          "sharpe_daily": -0.0094
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0054,
+          "sd_pct": 1.545,
+          "total_pct": 6.84,
+          "win_rate": 0.4969,
+          "sharpe_daily": 0.0035
+        }
+      },
+      {
+        "ticker": "SIE.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.013,
+          "sd_pct": 1.235,
+          "total_pct": 16.54,
+          "win_rate": 0.5259,
+          "sharpe_daily": 0.0105
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0603,
+          "sd_pct": 1.534,
+          "total_pct": 76.85,
+          "win_rate": 0.5369,
+          "sharpe_daily": 0.0393
+        }
+      },
+      {
+        "ticker": "MUV2.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0222,
+          "sd_pct": 0.773,
+          "total_pct": 28.24,
+          "win_rate": 0.5612,
+          "sharpe_daily": 0.0287
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0472,
+          "sd_pct": 1.21,
+          "total_pct": 60.14,
+          "win_rate": 0.5353,
+          "sharpe_daily": 0.039
+        }
+      },
+      {
+        "ticker": "ADS.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.0488,
+          "sd_pct": 1.36,
+          "total_pct": -62.19,
+          "win_rate": 0.4819,
+          "sharpe_daily": -0.0359
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0264,
+          "sd_pct": 1.798,
+          "total_pct": 33.65,
+          "win_rate": 0.4976,
+          "sharpe_daily": 0.0147
+        }
+      },
+      {
+        "ticker": "DB1.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.0017,
+          "sd_pct": 0.59,
+          "total_pct": -2.17,
+          "win_rate": 0.5188,
+          "sharpe_daily": -0.0029
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0664,
+          "sd_pct": 1.168,
+          "total_pct": 84.6,
+          "win_rate": 0.5298,
+          "sharpe_daily": 0.0568
+        }
+      },
+      {
+        "ticker": "AIR.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0388,
+          "sd_pct": 1.097,
+          "total_pct": 49.47,
+          "win_rate": 0.5424,
+          "sharpe_daily": 0.0354
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0175,
+          "sd_pct": 1.482,
+          "total_pct": 22.25,
+          "win_rate": 0.5039,
+          "sharpe_daily": 0.0118
+        }
+      },
+      {
+        "ticker": "HEI.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.0445,
+          "sd_pct": 1.245,
+          "total_pct": 56.64,
+          "win_rate": 0.529,
+          "sharpe_daily": 0.0357
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0418,
+          "sd_pct": 1.713,
+          "total_pct": 53.2,
+          "win_rate": 0.5063,
+          "sharpe_daily": 0.0244
+        }
+      },
+      {
+        "ticker": "RHM.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.1964,
+          "sd_pct": 1.958,
+          "total_pct": 250.25,
+          "win_rate": 0.5973,
+          "sharpe_daily": 0.1003
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0425,
+          "sd_pct": 2.455,
+          "total_pct": 54.19,
+          "win_rate": 0.5055,
+          "sharpe_daily": 0.0173
+        }
+      },
+      {
+        "ticker": "ZAL.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": -0.0634,
+          "sd_pct": 1.413,
+          "total_pct": -80.78,
+          "win_rate": 0.4765,
+          "sharpe_daily": -0.0449
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0099,
+          "sd_pct": 2.778,
+          "total_pct": 12.62,
+          "win_rate": 0.5047,
+          "sharpe_daily": 0.0036
+        }
+      },
+      {
+        "ticker": "LHA.DE",
+        "overnight": {
+          "n": 1274,
+          "mean_pct": 0.027,
+          "sd_pct": 1.309,
+          "total_pct": 34.44,
+          "win_rate": 0.529,
+          "sharpe_daily": 0.0207
+        },
+        "intraday": {
+          "n": 1274,
+          "mean_pct": 0.0161,
+          "sd_pct": 1.882,
+          "total_pct": 20.48,
+          "win_rate": 0.5055,
+          "sharpe_daily": 0.0085
+        }
+      }
+    ]
+  }
+}
