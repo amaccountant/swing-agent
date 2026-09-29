@@ -1,0 +1,5 @@
+date,ticker,p_win_stated,p_win_empirical,p_win_montecarlo,sample_n,target,stop,entry_ref,expectancy_eur,actionable,outcome,resolved_on
+2026-09-29,RHM.DE,0.2855,0.33,0.1817,500,998.27,919.92,950.5,-2.0,False,,
+2026-09-29,MUV2.DE,0.322,0.354,0.2475,500,518.77,498.56,506.8,-5.01,False,,
+2026-09-29,ALV.DE,0.3815,0.378,0.3895,500,434.91,418.03,425.4,-5.85,False,,
+2026-09-29,DB1.DE,0.2937,0.344,0.1762,500,293.93,282.06,287.0,-7.23,False,,

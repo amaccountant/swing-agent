@@ -1,15 +1,15 @@
 ticker,name,note
-SAP.DE,SAP SE,auto: ATR 2.78% ret20 -2.82% score 383.3
-SIE.DE,Siemens,auto: ATR 2.31% ret20 -3.98% score 309.8
-IFX.DE,Infineon,auto: ATR 4.38% ret20 -0.65% score 281.7
-ALV.DE,Allianz,auto: ATR 1.94% ret20 -6.51% score 259.4
-DBK.DE,Deutsche Bank,auto: ATR 3.04% ret20 -9.01% score 230.7
-MUV2.DE,Munich Re,auto: ATR 1.8% ret20 -1.47% score 230.2
-DTE.DE,Deutsche Telekom,auto: ATR 2.33% ret20 -5.33% score 224.5
-RHM.DE,Rheinmetall,auto: ATR 3.46% ret20 -14.91% score 222.2
-CBK.DE,Commerzbank,auto: ATR 2.28% ret20 4.22% score 203.4
-BAYN.DE,Bayer,auto: ATR 2.48% ret20 2.77% score 200.8
-VOW3.DE,Volkswagen pref,auto: ATR 3.71% ret20 -7.36% score 190.5
-RWE.DE,RWE,auto: ATR 2.4% ret20 0.51% score 187.4
-DB1.DE,Deutsche Boerse,auto: ATR 1.92% ret20 -2.2% score 180.8
-BMW.DE,BMW,auto: ATR 3.33% ret20 -11.05% score 176.2
+SAP.DE,SAP SE,auto: ATR 2.87% ret20 0.25% score 368.9
+SIE.DE,Siemens,auto: ATR 2.17% ret20 2.45% score 306.7
+IFX.DE,Infineon,auto: ATR 4.09% ret20 5.06% score 283.6
+ALV.DE,Allianz,auto: ATR 1.73% ret20 -5.84% score 251.5
+DBK.DE,Deutsche Bank,auto: ATR 2.79% ret20 -7.87% score 219.9
+MUV2.DE,Munich Re,auto: ATR 1.63% ret20 -3.39% score 217.9
+DTE.DE,Deutsche Telekom,auto: ATR 2.31% ret20 -6.62% score 216.4
+RHM.DE,Rheinmetall,auto: ATR 3.22% ret20 -11.97% score 214.9
+BAYN.DE,Bayer,auto: ATR 2.54% ret20 1.9% score 199.0
+CBK.DE,Commerzbank,auto: ATR 2.23% ret20 6.58% score 195.2
+VOW3.DE,Volkswagen pref,auto: ATR 3.46% ret20 -7.16% score 186.4
+DB1.DE,Deutsche Boerse,auto: ATR 1.72% ret20 1.13% score 177.5
+ADS.DE,Adidas,auto: ATR 2.4% ret20 -0.37% score 173.4
+BMW.DE,BMW,auto: ATR 3.21% ret20 -10.33% score 171.9
