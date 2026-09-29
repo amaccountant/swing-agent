@@ -9,6 +9,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,10 +17,10 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install yfinance
-      - name: Refresh watchlist (intelligent)
+      - name: Refresh watchlist
         run: python refresh_watchlist.py
-      - name: Morning scan
-        run: python scan.py
+      - name: Probability engine
+        run: python probability_engine.py
       - name: Build dashboard
         run: python build_dashboard.py
       - name: Commit results
@@ -27,6 +28,6 @@ jobs:
           git config user.name "swing-agent"
           git config user.email "bot@users.noreply.github.com"
           git add -A
-          git commit -m "Morning picks + dashboard" || echo "nothing to commit"
+          git commit -m "v4 probability engine run" || echo "nothing to commit"
           git pull --rebase --autostash origin main || true
           git push || echo "push skipped"
