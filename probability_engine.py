@@ -221,4 +221,177 @@ def analyze(ticker, name, idx, equity, halted):
 
     # blend: trust empirical more as sample grows
     if e_win is None:
-        p_win, p_loss, p_none = mc["p_win"], m
+        p_win, p_loss, p_none = mc["p_win"], mc["p_loss"], mc["p_none"]; w_emp = 0.0
+    else:
+        w_emp = min(n_sample / 300.0, 0.70)
+        p_win  = w_emp*e_win  + (1-w_emp)*mc["p_win"]
+        p_loss = w_emp*e_loss + (1-w_emp)*mc["p_loss"]
+        p_none = max(1 - p_win - p_loss, 0)
+
+    # parallel 20-day read-out (display only)
+    up20 = pctl([max(max(h[j:j+PARALLEL_HORIZON])/c[j-1] - 1, 0)*100
+                 for j in range(1, len(c)-PARALLEL_HORIZON)], 0.60)
+    e20w, e20l, _, n20 = empirical_first_passage(c, h, l, up20, dn_pct, PARALLEL_HORIZON)
+
+    # sizing: 2% risk, gap-adjusted stop distance
+    stop = round(price * (1 - dn_pct/100.0), 2)
+    target = round(price * (1 + up_pct/100.0), 2)
+    eff_stop_dist = (price - stop) * GAP_FACTOR
+    if eff_stop_dist <= 0: return None
+    risk_budget = equity * RISK_PCT / 100.0
+    sh_risk = int(risk_budget // eff_stop_dist)
+    sh_cap  = int((equity / MAX_POSITIONS) // price)
+    shares  = max(min(sh_risk, sh_cap), 0)
+    notional = round(shares * price, 2)
+    fees = FEE_PER_ORDER * 2
+
+    gross_gain = round(notional * up_pct/100.0, 2)
+    net_gain   = round(gross_gain - fees, 2)
+    gross_loss = round(shares * eff_stop_dist, 2)
+    net_loss   = round(gross_loss + fees, 2)
+    # "no touch" case: assume roughly flat exit, still pay fees
+    expectancy = round(p_win*net_gain - p_loss*net_loss - p_none*fees, 2)
+    exp_pct = round(expectancy/notional*100, 3) if notional > 0 else None
+    fee_share = round(fees/gross_gain*100, 1) if gross_gain > 0 else 999.0
+
+    # Kelly (quarter-Kelly cap), for reference only
+    b = (net_gain/net_loss) if net_loss > 0 else 0
+    kelly = ((p_win*b - p_loss)/b) if b > 0 else -1
+    kelly_q = round(max(kelly, 0)/4*100, 2)
+
+    gates = {
+        "regime_ok": bool(idx["regime_ok"]),
+        "rel_strength_ok": bool(rel is not None and rel > 0),
+        "atr_ok": ATR_MIN <= a <= ATR_MAX,
+        "liquidity_ok": turnover > MIN_TURNOVER,
+        "sample_ok": n_sample >= MIN_SAMPLE,
+        "size_ok": shares >= 1 and notional >= MIN_POSITION,
+        "expectancy_ok": expectancy > MIN_EXPECTANCY,
+        "not_halted": not halted,
+    }
+    worthwhile = all(gates.values())
+    blocked = [k for k, val in gates.items() if not val]
+
+    conf_score = round(p_win * 100, 1)
+    conf = "High" if (worthwhile and p_win >= 0.55) else ("Med" if worthwhile else "Low")
+
+    return {
+        "ticker":ticker, "name":name, "price":round(price,2),
+        "conf":conf, "score":conf_score, "p_win":round(p_win,4),
+        "p_loss":round(p_loss,4), "p_none":round(p_none,4),
+        "p_win_empirical":round(e_win,4) if e_win is not None else None,
+        "p_win_montecarlo":round(mc["p_win"],4), "sample_n":n_sample,
+        "emp_weight":round(w_emp,2),
+        "sigma_daily_pct":round(sigma*100,2), "gap_sd_pct":round(gap_sd*100,2),
+        "intra_sd_pct":round(intra_sd*100,2),
+        "rsi":round(r,1), "atr_pct":round(a,2), "sma5":round(sma(c,5),2), "sma20":round(s20,2),
+        "avgvol":int(av), "turnover":int(turnover),
+        "ret20":round(ret20,2) if ret20 is not None else None,
+        "rel_strength":round(rel,2) if rel is not None else None,
+        "buy_low":round(price*0.997,2), "buy_high":round(price*1.004,2),
+        "est_dayhigh":target, "est_dayend":round(price*(1+up_pct/200.0),2), "stop":stop,
+        "tgt_move_pct":round(up_pct,2), "stop_pct":round(dn_pct,2),
+        "eff_stop_pct":round(dn_pct*GAP_FACTOR,2),
+        "mc_p05":mc["p05"], "mc_p50":mc["p50"], "mc_p95":mc["p95"],
+        "shares":shares, "cost":notional,
+        "fee_drag_pct":round(fees/notional*100,2) if notional > 0 else None,
+        "fees_eur":fees, "gross_gain_eur":gross_gain, "net_gain_eur":net_gain,
+        "gross_loss_eur":gross_loss, "net_loss_eur":net_loss,
+        "fee_share_of_gain_pct":fee_share,
+        "expectancy_eur":expectancy, "expectancy_pct":exp_pct,
+        "kelly_quarter_pct":kelly_q,
+        "h20_target_pct":round(up20,2),
+        "h20_p_win":round(e20w,4) if e20w is not None else None, "h20_sample":n20,
+        "worthwhile":worthwhile, "blocked_by":blocked, "affordable":shares >= 1,
+        "spark":[round(x,2) for x in c[-30:]],
+        "target_by":(datetime.date.today()+datetime.timedelta(days=7)).isoformat(),
+        "horizon_days":HORIZON_DAYS,
+    }
+
+def log_calibration(picks, date):
+    """Store every stated probability so we can Brier-score it later."""
+    new = not os.path.exists("calibration_log.csv")
+    with open("calibration_log.csv", "a", newline="") as f:
+        w = csv.writer(f)
+        if new:
+            w.writerow(["date","ticker","p_win_stated","p_win_empirical","p_win_montecarlo",
+                        "sample_n","target","stop","entry_ref","expectancy_eur",
+                        "actionable","outcome","resolved_on"])
+        for p in picks:
+            w.writerow([date, p["ticker"], p["p_win"], p["p_win_empirical"],
+                        p["p_win_montecarlo"], p["sample_n"], p["est_dayhigh"], p["stop"],
+                        p["price"], p["expectancy_eur"], p["worthwhile"], "", ""])
+
+def main():
+    st = equity_state()
+    equity, halted = st["equity"], st["halted"]
+    print("Probability Engine v4 (PAPER MODE) — equity EUR" + str(equity)
+          + " peak EUR" + str(st["peak"]) + " dd " + str(st["dd_pct"]) + "%"
+          + ("  *** CIRCUIT BREAKER ACTIVE ***" if halted else ""))
+    idx = index_context()
+
+    picks = []
+    with open("watchlist.csv") as f:
+        for row in csv.DictReader(f):
+            res = analyze(row["ticker"], row["name"], idx, equity, halted)
+            if res: picks.append(res)
+
+    picks.sort(key=lambda x: (x["worthwhile"], x["expectancy_eur"]), reverse=True)
+    top = picks[:4]
+    actionable = [p for p in top if p["worthwhile"]][:MAX_POSITIONS]
+    for p in top:
+        p["worthwhile"] = p in actionable
+
+    now = datetime.datetime.now(datetime.timezone.utc).astimezone(
+        datetime.timezone(datetime.timedelta(hours=1)))
+    stamp = now.strftime("%Y-%m-%d %H:%M CET")
+
+    with open("picks_today.json","w") as f:
+        json.dump({"date":now.strftime("%Y-%m-%d"), "generated":stamp, "version":"v4-drop1",
+                   "paper_mode":True, "equity":equity, "peak":st["peak"],
+                   "drawdown_pct":st["dd_pct"], "halted":halted,
+                   "regime_ok":idx["regime_ok"], "index_ret20":idx["ret20"],
+                   "picks":top, "actionable_count":len(actionable)}, f, indent=2)
+
+    with open("analysed_all.json","w") as f:
+        slim=[{"ticker":p["ticker"],"name":p["name"],"price":p["price"],"conf":p["conf"],
+               "score":p["score"],"atr_pct":p["atr_pct"],"rsi":p["rsi"],
+               "worthwhile":p["worthwhile"],"tgt_move_pct":p["tgt_move_pct"],
+               "shares":p["shares"],"spark":p.get("spark",[])} for p in picks]
+        json.dump({"date":now.strftime("%Y-%m-%d"),"market":"DE","items":slim}, f, indent=2)
+
+    log_calibration(top, now.strftime("%Y-%m-%d"))
+
+    print("[" + stamp + "] scanned " + str(len(picks)) + "; ACTIONABLE " + str(len(actionable)))
+    for p in top:
+        print("")
+        print("  " + p["ticker"] + " (" + p["name"] + ")  EUR" + str(p["price"])
+              + "  RS " + str(p["rel_strength"]) + "%")
+        print("    P(win)=" + str(round(p["p_win"]*100,1)) + "%  [empirical "
+              + (str(round(p["p_win_empirical"]*100,1)) + "%" if p["p_win_empirical"] is not None else "n/a")
+              + " on " + str(p["sample_n"]) + " windows, MC "
+              + str(round(p["p_win_montecarlo"]*100,1)) + "%, emp weight " + str(p["emp_weight"]) + "]")
+        print("    P(loss)=" + str(round(p["p_loss"]*100,1)) + "%  P(neither)="
+              + str(round(p["p_none"]*100,1)) + "%")
+        print("    target " + str(p["est_dayhigh"]) + " (+" + str(p["tgt_move_pct"])
+              + "%)  stop " + str(p["stop"]) + " (-" + str(p["stop_pct"])
+              + "%, gap-adj -" + str(p["eff_stop_pct"]) + "%)")
+        print("    GARCH sigma/day " + str(p["sigma_daily_pct"]) + "%  (gap "
+              + str(p["gap_sd_pct"]) + "% / intraday " + str(p["intra_sd_pct"]) + "%)")
+        print("    MC 5d range: EUR" + str(p["mc_p05"]) + " / " + str(p["mc_p50"])
+              + " / " + str(p["mc_p95"]) + "  (5th / 50th / 95th pct)")
+        print("    size " + str(p["shares"]) + " sh = EUR" + str(p["cost"])
+              + " | GROSS +EUR" + str(p["gross_gain_eur"]) + " / -EUR" + str(p["gross_loss_eur"])
+              + " | fees EUR" + str(p["fees_eur"]) + " (" + str(p["fee_share_of_gain_pct"]) + "% of gain)")
+        print("    NET +EUR" + str(p["net_gain_eur"]) + " / -EUR" + str(p["net_loss_eur"]))
+        print("    EXPECTANCY = EUR" + str(p["expectancy_eur"])
+              + " (" + str(p["expectancy_pct"]) + "% of position)  quarter-Kelly "
+              + str(p["kelly_quarter_pct"]) + "%")
+        print("    [20-day read-out] target +" + str(p["h20_target_pct"]) + "%  P(win)="
+              + (str(round(p["h20_p_win"]*100,1)) + "%" if p["h20_p_win"] is not None else "n/a")
+              + " on " + str(p["h20_sample"]) + " windows")
+        print("    VERDICT: " + ("TAKE" if p["worthwhile"] else "DECLINE")
+              + ("" if p["worthwhile"] else "  blocked_by=" + ",".join(p["blocked_by"])))
+
+if __name__ == "__main__":
+    main()
