@@ -1,182 +1,250 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Malviyaarjun
-# track_review.py — horizon-aware recommendation tracker.
-# Registers each pick as an OPEN recommendation, then evaluates it every day
-# until TARGET hit, STOP hit, or the 5-trading-day horizon expires.
-# Outcomes are logged ONLY when resolved, so learning is never corrupted
-# by judging a 5-day idea on day one.  Research/education. NOT financial advice.
+# Swing Research Agent - Paper Tracker & Calibration Audit (v2)
+#
+# Every stock the engine scores is registered as a "probe" carrying its stated
+# P(win). A probe is resolved ONLY when its target is touched, its stop is
+# touched, or 5 trading sessions pass. Nothing is judged early.
+#   probes_open.json          probes still inside their 5-session window
+#   calibration_resolved.csv  one row per resolved probe
+#   calibration_summary.json  Brier score, reliability table, paper P&L
+#   strategy_memory.md        lessons, written only from resolved probes
+#   equity_state.json         paper equity for probes the engine WOULD trade
+# Research/education only. NOT financial advice.
 
-import json, os, csv, datetime, sys
+import csv, json, os, datetime
 import yfinance as yf
 
-MAX_DAYS = 5          # your hard maximum holding horizon
+MAX_DAYS = 5
+FEE_PER_ORDER = 1.0
+PAPER_CAPITAL = 2000.0
+MIN_FOR_VERDICT = 20
+PICKS_FILE = "picks_today.json"
+OPEN_FILE = "probes_open.json"
+RESOLVED_FILE = "calibration_resolved.csv"
+SUMMARY_FILE = "calibration_summary.json"
+MEMORY_FILE = "strategy_memory.md"
+EQUITY_FILE = "equity_state.json"
+FIELDS = ["signal_bar", "resolved_on", "ticker", "name", "engine", "p_win_stated",
+          "target", "stop", "entry", "exit", "outcome", "hit", "sessions",
+          "gross_pct", "would_trade", "shares", "paper_pnl_eur"]
 
-def load(p, d):
-    if os.path.exists(p):
-        with open(p) as f: return json.load(f)
-    return d
 
-def save(p, obj):
-    with open(p, "w") as f: json.dump(obj, f, indent=2)
+def berlin_now():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Europe/Berlin"))
+    except Exception:
+        return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1)))
 
-def bars_since(ticker, start_date):
-    """Daily bars from start_date onward (inclusive-ish, tolerant of gaps)."""
+
+def load(path, default):
+    if os.path.exists(path):
+        try:
+            with open(path) as f:
+                return json.load(f)
+        except Exception:
+            return default
+    return default
+
+
+def save(path, obj):
+    with open(path, "w") as f:
+        json.dump(obj, f, indent=2)
+
+
+def read_resolved():
+    if not os.path.exists(RESOLVED_FILE):
+        return []
+    with open(RESOLVED_FILE) as f:
+        return list(csv.DictReader(f))
+
+
+def register():
+    data = load(PICKS_FILE, {})
+    book = load(OPEN_FILE, {"open": []})
+    seen = set((p["signal_bar"], p["ticker"]) for p in book["open"])
+    seen |= set((r["signal_bar"], r["ticker"]) for r in read_resolved())
+    added = 0
+    for p in data.get("picks", []):
+        sb = p.get("signal_bar")
+        if not sb or p.get("p_win") is None:
+            continue                          # only probes from engine v4.1 onward
+        key = (sb, p["ticker"])
+        if key in seen:
+            continue
+        book["open"].append({"signal_bar": sb, "ticker": p["ticker"], "name": p["name"],
+                             "engine": data.get("version", "?"), "p_win": p["p_win"],
+                             "target": p["est_dayhigh"], "stop": p["stop"],
+                             "shares": int(p.get("shares") or 0),
+                             "would_trade": bool(p.get("would_trade"))})
+        seen.add(key)
+        added += 1
+    save(OPEN_FILE, book)
+    print("registered " + str(added) + " new probe(s); open probes: " + str(len(book["open"])))
+    return book
+
+
+def bars_after(ticker, signal_bar):
     try:
         h = yf.Ticker(ticker).history(period="3mo", interval="1d", auto_adjust=False)
         h = h[["Open", "High", "Low", "Close"]].dropna()
-        out = []
-        for idx, row in h.iterrows():
-            d = str(idx.date())
-            if d >= start_date:
-                out.append({"d": d, "o": float(row["Open"]), "h": float(row["High"]),
-                            "l": float(row["Low"]), "c": float(row["Close"])})
-        return out
     except Exception as e:
         print("  [error] " + ticker + ": " + str(e))
-        return []
-
-def register(picks_file, open_file, market):
-    """Add today's picks as OPEN recommendations (skip duplicates)."""
-    data = load(picks_file, {"picks": [], "date": None})
-    book = load(open_file, {"open": [], "market": market})
-    if not data.get("picks"): return book
-    have = set((o["date"], o["ticker"]) for o in book["open"])
-    added = 0
-    for p in data["picks"]:
-        key = (data.get("date"), p["ticker"])
-        if key in have: continue
-        # only track ideas the engine actually deemed actionable
-        if not (p.get("worthwhile") and p.get("conf") in ("Med", "High")): continue
-        book["open"].append({
-            "date": data.get("date"), "ticker": p["ticker"], "name": p["name"],
-            "conf": p["conf"], "score": p["score"],
-            "ref_close": p["price"], "buy_low": p["buy_low"], "buy_high": p["buy_high"],
-            "target": p["est_dayhigh"], "stop": p["stop"],
-            "tgt_move_pct": p["tgt_move_pct"], "shares": p["shares"], "cost": p["cost"],
-            "bars_seen": 0, "entry_price": None, "entry_date": None,
-            "best_high": None, "worst_low": None
-        })
-        added += 1
-    if added: print(market + ": registered " + str(added) + " new open recommendation(s)")
-    save(open_file, book)
-    return book
-
-def resolve(open_file, log_file, memory_file, market, fee_kind, fee, currency):
-    book = load(open_file, {"open": [], "market": market})
-    if not book["open"]:
-        print(market + ": no open recommendations to evaluate.")
-        return
-    new_log = not os.path.exists(log_file)
-    fh = open(log_file, "a", newline="")
-    w = csv.writer(fh)
-    if new_log:
-        w.writerow(["resolved_on", "signal_date", "ticker", "name", "conf",
-                    "entry_price", "target", "stop", "exit_price", "outcome",
-                    "days_held", "gross_pct", "net_pct_after_fees", "max_favourable_pct",
-                    "max_adverse_pct", "note"])
-    still_open = []
-    resolved = []
-    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).strftime("%Y-%m-%d")
-
-    for pos in book["open"]:
-        bars = bars_since(pos["ticker"], pos["date"])
-        # drop the signal day itself; entry is the NEXT session's open
-        fwd = [b for b in bars if b["d"] > pos["date"]]
-        if not fwd:
-            still_open.append(pos); continue
-
-        if pos["entry_price"] is None:
-            pos["entry_price"] = round(fwd[0]["o"], 2)
-            pos["entry_date"] = fwd[0]["d"]
-
-        entry = pos["entry_price"]
-        outcome = None; exit_px = None; exit_day = None; held = 0
-        best = pos.get("best_high") or entry
-        worst = pos.get("worst_low") or entry
-
-        for k, b in enumerate(fwd[:MAX_DAYS]):
-            held = k + 1
-            best = max(best, b["h"]); worst = min(worst, b["l"])
-            if b["l"] <= pos["stop"]:                      # stop checked first (conservative)
-                outcome = "STOP"; exit_px = pos["stop"]; exit_day = b["d"]; break
-            if b["h"] >= pos["target"]:
-                outcome = "TARGET"; exit_px = pos["target"]; exit_day = b["d"]; break
-            if held >= MAX_DAYS or k == len(fwd) - 1:
-                if held >= MAX_DAYS:
-                    outcome = "EXPIRED"; exit_px = b["c"]; exit_day = b["d"]
-
-        pos["bars_seen"] = len(fwd); pos["best_high"] = round(best, 2); pos["worst_low"] = round(worst, 2)
-
-        if outcome is None:
-            still_open.append(pos)
-            print("  " + market + " " + pos["ticker"] + ": still open (day " + str(held) +
-                  " of " + str(MAX_DAYS) + ") — no verdict yet, as designed.")
+        return None
+    now = berlin_now()
+    today = now.date().isoformat()
+    out = []
+    for idx, row in h.iterrows():
+        d = str(idx.date())
+        if d <= signal_bar:
             continue
+        if d == today and (now.hour, now.minute) < (17, 45):
+            continue                          # ignore today's incomplete bar
+        out.append({"d": d, "o": float(row["Open"]), "h": float(row["High"]),
+                    "l": float(row["Low"]), "c": float(row["Close"])})
+    return out
 
-        notional = entry * max(pos["shares"], 1)
-        fees = (fee * 2) if fee_kind == "flat" else (notional * fee / 100.0)
-        gross = (exit_px / entry - 1) * 100 if entry else 0
-        net = gross - (fees / notional * 100 if notional else 0)
-        mfe = (best / entry - 1) * 100 if entry else 0
-        mae = (worst / entry - 1) * 100 if entry else 0
-        note = {"TARGET": "Target reached within horizon.",
-                "STOP": "Stop triggered — loss capped as designed.",
-                "EXPIRED": "Horizon expired without hitting target or stop."}[outcome]
-        w.writerow([today, pos["date"], pos["ticker"], pos["name"], pos["conf"],
-                    entry, pos["target"], pos["stop"], round(exit_px, 2), outcome,
-                    held, round(gross, 2), round(net, 2), round(mfe, 2), round(mae, 2), note])
-        resolved.append({"pos": pos, "outcome": outcome, "net": net, "held": held,
-                         "mfe": mfe, "mae": mae})
-        print("  " + market + " " + pos["ticker"] + ": " + outcome + " on day " +
-              str(held) + " (net " + str(round(net, 2)) + "%)")
 
-    book["open"] = still_open
-    save(open_file, book)
-    fh.close()
+def resolve(book):
+    still, done = [], []
+    for pos in book["open"]:
+        bars = bars_after(pos["ticker"], pos["signal_bar"])
+        if not bars:
+            still.append(pos)
+            continue
+        entry = bars[0]["o"]
+        outcome = exit_px = exit_day = None
+        sessions = 0
+        for k, b in enumerate(bars[:MAX_DAYS]):
+            sessions = k + 1
+            if b["l"] <= pos["stop"]:                        # stop checked first
+                outcome, exit_day = "STOP", b["d"]
+                exit_px = b["o"] if b["o"] < pos["stop"] else pos["stop"]
+                break
+            if b["h"] >= pos["target"]:
+                outcome, exit_day, exit_px = "TARGET", b["d"], pos["target"]
+                break
+        if outcome is None:
+            if len(bars) >= MAX_DAYS:
+                last = bars[MAX_DAYS - 1]
+                outcome, exit_day, exit_px, sessions = "EXPIRED", last["d"], last["c"], MAX_DAYS
+            else:
+                print("  " + pos["ticker"] + ": open, session " + str(len(bars)) + " of "
+                      + str(MAX_DAYS) + " - no verdict yet")
+                still.append(pos)
+                continue
+        pnl = ""
+        if pos["would_trade"] and pos["shares"] >= 1:
+            pnl = round((exit_px - entry) * pos["shares"] - 2 * FEE_PER_ORDER, 2)
+        row = {"signal_bar": pos["signal_bar"], "resolved_on": exit_day,
+               "ticker": pos["ticker"], "name": pos["name"], "engine": pos["engine"],
+               "p_win_stated": pos["p_win"], "target": pos["target"], "stop": pos["stop"],
+               "entry": round(entry, 2), "exit": round(exit_px, 2), "outcome": outcome,
+               "hit": 1 if outcome == "TARGET" else 0, "sessions": sessions,
+               "gross_pct": round((exit_px / entry - 1) * 100, 2) if entry > 0 else 0,
+               "would_trade": pos["would_trade"], "shares": pos["shares"],
+               "paper_pnl_eur": pnl}
+        done.append(row)
+        print("  " + pos["ticker"] + ": " + outcome + " after " + str(sessions)
+              + " session(s), stated P(win) " + str(round(pos["p_win"] * 100, 1)) + "%")
+    book["open"] = still
+    save(OPEN_FILE, book)
+    if done:
+        new = not os.path.exists(RESOLVED_FILE)
+        with open(RESOLVED_FILE, "a", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=FIELDS)
+            if new:
+                w.writeheader()
+            for r in done:
+                w.writerow(r)
+    return done
 
-    if not resolved:
-        print(market + ": nothing resolved today — learning left untouched (correct).")
-        return
 
-    tgt = [r for r in resolved if r["outcome"] == "TARGET"]
-    stp = [r for r in resolved if r["outcome"] == "STOP"]
-    exp = [r for r in resolved if r["outcome"] == "EXPIRED"]
-    avg_net = sum(r["net"] for r in resolved) / len(resolved)
-    lines = ["", "## " + market + " resolved trades — logged " + today,
-             "- Resolved: " + str(len(resolved)) + " | Target " + str(len(tgt)) +
-             " | Stop " + str(len(stp)) + " | Expired " + str(len(exp)) +
-             " | Avg net " + ("%+.2f" % avg_net) + "%"]
-    for r in resolved:
-        p = r["pos"]
-        lines.append("  - " + p["ticker"] + " (" + p["conf"] + "): " + r["outcome"] +
-                     " in " + str(r["held"]) + "d, net " + ("%+.2f" % r["net"]) +
-                     "%, best " + ("%+.2f" % r["mfe"]) + "%, worst " + ("%+.2f" % r["mae"]) + "%")
-    near = [r for r in exp if r["mfe"] >= r["pos"]["tgt_move_pct"] * 0.7]
-    if len(stp) > len(tgt) and stp:
-        lines.append("- LESSON: stops are being hit more than targets. The stop may sit inside "
-                     "normal daily noise — widen it or demand a stronger setup.")
-    elif near and len(near) >= max(1, len(exp) // 2):
-        lines.append("- LESSON: several expired trades came close to target. Targets look slightly "
-                     "ambitious for a 5-day window, or exits are too early.")
-    elif tgt and len(tgt) >= len(resolved) / 2:
-        lines.append("- LESSON: targets are being reached within the horizon. Current calibration "
-                     "looks reasonable — keep settings and keep sample size growing.")
+def update_equity(rows):
+    st = load(EQUITY_FILE, {"equity": PAPER_CAPITAL, "peak": PAPER_CAPITAL})
+    for r in rows:
+        if r["paper_pnl_eur"] != "":
+            st["equity"] = round(st["equity"] + float(r["paper_pnl_eur"]), 2)
+            st["peak"] = max(st.get("peak", PAPER_CAPITAL), st["equity"])
+    save(EQUITY_FILE, st)
+    return st
+
+
+def summarise(eq):
+    rows = read_resolved()
+    n = len(rows)
+    out = {"updated": berlin_now().strftime("%Y-%m-%d %H:%M %Z"), "resolved": n,
+           "min_for_verdict": MIN_FOR_VERDICT,
+           "paper_equity": eq.get("equity"), "paper_peak": eq.get("peak")}
+    if n == 0:
+        out["verdict"] = "No resolved probes yet."
+        save(SUMMARY_FILE, out)
+        return out
+    ps = [float(r["p_win_stated"]) for r in rows]
+    hs = [int(r["hit"]) for r in rows]
+    brier = sum((p - o) ** 2 for p, o in zip(ps, hs)) / n
+    base = sum(hs) / n
+    ref = base * (1 - base)
+    skill = (1 - brier / ref) if ref > 0 else None
+    buckets = []
+    for lo, hi in [(0, .2), (.2, .4), (.4, .6), (.6, .8), (.8, 1.01)]:
+        sel = [(p, o) for p, o in zip(ps, hs) if lo <= p < hi]
+        if sel:
+            buckets.append({"range": str(int(lo * 100)) + "-" + str(min(int(hi * 100), 100)) + "%",
+                            "n": len(sel),
+                            "stated": round(sum(p for p, _ in sel) / len(sel), 3),
+                            "actual": round(sum(o for _, o in sel) / len(sel), 3)})
+    mean_p = sum(ps) / n
+    gap = mean_p - base
+    traded = [float(r["paper_pnl_eur"]) for r in rows if r["paper_pnl_eur"] not in ("", None)]
+    out.update({"brier": round(brier, 4), "brier_reference": round(ref, 4),
+                "skill": round(skill, 3) if skill is not None else None,
+                "mean_stated": round(mean_p, 3), "actual_hit_rate": round(base, 3),
+                "overconfidence_pp": round(gap * 100, 1), "buckets": buckets,
+                "paper_trades": len(traded), "paper_pnl_eur": round(sum(traded), 2)})
+    if n < MIN_FOR_VERDICT:
+        out["verdict"] = ("Too few resolved probes (" + str(n) + " of "
+                          + str(MIN_FOR_VERDICT) + ") for a verdict.")
+    elif abs(gap) <= 0.05 and skill is not None and skill > 0:
+        out["verdict"] = "Calibrated: stated odds match outcomes and beat a naive guess."
+    elif gap > 0.05:
+        out["verdict"] = "Over-confident: the engine claims better odds than it achieves."
+    elif gap < -0.05:
+        out["verdict"] = "Under-confident: outcomes beat the stated odds."
     else:
-        lines.append("- LESSON: mixed outcomes. Sample still small; avoid changing rules on noise.")
-    with open(memory_file, "a") as mf:
-        mf.write("\n".join(lines) + "\n")
+        out["verdict"] = "Stated odds roughly match outcomes but add no skill over a naive guess."
+    save(SUMMARY_FILE, out)
+    return out
+
+
+def write_lesson(done, s):
+    if not done:
+        print("nothing resolved today - memory left untouched (correct)")
+        return
+    lines = ["", "## " + berlin_now().date().isoformat() + " - " + str(len(done))
+             + " probe(s) resolved"]
+    for r in done:
+        lines.append("- " + r["ticker"] + ": " + r["outcome"] + " after " + str(r["sessions"])
+                     + " session(s); stated P(win) " + str(round(float(r["p_win_stated"]) * 100, 1))
+                     + "%, move " + str(r["gross_pct"]) + "%")
+    lines.append("- Running record: " + str(s["resolved"]) + " resolved | stated "
+                 + str(round(s.get("mean_stated", 0) * 100, 1)) + "% vs actual "
+                 + str(round(s.get("actual_hit_rate", 0) * 100, 1)) + "% | Brier "
+                 + str(s.get("brier")) + " | " + s["verdict"])
+    with open(MEMORY_FILE, "a") as f:
+        f.write("\n".join(lines) + "\n")
     print("\n".join(lines))
 
+
 def main():
-    which = sys.argv[1] if len(sys.argv) > 1 else "DE"
-    if which == "IN":
-        register("picks_today_in.json", "open_positions_in.json", "IN")
-        resolve("open_positions_in.json", "resolved_log_in.csv",
-                "strategy_memory_in.md", "IN", "pct", 0.35, "INR")
-    else:
-        register("picks_today.json", "open_positions.json", "DE")
-        resolve("open_positions.json", "resolved_log.csv",
-                "strategy_memory.md", "DE", "flat", 1.0, "EUR")
+    book = register()
+    done = resolve(book)
+    eq = update_equity(done)
+    s = summarise(eq)
+    write_lesson(done, s)
+    print("calibration: " + s["verdict"])
+
 
 if __name__ == "__main__":
     main()
