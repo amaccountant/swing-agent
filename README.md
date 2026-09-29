@@ -1,24 +1,41 @@
-# 📈 Swing Agent
+# Swing Research Agent
 
-A personal, **suggest-only** short-swing stock research dashboard for
-🇩🇪 German (XETRA) and 🇮🇳 Indian (NSE) equities. Runs free on GitHub Actions +
-GitHub Pages. Built by **Malviyaarjun**.
+Automated equity research for German (XETRA) stocks, built entirely on free tools:
+GitHub Actions, GitHub Pages and yfinance. Suggest-only research. **Not financial advice.**
 
-**Live dashboard:** https://amaccountant.github.io/swing-agent/
+- **Dashboard:** https://amaccountant.github.io/swing-agent/
+- **Event Lab:** https://amaccountant.github.io/swing-agent/events.html
 
-## What it does
-- Rebuilds an intelligent watchlist of liquid, affordable movers each morning
-- Scores candidates on trend, momentum (RSI), volatility (ATR) and liquidity
-- Sets a history-based realistic target, a stop-loss, and a cost-aware
-  "worthwhile" test (Germany ≥3%, India ≥1.5%)
-- Grades itself after the close and writes lessons into a strategy memory
+## Status: research mode
+Seven independent tests found no measurable edge for 2-hour to 5-day trades in this
+universe after retail costs. The agent therefore issues no trade calls. It estimates
+probabilities and records them on paper so that its calibration can be audited.
 
-## ⚠️ Disclaimer
-Research and education only — **not financial advice**. Market data is
-**~15 minutes delayed** and based on the prior close. All targets are estimates,
-never guarantees. You place, own, and are responsible for every trade, including
-tax and regulatory compliance.
+## What runs, and when (German time)
+| Workflow | Schedule | What it does |
+|---|---|---|
+| Morning Scan | Mon-Fri, about 08:00 | Refreshes the watchlist and estimates P(target before stop) for each stock |
+| Evening Review | Mon-Fri, about 18:30 | Resolves paper probes after 5 sessions; updates Brier score and paper P&L |
+| Event Lab | Saturday | Earnings-drift and overnight/intraday study |
+| Backtest | Sunday | Historical replay of the rule set |
 
-## Licensing
-- This project: **MIT** — see [`LICENSE`](LICENSE)
-- Third-party components and data terms: see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)
+## Files
+| Area | Files |
+|---|---|
+| Engines | `refresh_watchlist.py`, `probability_engine.py`, `track_review.py`, `event_layer.py`, `backtest.py` |
+| Site builders | `build_dashboard.py`, `build_events_page.py` |
+| Records | `probes_open.json`, `calibration_resolved.csv`, `calibration_summary.json`, `strategy_memory.md`, `equity_state.json` |
+| Latest outputs | `picks_today.json`, `analysed_all.json`, `event_results.json`, `backtest_results.json` |
+
+## Method
+For each stock, the engine estimates the probability of reaching a 5-day target before a
+volatility-based stop. It blends historical first-passage counts (about 500 windows) with a
+fat-tailed Monte Carlo simulation that models overnight gaps separately. Every estimate is
+tracked until it resolves, then scored with the Brier score.
+
+## Disclaimer
+Research and education only. Not investment advice or a recommendation. Data is about
+15 minutes delayed. Past results do not guarantee future results.
+
+## Licence
+MIT. See `LICENSE` and `THIRD_PARTY_NOTICES.md`.
