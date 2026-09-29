@@ -1,0 +1,30 @@
+name: Event Lab
+on:
+  schedule:
+    - cron: '0 4 * * 6'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  events:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install yfinance
+      - name: Run event study
+        run: python event_layer.py
+      - name: Build events page
+        run: python build_events_page.py
+      - name: Commit results
+        run: |
+          git config user.name "swing-agent"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git commit -m "Event Lab study" || echo "nothing to commit"
+          git pull --rebase --autostash origin main || true
+          git push || echo "push skipped"
