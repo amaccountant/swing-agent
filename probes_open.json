@@ -2,28 +2,6 @@
   "open": [
     {
       "signal_bar": "2026-09-28",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3303,
-      "target": 526.17,
-      "stop": 505.49,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-09-28",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3819,
-      "target": 435.04,
-      "stop": 417.54,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-09-28",
       "ticker": "RWE.DE",
       "name": "RWE",
       "engine": "v4.1",
@@ -42,6 +20,17 @@
       "target": 73.18,
       "stop": 68.35,
       "shares": 8,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-09-28",
+      "ticker": "DB1.DE",
+      "name": "Deutsche Boerse",
+      "engine": "v4.1",
+      "p_win": 0.3293,
+      "target": 294.02,
+      "stop": 281.78,
+      "shares": 3,
       "would_trade": false
     }
   ]
