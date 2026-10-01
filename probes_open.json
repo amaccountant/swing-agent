@@ -13,17 +13,6 @@
     },
     {
       "signal_bar": "2026-09-28",
-      "ticker": "VOW3.DE",
-      "name": "Volkswagen pref",
-      "engine": "v4.1",
-      "p_win": 0.3976,
-      "target": 73.18,
-      "stop": 68.35,
-      "shares": 8,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-09-28",
       "ticker": "DB1.DE",
       "name": "Deutsche Boerse",
       "engine": "v4.1",
@@ -31,6 +20,17 @@
       "target": 294.02,
       "stop": 281.78,
       "shares": 3,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-09-29",
+      "ticker": "RWE.DE",
+      "name": "RWE",
+      "engine": "v4.1",
+      "p_win": 0.341,
+      "target": 60.69,
+      "stop": 57.49,
+      "shares": 15,
       "would_trade": false
     }
   ]
