@@ -10,3 +10,7 @@
 - ALV.DE: STOP after 2 session(s); stated P(win) 37.7%, move -2.55%
 - BMW.DE: TARGET after 1 session(s); stated P(win) 37.8%, move 3.11%
 - Running record: 6 resolved | stated 36.6% vs actual 16.7% | Brier 0.1754 | Too few resolved probes (6 of 20) for a verdict.
+
+## 2026-10-02 - 1 probe(s) resolved
+- MUV2.DE: STOP after 1 session(s); stated P(win) 33.3%, move -0.42%
+- Running record: 7 resolved | stated 36.1% vs actual 14.3% | Brier 0.1661 | Too few resolved probes (7 of 20) for a verdict.

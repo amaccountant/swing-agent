@@ -32,6 +32,39 @@
       "stop": 57.49,
       "shares": 15,
       "would_trade": false
+    },
+    {
+      "signal_bar": "2026-09-30",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3797,
+      "target": 425.63,
+      "stop": 408.45,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-09-30",
+      "ticker": "BMW.DE",
+      "name": "BMW",
+      "engine": "v4.1",
+      "p_win": 0.3739,
+      "target": 57.15,
+      "stop": 53.3,
+      "shares": 11,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-09-30",
+      "ticker": "RWE.DE",
+      "name": "RWE",
+      "engine": "v4.1",
+      "p_win": 0.3386,
+      "target": 61.09,
+      "stop": 57.91,
+      "shares": 15,
+      "would_trade": false
     }
   ]
 }
