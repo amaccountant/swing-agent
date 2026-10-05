@@ -14,3 +14,8 @@
 ## 2026-10-02 - 1 probe(s) resolved
 - MUV2.DE: STOP after 1 session(s); stated P(win) 33.3%, move -0.42%
 - Running record: 7 resolved | stated 36.1% vs actual 14.3% | Brier 0.1661 | Too few resolved probes (7 of 20) for a verdict.
+
+## 2026-10-05 - 2 probe(s) resolved
+- RWE.DE: EXPIRED after 5 session(s); stated P(win) 34.5%, move -0.17%
+- DB1.DE: EXPIRED after 5 session(s); stated P(win) 32.9%, move 1.47%
+- Running record: 9 resolved | stated 35.6% vs actual 11.1% | Brier 0.1545 | Too few resolved probes (9 of 20) for a verdict.
