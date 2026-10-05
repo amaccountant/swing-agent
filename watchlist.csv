@@ -1,15 +1,15 @@
 ticker,name,note
-SAP.DE,SAP SE,ATR 2.82% | 20d 2.33% | score 378.5
-SIE.DE,Siemens,ATR 2.32% | 20d 0.62% | score 307.7
-IFX.DE,Infineon,ATR 4.15% | 20d 6.69% | score 296.2
-ALV.DE,Allianz,ATR 1.89% | 20d -7.32% | score 255.9
-DBK.DE,Deutsche Bank,ATR 2.78% | 20d -8.63% | score 223.2
-RHM.DE,Rheinmetall,ATR 3.22% | 20d -12.29% | score 221.9
-MUV2.DE,Munich Re,ATR 1.65% | 20d -3.98% | score 220.0
-DTE.DE,Deutsche Telekom,ATR 2.35% | 20d -8.22% | score 219.5
-VOW3.DE,Volkswagen pref,ATR 3.58% | 20d -4.4% | score 190.1
-BAYN.DE,Bayer,ATR 2.91% | 20d -2.5% | score 188.6
-BMW.DE,BMW,ATR 3.65% | 20d -8.83% | score 183.7
-DB1.DE,Deutsche Boerse,ATR 1.65% | 20d 2.58% | score 180.5
-CBK.DE,Commerzbank,ATR 2.59% | 20d -0.91% | score 179.8
-RWE.DE,RWE,ATR 2.34% | 20d 2.07% | score 176.0
+SAP.DE,SAP SE,ATR 2.76% | 20d -0.95% | score 358.5
+IFX.DE,Infineon,ATR 3.83% | 20d 13.68% | score 317.6
+SIE.DE,Siemens,ATR 2.3% | 20d 1.27% | score 311.4
+ALV.DE,Allianz,ATR 1.96% | 20d -7.63% | score 257.7
+MUV2.DE,Munich Re,ATR 1.72% | 20d -3.6% | score 234.8
+RHM.DE,Rheinmetall,ATR 3.02% | 20d -7.46% | score 227.1
+DTE.DE,Deutsche Telekom,ATR 2.31% | 20d -6.48% | score 223.3
+DBK.DE,Deutsche Bank,ATR 2.99% | 20d -13.02% | score 223.0
+BAYN.DE,Bayer,ATR 3.14% | 20d -8.0% | score 182.1
+DB1.DE,Deutsche Boerse,ATR 1.57% | 20d 2.13% | score 182.0
+CBK.DE,Commerzbank,ATR 2.78% | 20d -6.92% | score 178.8
+BMW.DE,BMW,ATR 3.53% | 20d -13.5% | score 177.7
+RWE.DE,RWE,ATR 2.14% | 20d 1.2% | score 171.7
+VOW3.DE,Volkswagen pref,ATR 3.7% | 20d -17.0% | score 170.6
