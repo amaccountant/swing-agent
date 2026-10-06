@@ -8,3 +8,4 @@ signal_bar,resolved_on,ticker,name,engine,p_win_stated,target,stop,entry,exit,ou
 2026-09-30,2026-10-01,MUV2.DE,Munich Re,v4.1,0.3327,514.36,494.13,496.2,494.13,STOP,0,1,-0.42,False,1,
 2026-09-28,2026-10-05,RWE.DE,RWE,v4.1,0.3449,60.92,57.69,58.7,58.6,EXPIRED,0,5,-0.17,False,15,
 2026-09-28,2026-10-05,DB1.DE,Deutsche Boerse,v4.1,0.3293,294.02,281.78,285.5,289.7,EXPIRED,0,5,1.47,False,3,
+2026-09-29,2026-10-06,RWE.DE,RWE,v4.1,0.341,60.69,57.49,59.46,58.38,EXPIRED,0,5,-1.82,False,15,

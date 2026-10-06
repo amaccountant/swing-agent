@@ -19,3 +19,7 @@
 - RWE.DE: EXPIRED after 5 session(s); stated P(win) 34.5%, move -0.17%
 - DB1.DE: EXPIRED after 5 session(s); stated P(win) 32.9%, move 1.47%
 - Running record: 9 resolved | stated 35.6% vs actual 11.1% | Brier 0.1545 | Too few resolved probes (9 of 20) for a verdict.
+
+## 2026-10-06 - 1 probe(s) resolved
+- RWE.DE: EXPIRED after 5 session(s); stated P(win) 34.1%, move -1.82%
+- Running record: 10 resolved | stated 35.4% vs actual 10.0% | Brier 0.1507 | Too few resolved probes (10 of 20) for a verdict.

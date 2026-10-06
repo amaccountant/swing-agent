@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-05 19:38 CEST",
-  "resolved": 9,
+  "updated": "2026-10-06 18:49 CEST",
+  "resolved": 10,
   "min_for_verdict": 20,
   "paper_equity": 2000.0,
   "paper_peak": 2000.0,
-  "brier": 0.1545,
-  "brier_reference": 0.0988,
-  "skill": -0.564,
-  "mean_stated": 0.356,
-  "actual_hit_rate": 0.111,
-  "overconfidence_pp": 24.5,
+  "brier": 0.1507,
+  "brier_reference": 0.09,
+  "skill": -0.674,
+  "mean_stated": 0.354,
+  "actual_hit_rate": 0.1,
+  "overconfidence_pp": 25.4,
   "buckets": [
     {
       "range": "20-40%",
-      "n": 9,
-      "stated": 0.356,
-      "actual": 0.111
+      "n": 10,
+      "stated": 0.354,
+      "actual": 0.1
     }
   ],
   "paper_trades": 0,
   "paper_pnl_eur": 0,
-  "verdict": "Too few resolved probes (9 of 20) for a verdict."
+  "verdict": "Too few resolved probes (10 of 20) for a verdict."
 }

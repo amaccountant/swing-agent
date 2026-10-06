@@ -1,17 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-09-29",
-      "ticker": "RWE.DE",
-      "name": "RWE",
-      "engine": "v4.1",
-      "p_win": 0.341,
-      "target": 60.69,
-      "stop": 57.49,
-      "shares": 15,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-09-30",
       "ticker": "ALV.DE",
       "name": "Allianz",
