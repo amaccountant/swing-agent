@@ -23,3 +23,11 @@
 ## 2026-10-06 - 1 probe(s) resolved
 - RWE.DE: EXPIRED after 5 session(s); stated P(win) 34.1%, move -1.82%
 - Running record: 10 resolved | stated 35.4% vs actual 10.0% | Brier 0.1507 | Too few resolved probes (10 of 20) for a verdict.
+
+## 2026-10-07 - 5 probe(s) resolved
+- ALV.DE: EXPIRED after 5 session(s); stated P(win) 38.0%, move 1.24%
+- BMW.DE: STOP after 5 session(s); stated P(win) 37.4%, move -3.09%
+- RWE.DE: STOP after 5 session(s); stated P(win) 33.9%, move -1.21%
+- VOW3.DE: TARGET after 3 session(s); stated P(win) 38.9%, move 2.65%
+- VOW3.DE: TARGET after 2 session(s); stated P(win) 39.0%, move 2.28%
+- Running record: 15 resolved | stated 36.1% vs actual 20.0% | Brier 0.1767 | Too few resolved probes (15 of 20) for a verdict.
