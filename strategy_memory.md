@@ -31,3 +31,12 @@
 - VOW3.DE: TARGET after 3 session(s); stated P(win) 38.9%, move 2.65%
 - VOW3.DE: TARGET after 2 session(s); stated P(win) 39.0%, move 2.28%
 - Running record: 15 resolved | stated 36.1% vs actual 20.0% | Brier 0.1767 | Too few resolved probes (15 of 20) for a verdict.
+
+## 2026-10-08 - 6 probe(s) resolved
+- MUV2.DE: TARGET after 4 session(s); stated P(win) 34.5%, move 2.09%
+- BMW.DE: STOP after 4 session(s); stated P(win) 36.1%, move -3.82%
+- BMW.DE: STOP after 3 session(s); stated P(win) 35.4%, move -4.02%
+- ALV.DE: STOP after 2 session(s); stated P(win) 36.6%, move -1.4%
+- BMW.DE: STOP after 1 session(s); stated P(win) 34.8%, move -2.74%
+- DB1.DE: STOP after 1 session(s); stated P(win) 31.8%, move -1.02%
+- Running record: 21 resolved | stated 35.7% vs actual 19.0% | Brier 0.1757 | Over-confident: the engine claims better odds than it achieves.
