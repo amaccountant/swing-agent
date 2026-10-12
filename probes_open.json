@@ -1,28 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-10-05",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3707,
-      "target": 428.62,
-      "stop": 411.21,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-07",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3386,
-      "target": 528.6,
-      "stop": 507.79,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-07",
       "ticker": "ALV.DE",
       "name": "Allianz",
@@ -45,14 +23,47 @@
       "would_trade": false
     },
     {
-      "signal_bar": "2026-10-07",
+      "signal_bar": "2026-10-09",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3308,
+      "target": 535.92,
+      "stop": 515.16,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-09",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3604,
+      "target": 426.17,
+      "stop": 409.1,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-09",
       "ticker": "DB1.DE",
       "name": "Deutsche Boerse",
       "engine": "v4.1",
-      "p_win": 0.3238,
-      "target": 299.34,
-      "stop": 287.5,
+      "p_win": 0.321,
+      "target": 303.25,
+      "stop": 291.27,
       "shares": 3,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-09",
+      "ticker": "BMW.DE",
+      "name": "BMW",
+      "engine": "v4.1",
+      "p_win": 0.3656,
+      "target": 55.03,
+      "stop": 51.42,
+      "shares": 12,
       "would_trade": false
     }
   ]
