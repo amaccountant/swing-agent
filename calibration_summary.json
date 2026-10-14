@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-13 23:54 CEST",
-  "resolved": 27,
+  "updated": "2026-10-14 22:18 CEST",
+  "resolved": 31,
   "min_for_verdict": 20,
   "paper_equity": 2000.0,
   "paper_peak": 2000.0,
-  "brier": 0.2124,
-  "brier_reference": 0.2085,
-  "skill": -0.019,
+  "brier": 0.23,
+  "brier_reference": 0.2289,
+  "skill": -0.005,
   "mean_stated": 0.355,
-  "actual_hit_rate": 0.296,
-  "overconfidence_pp": 5.9,
+  "actual_hit_rate": 0.355,
+  "overconfidence_pp": -0.0,
   "buckets": [
     {
       "range": "20-40%",
-      "n": 27,
+      "n": 31,
       "stated": 0.355,
-      "actual": 0.296
+      "actual": 0.355
     }
   ],
   "paper_trades": 0,
   "paper_pnl_eur": 0,
-  "verdict": "Over-confident: the engine claims better odds than it achieves."
+  "verdict": "Stated odds roughly match outcomes but add no skill over a naive guess."
 }

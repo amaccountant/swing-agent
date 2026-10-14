@@ -52,3 +52,10 @@
 - MUV2.DE: TARGET after 3 session(s); stated P(win) 33.9%, move 2.24%
 - DB1.DE: TARGET after 3 session(s); stated P(win) 32.4%, move 2.41%
 - Running record: 27 resolved | stated 35.5% vs actual 29.6% | Brier 0.2124 | Over-confident: the engine claims better odds than it achieves.
+
+## 2026-10-14 - 4 probe(s) resolved
+- ALV.DE: TARGET after 5 session(s); stated P(win) 36.7%, move 2.74%
+- BMW.DE: EXPIRED after 5 session(s); stated P(win) 35.3%, move 2.43%
+- ALV.DE: TARGET after 3 session(s); stated P(win) 36.0%, move 1.52%
+- DB1.DE: TARGET after 3 session(s); stated P(win) 32.1%, move 2.38%
+- Running record: 31 resolved | stated 35.5% vs actual 35.5% | Brier 0.23 | Stated odds roughly match outcomes but add no skill over a naive guess.

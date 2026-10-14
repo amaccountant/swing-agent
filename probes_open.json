@@ -1,28 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-10-07",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3667,
-      "target": 426.58,
-      "stop": 409.21,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-07",
-      "ticker": "BMW.DE",
-      "name": "BMW",
-      "engine": "v4.1",
-      "p_win": 0.3534,
-      "target": 55.44,
-      "stop": 51.79,
-      "shares": 11,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-09",
       "ticker": "MUV2.DE",
       "name": "Munich Re",
@@ -35,28 +13,6 @@
     },
     {
       "signal_bar": "2026-10-09",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3604,
-      "target": 426.17,
-      "stop": 409.1,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-09",
-      "ticker": "DB1.DE",
-      "name": "Deutsche Boerse",
-      "engine": "v4.1",
-      "p_win": 0.321,
-      "target": 303.25,
-      "stop": 291.27,
-      "shares": 3,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-09",
       "ticker": "BMW.DE",
       "name": "BMW",
       "engine": "v4.1",
@@ -64,6 +20,50 @@
       "target": 55.03,
       "stop": 51.42,
       "shares": 12,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-13",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3216,
+      "target": 541.78,
+      "stop": 521.11,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-13",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3429,
+      "target": 432.8,
+      "stop": 417.3,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-13",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.3733,
+      "target": 59.04,
+      "stop": 53.24,
+      "shares": 8,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-13",
+      "ticker": "DB1.DE",
+      "name": "Deutsche Boerse",
+      "engine": "v4.1",
+      "p_win": 0.3161,
+      "target": 306.28,
+      "stop": 294.14,
+      "shares": 3,
       "would_trade": false
     }
   ]
