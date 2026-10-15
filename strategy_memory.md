@@ -59,3 +59,14 @@
 - ALV.DE: TARGET after 3 session(s); stated P(win) 36.0%, move 1.52%
 - DB1.DE: TARGET after 3 session(s); stated P(win) 32.1%, move 2.38%
 - Running record: 31 resolved | stated 35.5% vs actual 35.5% | Brier 0.23 | Stated odds roughly match outcomes but add no skill over a naive guess.
+
+## 2026-10-15 - 8 probe(s) resolved
+- MUV2.DE: TARGET after 4 session(s); stated P(win) 33.1%, move 1.89%
+- BMW.DE: TARGET after 4 session(s); stated P(win) 36.6%, move 2.29%
+- MUV2.DE: TARGET after 2 session(s); stated P(win) 32.2%, move 2.11%
+- ALV.DE: TARGET after 2 session(s); stated P(win) 34.3%, move 2.05%
+- IFX.DE: STOP after 2 session(s); stated P(win) 37.3%, move -10.49%
+- DB1.DE: TARGET after 2 session(s); stated P(win) 31.6%, move 2.43%
+- MUV2.DE: TARGET after 1 session(s); stated P(win) 31.7%, move 1.41%
+- IFX.DE: STOP after 1 session(s); stated P(win) 37.1%, move 0.0%
+- Running record: 39 resolved | stated 35.2% vs actual 43.6% | Brier 0.2586 | Under-confident: outcomes beat the stated odds.
