@@ -12,17 +12,6 @@
       "would_trade": false
     },
     {
-      "signal_bar": "2026-10-14",
-      "ticker": "DB1.DE",
-      "name": "Deutsche Boerse",
-      "engine": "v4.1",
-      "p_win": 0.3203,
-      "target": 311.15,
-      "stop": 298.64,
-      "shares": 3,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-15",
       "ticker": "MUV2.DE",
       "name": "Munich Re",
@@ -64,6 +53,39 @@
       "target": 313.12,
       "stop": 300.33,
       "shares": 3,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-16",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3319,
+      "target": 560.53,
+      "stop": 538.53,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-16",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.3789,
+      "target": 55.24,
+      "stop": 49.37,
+      "shares": 7,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-16",
+      "ticker": "BAYN.DE",
+      "name": "Bayer",
+      "engine": "v4.1",
+      "p_win": 0.3551,
+      "target": 46.36,
+      "stop": 43.01,
+      "shares": 15,
       "would_trade": false
     }
   ]
