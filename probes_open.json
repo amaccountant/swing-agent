@@ -1,39 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-10-15",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3349,
-      "target": 557.74,
-      "stop": 536.33,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-15",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3885,
-      "target": 55.32,
-      "stop": 49.37,
-      "shares": 7,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-15",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3272,
-      "target": 439.26,
-      "stop": 423.87,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-16",
       "ticker": "IFX.DE",
       "name": "Infineon",
@@ -53,28 +20,6 @@
       "target": 46.36,
       "stop": 43.01,
       "shares": 15,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-19",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3306,
-      "target": 556.05,
-      "stop": 534.21,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-19",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3716,
-      "target": 55.37,
-      "stop": 49.63,
-      "shares": 7,
       "would_trade": false
     },
     {
@@ -107,6 +52,28 @@
       "p_win": 0.3462,
       "target": 441.25,
       "stop": 425.33,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-21",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3242,
+      "target": 565.28,
+      "stop": 543.07,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-21",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3422,
+      "target": 446.61,
+      "stop": 430.59,
       "shares": 2,
       "would_trade": false
     }
