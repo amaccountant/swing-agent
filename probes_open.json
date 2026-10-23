@@ -1,28 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-10-16",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3789,
-      "target": 55.24,
-      "stop": 49.37,
-      "shares": 7,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-16",
-      "ticker": "BAYN.DE",
-      "name": "Bayer",
-      "engine": "v4.1",
-      "p_win": 0.3551,
-      "target": 46.36,
-      "stop": 43.01,
-      "shares": 15,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-20",
       "ticker": "MUV2.DE",
       "name": "Munich Re",
@@ -31,28 +9,6 @@
       "target": 559.99,
       "stop": 537.9,
       "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-20",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3695,
-      "target": 54.87,
-      "stop": 49.09,
-      "shares": 7,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-20",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3462,
-      "target": 441.25,
-      "stop": 425.33,
-      "shares": 2,
       "would_trade": false
     },
     {
@@ -67,14 +23,36 @@
       "would_trade": false
     },
     {
-      "signal_bar": "2026-10-21",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
+      "signal_bar": "2026-10-22",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
       "engine": "v4.1",
-      "p_win": 0.3422,
-      "target": 446.61,
-      "stop": 430.59,
-      "shares": 2,
+      "p_win": 0.3169,
+      "target": 570.55,
+      "stop": 548.6,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-22",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.3823,
+      "target": 52.59,
+      "stop": 47.11,
+      "shares": 8,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-22",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.3679,
+      "target": 264.91,
+      "stop": 248.45,
+      "shares": 3,
       "would_trade": false
     }
   ]

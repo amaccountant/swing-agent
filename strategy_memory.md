@@ -97,3 +97,12 @@
 - IFX.DE: STOP after 1 session(s); stated P(win) 36.7%, move -2.75%
 - DB1.DE: TARGET after 1 session(s); stated P(win) 31.9%, move 2.06%
 - Running record: 54 resolved | stated 34.8% vs actual 42.6% | Brier 0.2561 | Under-confident: outcomes beat the stated odds.
+
+## 2026-10-23 - 6 probe(s) resolved
+- IFX.DE: STOP after 5 session(s); stated P(win) 37.9%, move -5.76%
+- BAYN.DE: EXPIRED after 5 session(s); stated P(win) 35.5%, move -0.95%
+- IFX.DE: STOP after 3 session(s); stated P(win) 37.0%, move -7.24%
+- ALV.DE: STOP after 3 session(s); stated P(win) 34.6%, move -1.59%
+- ALV.DE: STOP after 2 session(s); stated P(win) 34.2%, move -1.29%
+- ALV.DE: STOP after 1 session(s); stated P(win) 34.1%, move -1.46%
+- Running record: 60 resolved | stated 34.9% vs actual 38.3% | Brier 0.2431 | Stated odds roughly match outcomes but add no skill over a naive guess.

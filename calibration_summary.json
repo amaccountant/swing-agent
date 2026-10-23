@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-22 22:39 CEST",
-  "resolved": 54,
+  "updated": "2026-10-23 22:02 CEST",
+  "resolved": 60,
   "min_for_verdict": 20,
   "paper_equity": 2000.0,
   "paper_peak": 2000.0,
-  "brier": 0.2561,
-  "brier_reference": 0.2445,
-  "skill": -0.047,
-  "mean_stated": 0.348,
-  "actual_hit_rate": 0.426,
-  "overconfidence_pp": -7.8,
+  "brier": 0.2431,
+  "brier_reference": 0.2364,
+  "skill": -0.029,
+  "mean_stated": 0.349,
+  "actual_hit_rate": 0.383,
+  "overconfidence_pp": -3.4,
   "buckets": [
     {
       "range": "20-40%",
-      "n": 54,
-      "stated": 0.348,
-      "actual": 0.426
+      "n": 60,
+      "stated": 0.349,
+      "actual": 0.383
     }
   ],
   "paper_trades": 0,
   "paper_pnl_eur": 0,
-  "verdict": "Under-confident: outcomes beat the stated odds."
+  "verdict": "Stated odds roughly match outcomes but add no skill over a naive guess."
 }
