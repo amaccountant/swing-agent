@@ -106,3 +106,7 @@
 - ALV.DE: STOP after 2 session(s); stated P(win) 34.2%, move -1.29%
 - ALV.DE: STOP after 1 session(s); stated P(win) 34.1%, move -1.46%
 - Running record: 60 resolved | stated 34.9% vs actual 38.3% | Brier 0.2431 | Stated odds roughly match outcomes but add no skill over a naive guess.
+
+## 2026-10-26 - 1 probe(s) resolved
+- MUV2.DE: TARGET after 4 session(s); stated P(win) 32.7%, move 2.64%
+- Running record: 61 resolved | stated 34.9% vs actual 39.3% | Brier 0.2466 | Stated odds roughly match outcomes but add no skill over a naive guess.

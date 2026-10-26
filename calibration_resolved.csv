@@ -59,3 +59,4 @@ signal_bar,resolved_on,ticker,name,engine,p_win_stated,target,stop,entry,exit,ou
 2026-10-20,2026-10-23,ALV.DE,Allianz,v4.1,0.3462,441.25,425.33,432.2,425.33,STOP,0,3,-1.59,False,2,
 2026-10-21,2026-10-23,ALV.DE,Allianz,v4.1,0.3422,446.61,430.59,436.2,430.59,STOP,0,2,-1.29,False,2,
 2026-10-22,2026-10-23,ALV.DE,Allianz,v4.1,0.3408,442.37,426.47,432.8,426.47,STOP,0,1,-1.46,False,2,
+2026-10-20,2026-10-26,MUV2.DE,Munich Re,v4.1,0.3273,559.99,537.9,545.6,559.99,TARGET,1,4,2.64,False,1,
