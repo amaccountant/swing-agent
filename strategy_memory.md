@@ -110,3 +110,11 @@
 ## 2026-10-26 - 1 probe(s) resolved
 - MUV2.DE: TARGET after 4 session(s); stated P(win) 32.7%, move 2.64%
 - Running record: 61 resolved | stated 34.9% vs actual 39.3% | Brier 0.2466 | Stated odds roughly match outcomes but add no skill over a naive guess.
+
+## 2026-10-27 - 5 probe(s) resolved
+- IFX.DE: TARGET after 3 session(s); stated P(win) 38.2%, move 3.87%
+- SIE.DE: TARGET after 3 session(s); stated P(win) 36.8%, move 3.08%
+- IFX.DE: TARGET after 2 session(s); stated P(win) 38.3%, move 5.25%
+- SIE.DE: TARGET after 2 session(s); stated P(win) 36.1%, move 3.42%
+- IFX.DE: TARGET after 1 session(s); stated P(win) 38.2%, move 4.19%
+- Running record: 66 resolved | stated 35.1% vs actual 43.9% | Brier 0.2574 | Under-confident: outcomes beat the stated odds.
