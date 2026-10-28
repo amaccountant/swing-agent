@@ -118,3 +118,10 @@
 - SIE.DE: TARGET after 2 session(s); stated P(win) 36.1%, move 3.42%
 - IFX.DE: TARGET after 1 session(s); stated P(win) 38.2%, move 4.19%
 - Running record: 66 resolved | stated 35.1% vs actual 43.9% | Brier 0.2574 | Under-confident: outcomes beat the stated odds.
+
+## 2026-10-28 - 4 probe(s) resolved
+- MUV2.DE: EXPIRED after 5 session(s); stated P(win) 32.4%, move 0.43%
+- MUV2.DE: STOP after 4 session(s); stated P(win) 31.7%, move -1.83%
+- MUV2.DE: STOP after 3 session(s); stated P(win) 31.5%, move -1.44%
+- MUV2.DE: STOP after 2 session(s); stated P(win) 31.4%, move -1.12%
+- Running record: 70 resolved | stated 34.9% vs actual 41.4% | Brier 0.2485 | Under-confident: outcomes beat the stated odds.
