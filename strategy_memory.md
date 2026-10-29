@@ -125,3 +125,8 @@
 - MUV2.DE: STOP after 3 session(s); stated P(win) 31.5%, move -1.44%
 - MUV2.DE: STOP after 2 session(s); stated P(win) 31.4%, move -1.12%
 - Running record: 70 resolved | stated 34.9% vs actual 41.4% | Brier 0.2485 | Under-confident: outcomes beat the stated odds.
+
+## 2026-10-29 - 2 probe(s) resolved
+- ALV.DE: TARGET after 4 session(s); stated P(win) 34.5%, move 1.54%
+- ALV.DE: TARGET after 3 session(s); stated P(win) 34.4%, move 2.55%
+- Running record: 72 resolved | stated 34.9% vs actual 43.1% | Brier 0.2535 | Under-confident: outcomes beat the stated odds.

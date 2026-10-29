@@ -1,28 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-10-23",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3453,
-      "target": 437.64,
-      "stop": 421.44,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-26",
-      "ticker": "ALV.DE",
-      "name": "Allianz",
-      "engine": "v4.1",
-      "p_win": 0.3443,
-      "target": 440.98,
-      "stop": 424.69,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-26",
       "ticker": "DB1.DE",
       "name": "Deutsche Boerse",
@@ -75,6 +53,50 @@
       "target": 48.16,
       "stop": 44.91,
       "shares": 17,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-28",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3078,
+      "target": 568.72,
+      "stop": 546.26,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-28",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3363,
+      "target": 445.22,
+      "stop": 428.92,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-28",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.377,
+      "target": 56.34,
+      "stop": 50.72,
+      "shares": 8,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-28",
+      "ticker": "DB1.DE",
+      "name": "Deutsche Boerse",
+      "engine": "v4.1",
+      "p_win": 0.3321,
+      "target": 321.37,
+      "stop": 306.87,
+      "shares": 3,
       "would_trade": false
     }
   ]
