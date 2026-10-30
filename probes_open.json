@@ -13,17 +13,6 @@
     },
     {
       "signal_bar": "2026-10-27",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3122,
-      "target": 567.68,
-      "stop": 545.49,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-27",
       "ticker": "ALV.DE",
       "name": "Allianz",
       "engine": "v4.1",
@@ -45,28 +34,6 @@
       "would_trade": false
     },
     {
-      "signal_bar": "2026-10-27",
-      "ticker": "BAYN.DE",
-      "name": "Bayer",
-      "engine": "v4.1",
-      "p_win": 0.3412,
-      "target": 48.16,
-      "stop": 44.91,
-      "shares": 17,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-10-28",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3078,
-      "target": 568.72,
-      "stop": 546.26,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-10-28",
       "ticker": "ALV.DE",
       "name": "Allianz",
@@ -78,24 +45,35 @@
       "would_trade": false
     },
     {
-      "signal_bar": "2026-10-28",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
+      "signal_bar": "2026-10-29",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
       "engine": "v4.1",
-      "p_win": 0.377,
-      "target": 56.34,
-      "stop": 50.72,
-      "shares": 8,
+      "p_win": 0.3049,
+      "target": 570.36,
+      "stop": 547.86,
+      "shares": 1,
       "would_trade": false
     },
     {
-      "signal_bar": "2026-10-28",
+      "signal_bar": "2026-10-29",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3369,
+      "target": 449.61,
+      "stop": 433.14,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-10-29",
       "ticker": "DB1.DE",
       "name": "Deutsche Boerse",
       "engine": "v4.1",
-      "p_win": 0.3321,
-      "target": 321.37,
-      "stop": 306.87,
+      "p_win": 0.3267,
+      "target": 323.05,
+      "stop": 308.62,
       "shares": 3,
       "would_trade": false
     }
