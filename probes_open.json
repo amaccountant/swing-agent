@@ -1,47 +1,14 @@
 {
   "open": [
     {
-      "signal_bar": "2026-10-29",
-      "ticker": "DB1.DE",
-      "name": "Deutsche Boerse",
-      "engine": "v4.1",
-      "p_win": 0.3267,
-      "target": 323.05,
-      "stop": 308.62,
-      "shares": 3,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-02",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3801,
-      "target": 54.91,
-      "stop": 49.34,
-      "shares": 8,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-03",
+      "signal_bar": "2026-11-04",
       "ticker": "SIE.DE",
       "name": "Siemens",
       "engine": "v4.1",
-      "p_win": 0.3559,
-      "target": 279.47,
-      "stop": 262.06,
+      "p_win": 0.3553,
+      "target": 285.52,
+      "stop": 268.08,
       "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-03",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3805,
-      "target": 55.27,
-      "stop": 49.68,
-      "shares": 8,
       "would_trade": false
     }
   ]
