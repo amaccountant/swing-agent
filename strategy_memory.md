@@ -166,3 +166,10 @@
 - ALV.DE: TARGET after 1 session(s); stated P(win) 37.1%, move 2.04%
 - IFX.DE: STOP after 1 session(s); stated P(win) 38.2%, move -3.57%
 - Running record: 96 resolved | stated 34.8% vs actual 49.0% | Brier 0.2759 | Under-confident: outcomes beat the stated odds.
+
+## 2026-11-06 - 4 probe(s) resolved
+- SIE.DE: STOP after 2 session(s); stated P(win) 35.5%, move -2.45%
+- MUV2.DE: STOP after 1 session(s); stated P(win) 34.8%, move 0.0%
+- SIE.DE: STOP after 1 session(s); stated P(win) 35.6%, move -1.48%
+- ALV.DE: STOP after 1 session(s); stated P(win) 37.0%, move -0.12%
+- Running record: 100 resolved | stated 34.8% vs actual 47.0% | Brier 0.27 | Under-confident: outcomes beat the stated odds.

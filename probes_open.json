@@ -1,14 +1,14 @@
 {
   "open": [
     {
-      "signal_bar": "2026-11-04",
-      "ticker": "SIE.DE",
-      "name": "Siemens",
+      "signal_bar": "2026-11-05",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
       "engine": "v4.1",
-      "p_win": 0.3553,
-      "target": 285.52,
-      "stop": 268.08,
-      "shares": 2,
+      "p_win": 0.4064,
+      "target": 48.45,
+      "stop": 43.09,
+      "shares": 7,
       "would_trade": false
     }
   ]
