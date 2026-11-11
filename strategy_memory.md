@@ -178,3 +178,7 @@
 - IFX.DE: TARGET after 2 session(s); stated P(win) 40.6%, move 4.92%
 - IFX.DE: TARGET after 1 session(s); stated P(win) 40.6%, move 0.77%
 - Running record: 102 resolved | stated 34.9% vs actual 48.0% | Brier 0.2716 | Under-confident: outcomes beat the stated odds.
+
+## 2026-11-11 - 1 probe(s) resolved
+- IFX.DE: TARGET after 1 session(s); stated P(win) 40.3%, move -0.25%
+- Running record: 103 resolved | stated 35.0% vs actual 48.5% | Brier 0.2724 | Under-confident: outcomes beat the stated odds.

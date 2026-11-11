@@ -101,3 +101,4 @@ signal_bar,resolved_on,ticker,name,engine,p_win_stated,target,stop,entry,exit,ou
 2026-11-05,2026-11-06,ALV.DE,Allianz,v4.1,0.3705,475.72,457.46,458.0,457.46,STOP,0,1,-0.12,False,2,
 2026-11-05,2026-11-09,IFX.DE,Infineon,v4.1,0.4064,48.45,43.09,46.18,48.45,TARGET,1,2,4.92,False,7,
 2026-11-09,2026-11-10,IFX.DE,Infineon,v4.1,0.4064,51.27,45.67,50.88,51.27,TARGET,1,1,0.77,False,7,
+2026-11-10,2026-11-11,IFX.DE,Infineon,v4.1,0.4029,51.71,45.99,51.84,51.71,TARGET,1,1,-0.25,False,7,

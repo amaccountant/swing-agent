@@ -32,6 +32,39 @@
       "stop": 262.77,
       "shares": 2,
       "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-10",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3819,
+      "target": 590.65,
+      "stop": 564.81,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-10",
+      "ticker": "BAYN.DE",
+      "name": "Bayer",
+      "engine": "v4.1",
+      "p_win": 0.3714,
+      "target": 59.68,
+      "stop": 55.21,
+      "shares": 11,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-10",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.3679,
+      "target": 281.17,
+      "stop": 263.41,
+      "shares": 2,
+      "would_trade": false
     }
   ]
 }
