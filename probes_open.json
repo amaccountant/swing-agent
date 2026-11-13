@@ -2,17 +2,6 @@
   "open": [
     {
       "signal_bar": "2026-11-10",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3819,
-      "target": 590.65,
-      "stop": 564.81,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-10",
       "ticker": "BAYN.DE",
       "name": "Bayer",
       "engine": "v4.1",
@@ -42,6 +31,50 @@
       "target": 59.35,
       "stop": 54.89,
       "shares": 11,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-12",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3931,
+      "target": 600.55,
+      "stop": 573.56,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-12",
+      "ticker": "BAYN.DE",
+      "name": "Bayer",
+      "engine": "v4.1",
+      "p_win": 0.3664,
+      "target": 59.15,
+      "stop": 54.64,
+      "shares": 11,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-12",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.3968,
+      "target": 54.94,
+      "stop": 49.04,
+      "shares": 7,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-12",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.3699,
+      "target": 291.58,
+      "stop": 273.09,
+      "shares": 2,
       "would_trade": false
     }
   ]
