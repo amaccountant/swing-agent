@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-08 12:36 CET",
+  "generated": "2026-11-15 13:21 CET",
   "version": "v2",
   "config": {
     "lookback": "2y",
@@ -15,216 +15,168 @@
   },
   "markets": {
     "DE": {
-      "benchmark_pct": 31.35,
-      "benchmark_test_pct": 13.16,
-      "split_date": "2026-04-07",
+      "benchmark_pct": 34.89,
+      "benchmark_test_pct": 9.94,
+      "split_date": "2026-04-14",
       "strategies": {
         "baseline": {
-          "trades_n": 29,
+          "trades_n": 35,
           "start_equity": 200.0,
           "cur": "EUR",
           "equity": [
             {
-              "d": "2025-02-06",
-              "v": 193.91
-            },
-            {
-              "d": "2025-02-14",
-              "v": 197.48
-            },
-            {
               "d": "2025-02-19",
-              "v": 192.55
+              "v": 200.67
             },
             {
               "d": "2025-02-25",
-              "v": 196.34
+              "v": 204.46
             },
             {
               "d": "2025-03-03",
-              "v": 199.84
+              "v": 207.96
             },
             {
               "d": "2025-03-05",
-              "v": 195.57
+              "v": 203.69
+            },
+            {
+              "d": "2025-03-07",
+              "v": 197.57
             },
             {
               "d": "2025-03-11",
-              "v": 186.07
+              "v": 191.47
             },
             {
               "d": "2025-03-14",
-              "v": 181.37
+              "v": 186.77
             },
             {
               "d": "2025-03-24",
-              "v": 180.02
+              "v": 185.48
             },
             {
               "d": "2025-04-01",
-              "v": 179.1
+              "v": 184.82
             },
             {
               "d": "2025-04-04",
-              "v": 174.05
+              "v": 179.78
             },
             {
               "d": "2025-04-14",
-              "v": 182.48
+              "v": 188.2
             },
             {
-              "d": "2025-05-05",
-              "v": 185.13
+              "d": "2025-04-25",
+              "v": 185.08
             },
             {
-              "d": "2025-05-08",
-              "v": 180.77
+              "d": "2025-05-06",
+              "v": 189.1
             },
             {
               "d": "2025-05-12",
-              "v": 175.38
+              "v": 184.82
             },
             {
               "d": "2025-05-20",
-              "v": 174.18
+              "v": 183.62
             },
             {
               "d": "2025-05-23",
-              "v": 169.33
+              "v": 178.54
             },
             {
-              "d": "2025-05-27",
-              "v": 164.81
-            },
-            {
-              "d": "2025-06-04",
-              "v": 163.2
+              "d": "2025-06-02",
+              "v": 174.51
             },
             {
               "d": "2025-06-10",
-              "v": 157.81
+              "v": 169.63
             },
             {
               "d": "2025-06-18",
-              "v": 160.08
-            },
-            {
-              "d": "2025-06-24",
-              "v": 156.07
+              "v": 172.75
             },
             {
               "d": "2025-06-27",
-              "v": 151.19
+              "v": 173.22
             },
             {
-              "d": "2025-07-04",
-              "v": 146.98
+              "d": "2025-07-01",
+              "v": 168.58
             },
             {
-              "d": "2025-07-14",
-              "v": 146.09
+              "d": "2025-07-08",
+              "v": 163.32
             },
             {
-              "d": "2025-07-22",
-              "v": 146.28
+              "d": "2025-07-10",
+              "v": 158.7
             },
             {
-              "d": "2025-07-24",
-              "v": 143.52
+              "d": "2025-07-18",
+              "v": 161.53
             },
             {
-              "d": "2025-08-01",
-              "v": 139.11
+              "d": "2025-07-28",
+              "v": 161.56
             },
             {
-              "d": "2025-08-27",
-              "v": 135.43
+              "d": "2025-07-31",
+              "v": 156.63
+            },
+            {
+              "d": "2025-08-08",
+              "v": 151.63
+            },
+            {
+              "d": "2025-08-18",
+              "v": 153.55
+            },
+            {
+              "d": "2025-08-20",
+              "v": 149.1
+            },
+            {
+              "d": "2025-08-28",
+              "v": 146.32
+            },
+            {
+              "d": "2025-09-02",
+              "v": 141.49
+            },
+            {
+              "d": "2025-10-07",
+              "v": 143.7
+            },
+            {
+              "d": "2025-10-14",
+              "v": 141.35
+            },
+            {
+              "d": "2025-10-27",
+              "v": 138.88
+            },
+            {
+              "d": "2025-10-31",
+              "v": 134.11
             }
           ],
           "trades": [
             {
-              "t": "RWE.DE",
-              "in": "2025-02-06",
-              "out": "2025-02-06",
-              "why": "stop",
-              "sh": 6,
-              "entry": 30.02,
-              "exit": 29.34,
-              "pnl": -6.09,
-              "ret_pct": -3.38,
-              "days": 1
-            },
-            {
-              "t": "CBK.DE",
-              "in": "2025-02-10",
-              "out": "2025-02-14",
-              "why": "target",
-              "sh": 8,
-              "entry": 18.91,
-              "exit": 19.61,
-              "pnl": 3.57,
-              "ret_pct": 2.36,
-              "days": 5
-            },
-            {
-              "t": "BAS.DE",
-              "in": "2025-02-18",
-              "out": "2025-02-19",
-              "why": "stop",
-              "sh": 3,
-              "entry": 50.4,
-              "exit": 49.42,
-              "pnl": -4.93,
-              "ret_pct": -3.26,
-              "days": 2
-            },
-            {
-              "t": "DBK.DE",
-              "in": "2025-02-21",
-              "out": "2025-02-25",
-              "why": "target",
-              "sh": 7,
-              "entry": 19.45,
-              "exit": 20.28,
-              "pnl": 3.79,
-              "ret_pct": 2.78,
-              "days": 3
-            },
-            {
-              "t": "DTE.DE",
-              "in": "2025-02-27",
-              "out": "2025-03-03",
-              "why": "target",
-              "sh": 5,
-              "entry": 33.87,
-              "exit": 34.97,
-              "pnl": 3.5,
-              "ret_pct": 2.07,
-              "days": 3
-            },
-            {
-              "t": "DTE.DE",
-              "in": "2025-03-05",
-              "out": "2025-03-05",
-              "why": "stop",
-              "sh": 5,
-              "entry": 34.88,
-              "exit": 34.43,
-              "pnl": -4.28,
-              "ret_pct": -2.45,
-              "days": 1
-            },
-            {
-              "t": "HEN3.DE",
-              "in": "2025-03-07",
+              "t": "LHA.DE",
+              "in": "2025-03-11",
               "out": "2025-03-11",
               "why": "stop",
-              "sh": 2,
-              "entry": 86.21,
-              "exit": 82.46,
-              "pnl": -9.5,
-              "ret_pct": -5.51,
-              "days": 3
+              "sh": 24,
+              "entry": 7.71,
+              "exit": 7.54,
+              "pnl": -6.1,
+              "ret_pct": -3.3,
+              "days": 1
             },
             {
               "t": "BMW.DE",
@@ -243,11 +195,11 @@
               "in": "2025-03-18",
               "out": "2025-03-24",
               "why": "time",
-              "sh": 11,
+              "sh": 12,
               "entry": 13.03,
               "exit": 13.09,
-              "pnl": -1.35,
-              "ret_pct": -0.94,
+              "pnl": -1.29,
+              "ret_pct": -0.83,
               "days": 5
             },
             {
@@ -255,11 +207,11 @@
               "in": "2025-03-26",
               "out": "2025-04-01",
               "why": "time",
-              "sh": 4,
+              "sh": 5,
               "entry": 35.44,
               "exit": 35.7,
-              "pnl": -0.92,
-              "ret_pct": -0.65,
+              "pnl": -0.66,
+              "ret_pct": -0.37,
               "days": 5
             },
             {
@@ -287,40 +239,40 @@
               "days": 4
             },
             {
-              "t": "CON.DE",
-              "in": "2025-04-28",
-              "out": "2025-05-05",
+              "t": "EOAN.DE",
+              "in": "2025-04-17",
+              "out": "2025-04-25",
               "why": "time",
-              "sh": 3,
-              "entry": 51.68,
-              "exit": 53.24,
-              "pnl": 2.66,
-              "ret_pct": 1.71,
+              "sh": 9,
+              "entry": 15.14,
+              "exit": 15.01,
+              "pnl": -3.13,
+              "ret_pct": -2.3,
               "days": 5
             },
             {
-              "t": "HEN3.DE",
-              "in": "2025-05-07",
-              "out": "2025-05-08",
-              "why": "stop",
-              "sh": 2,
-              "entry": 68.55,
-              "exit": 67.36,
-              "pnl": -4.37,
-              "ret_pct": -3.19,
-              "days": 2
+              "t": "EOAN.DE",
+              "in": "2025-04-29",
+              "out": "2025-05-06",
+              "why": "time",
+              "sh": 9,
+              "entry": 15.01,
+              "exit": 15.68,
+              "pnl": 4.02,
+              "ret_pct": 2.98,
+              "days": 5
             },
             {
               "t": "DTE.DE",
-              "in": "2025-05-12",
+              "in": "2025-05-08",
               "out": "2025-05-12",
               "why": "stop",
               "sh": 5,
-              "entry": 32.36,
-              "exit": 31.68,
-              "pnl": -5.39,
-              "ret_pct": -3.33,
-              "days": 1
+              "entry": 31.76,
+              "exit": 31.31,
+              "pnl": -4.28,
+              "ret_pct": -2.7,
+              "days": 3
             },
             {
               "t": "HEN3.DE",
@@ -339,325 +291,405 @@
               "in": "2025-05-22",
               "out": "2025-05-23",
               "why": "stop",
-              "sh": 25,
+              "sh": 27,
               "entry": 6.6,
               "exit": 6.49,
-              "pnl": -4.85,
-              "ret_pct": -2.94,
+              "pnl": -5.08,
+              "ret_pct": -2.85,
               "days": 2
             },
             {
-              "t": "EOAN.DE",
+              "t": "DBK.DE",
               "in": "2025-05-27",
-              "out": "2025-05-27",
-              "why": "stop",
-              "sh": 10,
-              "entry": 15.73,
-              "exit": 15.47,
-              "pnl": -4.52,
-              "ret_pct": -2.87,
-              "days": 1
-            },
-            {
-              "t": "EOAN.DE",
-              "in": "2025-05-29",
-              "out": "2025-06-04",
+              "out": "2025-06-02",
               "why": "time",
-              "sh": 10,
-              "entry": 15.48,
-              "exit": 15.51,
-              "pnl": -1.61,
-              "ret_pct": -1.04,
+              "sh": 6,
+              "entry": 24.51,
+              "exit": 24.17,
+              "pnl": -4.03,
+              "ret_pct": -2.74,
               "days": 5
             },
             {
               "t": "DTE.DE",
-              "in": "2025-06-06",
+              "in": "2025-06-04",
               "out": "2025-06-10",
-              "why": "stop",
-              "sh": 4,
-              "entry": 34.1,
-              "exit": 33.26,
-              "pnl": -5.39,
-              "ret_pct": -3.95,
-              "days": 3
+              "why": "time",
+              "sh": 5,
+              "entry": 33.38,
+              "exit": 32.81,
+              "pnl": -4.88,
+              "ret_pct": -2.92,
+              "days": 5
             },
             {
               "t": "CBK.DE",
               "in": "2025-06-12",
               "out": "2025-06-18",
               "why": "time",
-              "sh": 5,
+              "sh": 6,
               "entry": 27.31,
               "exit": 28.16,
-              "pnl": 2.27,
-              "ret_pct": 1.66,
+              "pnl": 3.13,
+              "ret_pct": 1.91,
               "days": 5
             },
             {
-              "t": "EOAN.DE",
-              "in": "2025-06-24",
-              "out": "2025-06-24",
+              "t": "BAYN.DE",
+              "in": "2025-06-23",
+              "out": "2025-06-27",
+              "why": "time",
+              "sh": 6,
+              "entry": 26.54,
+              "exit": 26.95,
+              "pnl": 0.47,
+              "ret_pct": 0.29,
+              "days": 5
+            },
+            {
+              "t": "DBK.DE",
+              "in": "2025-07-01",
+              "out": "2025-07-01",
               "why": "stop",
-              "sh": 9,
-              "entry": 15.72,
-              "exit": 15.49,
-              "pnl": -4.01,
-              "ret_pct": -2.84,
+              "sh": 6,
+              "entry": 24.94,
+              "exit": 24.5,
+              "pnl": -4.64,
+              "ret_pct": -3.1,
               "days": 1
             },
             {
-              "t": "SHL.DE",
-              "in": "2025-06-26",
-              "out": "2025-06-27",
+              "t": "RWE.DE",
+              "in": "2025-07-03",
+              "out": "2025-07-08",
               "why": "stop",
-              "sh": 3,
-              "entry": 47.17,
-              "exit": 46.21,
-              "pnl": -4.88,
-              "ret_pct": -3.45,
-              "days": 2
-            },
-            {
-              "t": "SHL.DE",
-              "in": "2025-07-01",
-              "out": "2025-07-04",
-              "why": "stop",
-              "sh": 3,
-              "entry": 47.0,
-              "exit": 46.26,
-              "pnl": -4.21,
-              "ret_pct": -2.99,
+              "sh": 4,
+              "entry": 36.2,
+              "exit": 35.38,
+              "pnl": -5.26,
+              "ret_pct": -3.64,
               "days": 4
             },
             {
-              "t": "RWE.DE",
-              "in": "2025-07-08",
-              "out": "2025-07-14",
+              "t": "DTE.DE",
+              "in": "2025-07-10",
+              "out": "2025-07-10",
+              "why": "stop",
+              "sh": 5,
+              "entry": 31.13,
+              "exit": 30.61,
+              "pnl": -4.61,
+              "ret_pct": -2.96,
+              "days": 1
+            },
+            {
+              "t": "DBK.DE",
+              "in": "2025-07-14",
+              "out": "2025-07-18",
               "why": "time",
-              "sh": 4,
-              "entry": 35.86,
-              "exit": 36.13,
-              "pnl": -0.89,
-              "ret_pct": -0.62,
+              "sh": 6,
+              "entry": 25.02,
+              "exit": 25.83,
+              "pnl": 2.82,
+              "ret_pct": 1.88,
               "days": 5
             },
             {
               "t": "LHA.DE",
-              "in": "2025-07-16",
-              "out": "2025-07-22",
+              "in": "2025-07-22",
+              "out": "2025-07-28",
               "why": "time",
               "sh": 19,
-              "entry": 7.35,
-              "exit": 7.47,
-              "pnl": 0.19,
-              "ret_pct": 0.13,
+              "entry": 7.51,
+              "exit": 7.61,
+              "pnl": 0.03,
+              "ret_pct": 0.02,
               "days": 5
             },
             {
+              "t": "LHA.DE",
+              "in": "2025-07-30",
+              "out": "2025-07-31",
+              "why": "stop",
+              "sh": 20,
+              "entry": 7.61,
+              "exit": 7.46,
+              "pnl": -4.93,
+              "ret_pct": -3.24,
+              "days": 2
+            },
+            {
               "t": "EOAN.DE",
-              "in": "2025-07-24",
-              "out": "2025-07-24",
+              "in": "2025-08-06",
+              "out": "2025-08-08",
               "why": "stop",
               "sh": 9,
-              "entry": 15.72,
-              "exit": 15.63,
-              "pnl": -2.76,
-              "ret_pct": -1.95,
+              "entry": 16.38,
+              "exit": 16.04,
+              "pnl": -5.0,
+              "ret_pct": -3.39,
+              "days": 3
+            },
+            {
+              "t": "LHA.DE",
+              "in": "2025-08-12",
+              "out": "2025-08-18",
+              "why": "time",
+              "sh": 18,
+              "entry": 8.01,
+              "exit": 8.23,
+              "pnl": 1.92,
+              "ret_pct": 1.33,
+              "days": 5
+            },
+            {
+              "t": "IFX.DE",
+              "in": "2025-08-20",
+              "out": "2025-08-20",
+              "why": "stop",
+              "sh": 4,
+              "entry": 36.55,
+              "exit": 35.93,
+              "pnl": -4.45,
+              "ret_pct": -3.04,
               "days": 1
             },
             {
-              "t": "HEN3.DE",
-              "in": "2025-07-29",
-              "out": "2025-08-01",
+              "t": "FNTN.DE",
+              "in": "2025-08-22",
+              "out": "2025-08-28",
+              "why": "time",
+              "sh": 5,
+              "entry": 28.51,
+              "exit": 28.35,
+              "pnl": -2.78,
+              "ret_pct": -1.95,
+              "days": 5
+            },
+            {
+              "t": "LHA.DE",
+              "in": "2025-09-01",
+              "out": "2025-09-02",
               "why": "stop",
-              "sh": 2,
-              "entry": 68.25,
-              "exit": 67.04,
-              "pnl": -4.41,
-              "ret_pct": -3.23,
-              "days": 4
+              "sh": 17,
+              "entry": 7.97,
+              "exit": 7.8,
+              "pnl": -4.83,
+              "ret_pct": -3.57,
+              "days": 2
+            },
+            {
+              "t": "LHA.DE",
+              "in": "2025-10-01",
+              "out": "2025-10-07",
+              "why": "time",
+              "sh": 19,
+              "entry": 7.13,
+              "exit": 7.35,
+              "pnl": 2.21,
+              "ret_pct": 1.63,
+              "days": 5
+            },
+            {
+              "t": "SHL.DE",
+              "in": "2025-10-14",
+              "out": "2025-10-14",
+              "why": "stop",
+              "sh": 3,
+              "entry": 46.43,
+              "exit": 46.31,
+              "pnl": -2.34,
+              "ret_pct": -1.68,
+              "days": 1
+            },
+            {
+              "t": "FNTN.DE",
+              "in": "2025-10-21",
+              "out": "2025-10-27",
+              "why": "time",
+              "sh": 5,
+              "entry": 27.35,
+              "exit": 27.25,
+              "pnl": -2.47,
+              "ret_pct": -1.81,
+              "days": 5
             },
             {
               "t": "EVK.DE",
-              "in": "2025-08-26",
-              "out": "2025-08-27",
+              "in": "2025-10-29",
+              "out": "2025-10-31",
               "why": "stop",
-              "sh": 8,
-              "entry": 16.91,
-              "exit": 16.7,
-              "pnl": -3.68,
-              "ret_pct": -2.72,
-              "days": 2
+              "sh": 9,
+              "entry": 14.84,
+              "exit": 14.54,
+              "pnl": -4.77,
+              "ret_pct": -3.57,
+              "days": 3
             }
           ],
-          "win_rate": 24.1,
-          "avg_win_pct": 2.26,
-          "avg_loss_pct": -2.64,
-          "profit_factor": 0.27,
-          "expectancy_pct": -1.46,
-          "total_return_pct": -32.28,
-          "final_equity": 135.43,
-          "max_dd_pct": 32.28,
-          "sharpe": -4.36,
-          "avg_hold_days": 3.03,
-          "trades_per_year": 52.4,
+          "win_rate": 31.4,
+          "avg_win_pct": 1.85,
+          "avg_loss_pct": -2.6,
+          "profit_factor": 0.32,
+          "expectancy_pct": -1.2,
+          "total_return_pct": -32.94,
+          "final_equity": 134.11,
+          "max_dd_pct": 35.51,
+          "sharpe": -3.71,
+          "avg_hold_days": 3.4,
+          "trades_per_year": 49.2,
           "diag": {
             "blocked_regime": 428,
-            "skipped_size": 1057,
-            "skipped_cost": 3197
+            "skipped_size": 936,
+            "skipped_cost": 2875
           },
           "train_summary": {
-            "trades_n": 29,
-            "win_rate": 24.1,
-            "total_return_pct": -32.28,
-            "profit_factor": 0.27,
-            "sharpe": -4.36,
-            "max_dd_pct": 32.28,
-            "expectancy_pct": -1.46
+            "trades_n": 35,
+            "win_rate": 31.4,
+            "total_return_pct": -32.94,
+            "profit_factor": 0.32,
+            "sharpe": -3.71,
+            "max_dd_pct": 35.51,
+            "expectancy_pct": -1.2
           },
           "test_summary": {
-            "trades_n": 32,
-            "win_rate": 37.5,
-            "total_return_pct": -26.17,
-            "profit_factor": 0.4,
-            "sharpe": -2.86,
+            "trades_n": 33,
+            "win_rate": 39.4,
+            "total_return_pct": -24.25,
+            "profit_factor": 0.44,
+            "sharpe": -2.49,
             "max_dd_pct": 27.6,
-            "expectancy_pct": -1.12
+            "expectancy_pct": -1.01
           }
         },
         "momentum": {
-          "trades_n": 32,
+          "trades_n": 31,
           "start_equity": 200.0,
           "cur": "EUR",
           "equity": [
             {
-              "d": "2025-02-12",
-              "v": 202.4
-            },
-            {
               "d": "2025-02-19",
-              "v": 196.34
+              "v": 193.95
             },
             {
               "d": "2025-02-25",
-              "v": 200.14
+              "v": 197.74
             },
             {
               "d": "2025-02-27",
-              "v": 194.49
+              "v": 192.09
             },
             {
               "d": "2025-03-05",
-              "v": 202.85
+              "v": 200.45
             },
             {
               "d": "2025-03-10",
-              "v": 196.93
+              "v": 194.97
             },
             {
               "d": "2025-03-25",
-              "v": 196.17
+              "v": 194.21
             },
             {
               "d": "2025-03-27",
-              "v": 192.22
+              "v": 190.26
             },
             {
               "d": "2025-03-31",
-              "v": 186.95
+              "v": 184.99
             },
             {
               "d": "2025-04-03",
-              "v": 181.09
+              "v": 179.13
             },
             {
               "d": "2025-04-14",
-              "v": 189.52
+              "v": 187.56
             },
             {
               "d": "2025-05-06",
-              "v": 193.54
+              "v": 191.58
             },
             {
               "d": "2025-05-12",
-              "v": 187.88
+              "v": 185.92
             },
             {
               "d": "2025-05-22",
-              "v": 195.46
+              "v": 193.5
             },
             {
               "d": "2025-05-29",
-              "v": 189.42
+              "v": 188.59
             },
             {
               "d": "2025-06-03",
-              "v": 184.31
+              "v": 183.49
             },
             {
               "d": "2025-06-11",
-              "v": 186.25
+              "v": 185.43
             },
             {
               "d": "2025-06-13",
-              "v": 183.61
+              "v": 182.79
             },
             {
               "d": "2025-06-18",
-              "v": 178.23
+              "v": 177.4
             },
             {
               "d": "2025-06-27",
-              "v": 178.69
+              "v": 177.87
             },
             {
               "d": "2025-07-01",
-              "v": 173.61
+              "v": 173.23
             },
             {
               "d": "2025-07-08",
-              "v": 168.35
+              "v": 167.97
             },
             {
               "d": "2025-07-10",
-              "v": 163.11
+              "v": 162.73
             },
             {
               "d": "2025-07-16",
-              "v": 158.05
+              "v": 157.67
             },
             {
               "d": "2025-07-24",
-              "v": 159.23
+              "v": 158.85
             },
             {
               "d": "2025-07-31",
-              "v": 154.3
+              "v": 153.92
             },
             {
               "d": "2025-08-08",
-              "v": 149.31
+              "v": 148.92
             },
             {
               "d": "2025-08-18",
-              "v": 151.22
+              "v": 150.84
             },
             {
               "d": "2025-08-20",
-              "v": 146.77
+              "v": 146.39
             },
             {
               "d": "2025-08-28",
-              "v": 143.99
+              "v": 143.61
             },
             {
               "d": "2025-09-30",
-              "v": 139.06
+              "v": 138.68
             },
             {
               "d": "2025-11-04",
-              "v": 134.71
+              "v": 134.33
             }
           ],
           "trades": [
@@ -702,11 +734,11 @@
               "in": "2025-03-07",
               "out": "2025-03-10",
               "why": "stop",
-              "sh": 9,
+              "sh": 8,
               "entry": 22.02,
               "exit": 21.59,
-              "pnl": -5.92,
-              "ret_pct": -2.99,
+              "pnl": -5.48,
+              "ret_pct": -3.11,
               "days": 2
             },
             {
@@ -806,15 +838,15 @@
               "days": 5
             },
             {
-              "t": "EOAN.DE",
+              "t": "FRE.DE",
               "in": "2025-05-26",
               "out": "2025-05-29",
               "why": "stop",
-              "sh": 9,
-              "entry": 15.73,
-              "exit": 15.28,
-              "pnl": -6.04,
-              "ret_pct": -4.27,
+              "sh": 4,
+              "entry": 42.97,
+              "exit": 42.25,
+              "pnl": -4.9,
+              "ret_pct": -2.85,
               "days": 4
             },
             {
@@ -882,11 +914,11 @@
               "in": "2025-07-01",
               "out": "2025-07-01",
               "why": "stop",
-              "sh": 7,
+              "sh": 6,
               "entry": 24.94,
               "exit": 24.5,
-              "pnl": -5.08,
-              "ret_pct": -2.91,
+              "pnl": -4.64,
+              "ret_pct": -3.1,
               "days": 1
             },
             {
@@ -1022,30 +1054,30 @@
               "days": 1
             }
           ],
-          "win_rate": 31.2,
-          "avg_win_pct": 2.6,
-          "avg_loss_pct": -3.05,
-          "profit_factor": 0.38,
-          "expectancy_pct": -1.29,
-          "total_return_pct": -32.64,
-          "final_equity": 134.71,
-          "max_dd_pct": 33.59,
-          "sharpe": -3.12,
-          "avg_hold_days": 2.94,
+          "win_rate": 29.0,
+          "avg_win_pct": 2.73,
+          "avg_loss_pct": -3.0,
+          "profit_factor": 0.36,
+          "expectancy_pct": -1.34,
+          "total_return_pct": -32.83,
+          "final_equity": 134.33,
+          "max_dd_pct": 32.99,
+          "sharpe": -3.24,
+          "avg_hold_days": 2.87,
           "trades_per_year": 43.1,
           "diag": {
             "blocked_regime": 177,
-            "skipped_size": 480,
-            "skipped_cost": 1593
+            "skipped_size": 507,
+            "skipped_cost": 1633
           },
           "train_summary": {
-            "trades_n": 32,
-            "win_rate": 31.2,
-            "total_return_pct": -32.64,
-            "profit_factor": 0.38,
-            "sharpe": -3.12,
-            "max_dd_pct": 33.59,
-            "expectancy_pct": -1.29
+            "trades_n": 31,
+            "win_rate": 29.0,
+            "total_return_pct": -32.83,
+            "profit_factor": 0.36,
+            "sharpe": -3.24,
+            "max_dd_pct": 32.99,
+            "expectancy_pct": -1.34
           },
           "test_summary": {
             "trades_n": 30,
@@ -1350,8 +1382,8 @@
           "trades_per_year": 12.8,
           "diag": {
             "blocked_regime": 28,
-            "skipped_size": 72,
-            "skipped_cost": 189
+            "skipped_size": 74,
+            "skipped_cost": 190
           },
           "train_summary": {
             "trades_n": 15,
@@ -1364,116 +1396,112 @@
           },
           "test_summary": {
             "trades_n": 15,
-            "win_rate": 26.7,
-            "total_return_pct": -15.45,
-            "profit_factor": 0.39,
-            "sharpe": -2.39,
-            "max_dd_pct": 18.32,
-            "expectancy_pct": -1.24
+            "win_rate": 20.0,
+            "total_return_pct": -16.22,
+            "profit_factor": 0.36,
+            "sharpe": -2.54,
+            "max_dd_pct": 18.55,
+            "expectancy_pct": -1.31
           }
         },
         "breakout": {
-          "trades_n": 18,
+          "trades_n": 17,
           "start_equity": 200.0,
           "cur": "EUR",
           "equity": [
             {
-              "d": "2025-02-10",
-              "v": 195.8
+              "d": "2025-02-13",
+              "v": 195.93
             },
             {
               "d": "2025-02-18",
-              "v": 195.45
+              "v": 191.44
             },
             {
               "d": "2025-03-03",
-              "v": 200.75
+              "v": 196.74
             },
             {
               "d": "2025-03-05",
-              "v": 197.82
+              "v": 193.81
             },
             {
               "d": "2025-03-10",
-              "v": 192.34
+              "v": 188.32
             },
             {
               "d": "2025-03-24",
-              "v": 188.86
+              "v": 184.84
             },
             {
               "d": "2025-03-28",
-              "v": 191.9
+              "v": 187.88
             },
             {
               "d": "2025-04-04",
-              "v": 185.93
-            },
-            {
-              "d": "2025-04-25",
-              "v": 182.81
+              "v": 182.71
             },
             {
               "d": "2025-05-07",
-              "v": 177.79
+              "v": 177.7
             },
             {
               "d": "2025-05-23",
-              "v": 170.9
+              "v": 170.81
             },
             {
               "d": "2025-05-27",
-              "v": 166.38
+              "v": 166.29
             },
             {
               "d": "2025-06-05",
-              "v": 161.3
+              "v": 161.21
             },
             {
               "d": "2025-06-12",
-              "v": 155.95
+              "v": 155.85
             },
             {
               "d": "2025-06-17",
-              "v": 150.79
+              "v": 150.69
             },
             {
               "d": "2025-07-02",
-              "v": 146.03
+              "v": 145.94
             },
             {
               "d": "2025-07-14",
-              "v": 139.19
+              "v": 139.1
             },
             {
               "d": "2025-11-04",
-              "v": 134.84
+              "v": 134.75
             }
           ],
           "trades": [
             {
-              "t": "SHL.DE",
-              "in": "2025-02-07",
-              "out": "2025-02-10",
+              "t": "DTE.DE",
+              "in": "2025-02-13",
+              "out": "2025-02-13",
               "why": "stop",
-              "sh": 3,
-              "entry": 56.64,
-              "exit": 55.9,
-              "pnl": -4.2,
-              "ret_pct": -2.47,
-              "days": 2
+              "sh": 5,
+              "entry": 33.86,
+              "exit": 33.45,
+              "pnl": -4.07,
+              "ret_pct": -2.41,
+              "days": 1
             },
             {
-              "t": "DTE.DE",
-              "in": "2025-02-12",
+              "t": "EVK.DE",
+              "in": "2025-02-17",
               "out": "2025-02-18",
-              "why": "time",
-              "sh": 4,
-              "entry": 34.02,
-              "exit": 34.44,
-              "pnl": -0.35,
-              "ret_pct": -0.26,
-              "days": 5
+              "why": "stop",
+              "sh": 9,
+              "entry": 19.67,
+              "exit": 19.4,
+              "pnl": -4.49,
+              "ret_pct": -2.54,
+              "days": 2
             },
             {
               "t": "BAYN.DE",
@@ -1540,24 +1568,12 @@
               "in": "2025-04-02",
               "out": "2025-04-04",
               "why": "stop",
-              "sh": 5,
+              "sh": 4,
               "entry": 33.48,
               "exit": 32.69,
-              "pnl": -5.96,
-              "ret_pct": -3.56,
+              "pnl": -5.17,
+              "ret_pct": -3.86,
               "days": 3
-            },
-            {
-              "t": "EOAN.DE",
-              "in": "2025-04-17",
-              "out": "2025-04-25",
-              "why": "time",
-              "sh": 9,
-              "entry": 15.14,
-              "exit": 15.01,
-              "pnl": -3.13,
-              "ret_pct": -2.3,
-              "days": 5
             },
             {
               "t": "FNTN.DE",
@@ -1668,30 +1684,30 @@
               "days": 1
             }
           ],
-          "win_rate": 11.1,
+          "win_rate": 11.8,
           "avg_win_pct": 2.58,
-          "avg_loss_pct": -3.0,
+          "avg_loss_pct": -3.22,
           "profit_factor": 0.11,
-          "expectancy_pct": -2.38,
-          "total_return_pct": -32.58,
-          "final_equity": 134.84,
-          "max_dd_pct": 32.83,
-          "sharpe": -5.68,
-          "avg_hold_days": 2.44,
-          "trades_per_year": 24.4,
+          "expectancy_pct": -2.54,
+          "total_return_pct": -32.63,
+          "final_equity": 134.75,
+          "max_dd_pct": 32.62,
+          "sharpe": -5.95,
+          "avg_hold_days": 2.06,
+          "trades_per_year": 23.5,
           "diag": {
             "blocked_regime": 28,
-            "skipped_size": 156,
-            "skipped_cost": 461
+            "skipped_size": 163,
+            "skipped_cost": 471
           },
           "train_summary": {
-            "trades_n": 18,
-            "win_rate": 11.1,
-            "total_return_pct": -32.58,
+            "trades_n": 17,
+            "win_rate": 11.8,
+            "total_return_pct": -32.63,
             "profit_factor": 0.11,
-            "sharpe": -5.68,
-            "max_dd_pct": 32.83,
-            "expectancy_pct": -2.38
+            "sharpe": -5.95,
+            "max_dd_pct": 32.62,
+            "expectancy_pct": -2.54
           },
           "test_summary": {
             "trades_n": 23,
@@ -1706,9 +1722,9 @@
       }
     },
     "IN": {
-      "benchmark_pct": 4.77,
-      "benchmark_test_pct": 7.98,
-      "split_date": "2026-04-02",
+      "benchmark_pct": 10.2,
+      "benchmark_test_pct": 1.97,
+      "split_date": "2026-04-09",
       "strategies": {
         "baseline": {
           "trades_n": 50,
@@ -1912,8 +1928,8 @@
               "v": 15558.32
             },
             {
-              "d": "2026-11-08",
-              "v": 15460.9
+              "d": "2026-11-13",
+              "v": 15307.2
             }
           ],
           "trades": [
@@ -2268,29 +2284,29 @@
             {
               "t": "TCS.NS",
               "in": "2026-11-06",
-              "out": "2026-11-08",
-              "why": "time",
+              "out": "2026-11-13",
+              "why": "stop",
               "sh": 2,
               "entry": 2536.13,
-              "exit": 2496.3,
-              "pnl": -97.42,
-              "ret_pct": -1.92,
-              "days": 2
+              "exit": 2419.45,
+              "pnl": -251.12,
+              "ret_pct": -4.95,
+              "days": 5
             }
           ],
           "win_rate": 38.0,
           "avg_win_pct": 1.41,
-          "avg_loss_pct": -1.72,
-          "profit_factor": 0.46,
-          "expectancy_pct": -0.53,
-          "total_return_pct": -22.7,
-          "final_equity": 15460.9,
+          "avg_loss_pct": -1.82,
+          "profit_factor": 0.45,
+          "expectancy_pct": -0.59,
+          "total_return_pct": -23.46,
+          "final_equity": 15307.2,
           "max_dd_pct": 26.19,
-          "sharpe": -1.8,
-          "avg_hold_days": 3.36,
-          "trades_per_year": 32.3,
+          "sharpe": -1.86,
+          "avg_hold_days": 3.42,
+          "trades_per_year": 32.0,
           "diag": {
-            "blocked_regime": 3129,
+            "blocked_regime": 3044,
             "skipped_size": 0,
             "skipped_cost": 0
           },
@@ -2306,11 +2322,11 @@
           "test_summary": {
             "trades_n": 1,
             "win_rate": 0.0,
-            "total_return_pct": -0.73,
+            "total_return_pct": -1.88,
             "profit_factor": 0.0,
             "sharpe": 0,
-            "max_dd_pct": 0.73,
-            "expectancy_pct": -1.92
+            "max_dd_pct": 1.88,
+            "expectancy_pct": -4.95
           }
         },
         "momentum": {
@@ -2499,8 +2515,8 @@
               "v": 18761.78
             },
             {
-              "d": "2026-11-08",
-              "v": 18673.29
+              "d": "2026-11-13",
+              "v": 18522.94
             }
           ],
           "trades": [
@@ -2855,29 +2871,29 @@
             {
               "t": "INFY.NS",
               "in": "2026-11-06",
-              "out": "2026-11-08",
+              "out": "2026-11-13",
               "why": "time",
               "sh": 5,
               "entry": 1183.98,
-              "exit": 1170.43,
-              "pnl": -88.49,
-              "ret_pct": -1.49,
-              "days": 2
+              "exit": 1140.36,
+              "pnl": -238.84,
+              "ret_pct": -4.03,
+              "days": 5
             }
           ],
           "win_rate": 39.1,
           "avg_win_pct": 3.29,
-          "avg_loss_pct": -2.77,
-          "profit_factor": 0.86,
-          "expectancy_pct": -0.4,
-          "total_return_pct": -6.63,
-          "final_equity": 18673.29,
+          "avg_loss_pct": -2.87,
+          "profit_factor": 0.84,
+          "expectancy_pct": -0.46,
+          "total_return_pct": -7.39,
+          "final_equity": 18522.94,
           "max_dd_pct": 13.79,
-          "sharpe": -0.3,
-          "avg_hold_days": 3.78,
-          "trades_per_year": 29.7,
+          "sharpe": -0.34,
+          "avg_hold_days": 3.85,
+          "trades_per_year": 29.5,
           "diag": {
-            "blocked_regime": 1392,
+            "blocked_regime": 1370,
             "skipped_size": 0,
             "skipped_cost": 0
           },
@@ -2893,15 +2909,15 @@
           "test_summary": {
             "trades_n": 1,
             "win_rate": 0.0,
-            "total_return_pct": -0.53,
+            "total_return_pct": -1.43,
             "profit_factor": 0.0,
             "sharpe": 0,
-            "max_dd_pct": 0.53,
-            "expectancy_pct": -1.49
+            "max_dd_pct": 1.43,
+            "expectancy_pct": -4.03
           }
         },
         "meanrev": {
-          "trades_n": 35,
+          "trades_n": 36,
           "start_equity": 20000.0,
           "cur": "INR",
           "equity": [
@@ -3044,21 +3060,13 @@
             {
               "d": "2026-02-24",
               "v": 22397.83
+            },
+            {
+              "d": "2026-11-13",
+              "v": 22238.13
             }
           ],
           "trades": [
-            {
-              "t": "PNB.NS",
-              "in": "2025-06-24",
-              "out": "2025-06-30",
-              "why": "target",
-              "sh": 108,
-              "entry": 105.19,
-              "exit": 108.94,
-              "pnl": 365.57,
-              "ret_pct": 3.22,
-              "days": 5
-            },
             {
               "t": "BAJAJ-AUTO.NS",
               "in": "2025-07-02",
@@ -3406,19 +3414,31 @@
               "pnl": 278.04,
               "ret_pct": 3.19,
               "days": 5
+            },
+            {
+              "t": "TECHM.NS",
+              "in": "2026-11-13",
+              "out": "2026-11-13",
+              "why": "time",
+              "sh": 9,
+              "entry": 1773.77,
+              "exit": 1762.24,
+              "pnl": -159.7,
+              "ret_pct": -1.0,
+              "days": 1
             }
           ],
-          "win_rate": 48.6,
+          "win_rate": 47.2,
           "avg_win_pct": 3.03,
-          "avg_loss_pct": -2.0,
-          "profit_factor": 1.39,
-          "expectancy_pct": 0.45,
-          "total_return_pct": 11.99,
-          "final_equity": 22397.83,
+          "avg_loss_pct": -1.94,
+          "profit_factor": 1.36,
+          "expectancy_pct": 0.41,
+          "total_return_pct": 11.19,
+          "final_equity": 22238.13,
           "max_dd_pct": 4.75,
-          "sharpe": 1.0,
-          "avg_hold_days": 3.71,
-          "trades_per_year": 43.9,
+          "sharpe": 0.68,
+          "avg_hold_days": 3.64,
+          "trades_per_year": 23.8,
           "diag": {
             "blocked_regime": 189,
             "skipped_size": 0,
@@ -3434,17 +3454,17 @@
             "expectancy_pct": 0.45
           },
           "test_summary": {
-            "trades_n": 0,
-            "win_rate": 0,
-            "total_return_pct": 0,
-            "profit_factor": 0,
+            "trades_n": 1,
+            "win_rate": 0.0,
+            "total_return_pct": -0.71,
+            "profit_factor": 0.0,
             "sharpe": 0,
-            "max_dd_pct": 0,
-            "expectancy_pct": 0
+            "max_dd_pct": 0.71,
+            "expectancy_pct": -1.0
           }
         },
         "breakout": {
-          "trades_n": 46,
+          "trades_n": 47,
           "start_equity": 20000.0,
           "cur": "INR",
           "equity": [
@@ -3629,23 +3649,15 @@
               "v": 16137.66
             },
             {
-              "d": "2026-11-08",
-              "v": 16070.35
+              "d": "2026-11-11",
+              "v": 15941.62
+            },
+            {
+              "d": "2026-11-13",
+              "v": 16094.63
             }
           ],
           "trades": [
-            {
-              "t": "ASHOKLEY.NS",
-              "in": "2025-08-20",
-              "out": "2025-08-26",
-              "why": "time",
-              "sh": 73,
-              "entry": 134.43,
-              "exit": 131.24,
-              "pnl": -267.63,
-              "ret_pct": -2.73,
-              "days": 5
-            },
             {
               "t": "BAJAJ-AUTO.NS",
               "in": "2025-09-02",
@@ -3985,29 +3997,41 @@
             {
               "t": "HEROMOTOCO.NS",
               "in": "2026-11-06",
-              "out": "2026-11-08",
-              "why": "time",
+              "out": "2026-11-11",
+              "why": "stop",
               "sh": 1,
               "entry": 5520.51,
-              "exit": 5472.52,
-              "pnl": -67.31,
-              "ret_pct": -1.22,
-              "days": 2
+              "exit": 5343.79,
+              "pnl": -196.04,
+              "ret_pct": -3.55,
+              "days": 3
+            },
+            {
+              "t": "BAJFINANCE.NS",
+              "in": "2026-11-13",
+              "out": "2026-11-13",
+              "why": "time",
+              "sh": 14,
+              "entry": 1101.1,
+              "exit": 1115.88,
+              "pnl": 153.01,
+              "ret_pct": 0.99,
+              "days": 1
             }
           ],
-          "win_rate": 37.0,
-          "avg_win_pct": 2.35,
-          "avg_loss_pct": -2.4,
-          "profit_factor": 0.55,
-          "expectancy_pct": -0.65,
-          "total_return_pct": -19.65,
-          "final_equity": 16070.35,
+          "win_rate": 38.3,
+          "avg_win_pct": 2.27,
+          "avg_loss_pct": -2.48,
+          "profit_factor": 0.56,
+          "expectancy_pct": -0.66,
+          "total_return_pct": -19.53,
+          "final_equity": 16094.63,
           "max_dd_pct": 21.79,
-          "sharpe": -1.34,
-          "avg_hold_days": 3.28,
-          "trades_per_year": 29.7,
+          "sharpe": -1.31,
+          "avg_hold_days": 3.26,
+          "trades_per_year": 30.1,
           "diag": {
-            "blocked_regime": 247,
+            "blocked_regime": 243,
             "skipped_size": 0,
             "skipped_cost": 0
           },
@@ -4021,13 +4045,13 @@
             "expectancy_pct": -0.64
           },
           "test_summary": {
-            "trades_n": 1,
-            "win_rate": 0.0,
-            "total_return_pct": -0.67,
-            "profit_factor": 0.0,
-            "sharpe": 0,
-            "max_dd_pct": 0.67,
-            "expectancy_pct": -1.22
+            "trades_n": 2,
+            "win_rate": 50.0,
+            "total_return_pct": -1.03,
+            "profit_factor": 0.47,
+            "sharpe": -0.7,
+            "max_dd_pct": 1.96,
+            "expectancy_pct": -1.28
           }
         }
       }
