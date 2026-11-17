@@ -13,17 +13,6 @@
     },
     {
       "signal_bar": "2026-11-11",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.4047,
-      "target": 54.95,
-      "stop": 49.02,
-      "shares": 7,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-11",
       "ticker": "BAYN.DE",
       "name": "Bayer",
       "engine": "v4.1",
@@ -56,28 +45,6 @@
       "would_trade": false
     },
     {
-      "signal_bar": "2026-11-12",
-      "ticker": "IFX.DE",
-      "name": "Infineon",
-      "engine": "v4.1",
-      "p_win": 0.3968,
-      "target": 54.94,
-      "stop": 49.04,
-      "shares": 7,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-12",
-      "ticker": "SIE.DE",
-      "name": "Siemens",
-      "engine": "v4.1",
-      "p_win": 0.3699,
-      "target": 291.58,
-      "stop": 273.09,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-11-13",
       "ticker": "MUV2.DE",
       "name": "Munich Re",
@@ -101,23 +68,56 @@
     },
     {
       "signal_bar": "2026-11-13",
-      "ticker": "SIE.DE",
-      "name": "Siemens",
-      "engine": "v4.1",
-      "p_win": 0.3621,
-      "target": 289.27,
-      "stop": 270.67,
-      "shares": 2,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-13",
       "ticker": "ALV.DE",
       "name": "Allianz",
       "engine": "v4.1",
       "p_win": 0.3741,
       "target": 488.26,
       "stop": 468.3,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-16",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3891,
+      "target": 606.49,
+      "stop": 579.1,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-16",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.3967,
+      "target": 51.93,
+      "stop": 46.27,
+      "shares": 7,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-16",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.366,
+      "target": 282.26,
+      "stop": 263.81,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-16",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3702,
+      "target": 486.24,
+      "stop": 466.38,
       "shares": 2,
       "would_trade": false
     }

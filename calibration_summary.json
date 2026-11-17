@@ -1,27 +1,27 @@
 {
-  "updated": "2026-11-17 01:54 CET",
-  "resolved": 110,
+  "updated": "2026-11-18 00:37 CET",
+  "resolved": 114,
   "min_for_verdict": 20,
   "paper_equity": 2000.0,
   "paper_peak": 2000.0,
-  "brier": 0.2798,
-  "brier_reference": 0.2497,
-  "skill": -0.121,
-  "mean_stated": 0.351,
-  "actual_hit_rate": 0.518,
-  "overconfidence_pp": -16.7,
+  "brier": 0.2752,
+  "brier_reference": 0.25,
+  "skill": -0.101,
+  "mean_stated": 0.352,
+  "actual_hit_rate": 0.5,
+  "overconfidence_pp": -14.8,
   "buckets": [
     {
       "range": "20-40%",
-      "n": 107,
-      "stated": 0.35,
-      "actual": 0.505
+      "n": 110,
+      "stated": 0.351,
+      "actual": 0.491
     },
     {
       "range": "40-60%",
-      "n": 3,
+      "n": 4,
       "stated": 0.405,
-      "actual": 1.0
+      "actual": 0.75
     }
   ],
   "paper_trades": 0,
