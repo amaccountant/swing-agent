@@ -113,3 +113,5 @@ signal_bar,resolved_on,ticker,name,engine,p_win_stated,target,stop,entry,exit,ou
 2026-11-12,2026-11-16,IFX.DE,Infineon,v4.1,0.3968,54.94,49.04,51.21,49.04,STOP,0,2,-4.24,False,7,
 2026-11-12,2026-11-16,SIE.DE,Siemens,v4.1,0.3699,291.58,273.09,278.9,273.09,STOP,0,2,-2.08,False,2,
 2026-11-13,2026-11-16,SIE.DE,Siemens,v4.1,0.3621,289.27,270.67,278.85,270.67,STOP,0,1,-2.93,False,2,
+2026-11-10,2026-11-17,BAYN.DE,Bayer,v4.1,0.3714,59.68,55.21,56.78,56.14,EXPIRED,0,5,-1.13,False,11,
+2026-11-13,2026-11-17,ALV.DE,Allianz,v4.1,0.3741,488.26,468.3,478.0,468.3,STOP,0,2,-2.03,False,2,
