@@ -207,3 +207,8 @@
 - BAYN.DE: EXPIRED after 5 session(s); stated P(win) 37.1%, move -1.13%
 - ALV.DE: STOP after 2 session(s); stated P(win) 37.4%, move -2.03%
 - Running record: 116 resolved | stated 35.3% vs actual 49.1% | Brier 0.2728 | Under-confident: outcomes beat the stated odds.
+
+## 2026-11-20 - 2 probe(s) resolved
+- BAYN.DE: EXPIRED after 5 session(s); stated P(win) 36.6%, move -2.88%
+- ALV.DE: STOP after 2 session(s); stated P(win) 37.0%, move -1.44%
+- Running record: 118 resolved | stated 35.3% vs actual 48.3% | Brier 0.2705 | Under-confident: outcomes beat the stated odds.
