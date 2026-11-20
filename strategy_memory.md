@@ -212,3 +212,21 @@
 - BAYN.DE: EXPIRED after 5 session(s); stated P(win) 36.6%, move -2.88%
 - ALV.DE: STOP after 2 session(s); stated P(win) 37.0%, move -1.44%
 - Running record: 118 resolved | stated 35.3% vs actual 48.3% | Brier 0.2705 | Under-confident: outcomes beat the stated odds.
+
+## 2026-11-20 - 15 probe(s) resolved
+- MUV2.DE: EXPIRED after 5 session(s); stated P(win) 39.3%, move -2.24%
+- BAYN.DE: EXPIRED after 5 session(s); stated P(win) 36.6%, move -3.26%
+- MUV2.DE: STOP after 4 session(s); stated P(win) 39.1%, move -2.14%
+- IFX.DE: STOP after 5 session(s); stated P(win) 40.0%, move -5.41%
+- MUV2.DE: STOP after 3 session(s); stated P(win) 38.9%, move -2.18%
+- IFX.DE: STOP after 4 session(s); stated P(win) 39.7%, move -5.12%
+- SIE.DE: STOP after 4 session(s); stated P(win) 36.6%, move -3.91%
+- IFX.DE: STOP after 3 session(s); stated P(win) 39.2%, move -9.18%
+- SIE.DE: STOP after 3 session(s); stated P(win) 36.2%, move -3.52%
+- ALV.DE: STOP after 3 session(s); stated P(win) 37.6%, move -1.86%
+- IFX.DE: STOP after 2 session(s); stated P(win) 38.6%, move -9.12%
+- SIE.DE: STOP after 2 session(s); stated P(win) 36.0%, move -4.39%
+- CBK.DE: STOP after 2 session(s); stated P(win) 34.4%, move -4.0%
+- SIE.DE: STOP after 1 session(s); stated P(win) 35.4%, move -0.78%
+- IFX.DE: STOP after 1 session(s); stated P(win) 37.8%, move -1.77%
+- Running record: 133 resolved | stated 35.6% vs actual 42.9% | Brier 0.2561 | Under-confident: outcomes beat the stated odds.
