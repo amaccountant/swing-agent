@@ -43,6 +43,50 @@
       "stop": 36.01,
       "shares": 17,
       "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-23",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.373,
+      "target": 597.06,
+      "stop": 570.07,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-23",
+      "ticker": "CBK.DE",
+      "name": "Commerzbank",
+      "engine": "v4.1",
+      "p_win": 0.3431,
+      "target": 38.29,
+      "stop": 35.43,
+      "shares": 17,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-23",
+      "ticker": "BAYN.DE",
+      "name": "Bayer",
+      "engine": "v4.1",
+      "p_win": 0.3484,
+      "target": 55.41,
+      "stop": 51.24,
+      "shares": 12,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-23",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.3915,
+      "target": 274.73,
+      "stop": 256.1,
+      "shares": 2,
+      "would_trade": false
     }
   ]
 }
