@@ -87,6 +87,50 @@
       "stop": 256.1,
       "shares": 2,
       "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-24",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3598,
+      "target": 601.55,
+      "stop": 575.4,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-24",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.4267,
+      "target": 46.11,
+      "stop": 40.6,
+      "shares": 7,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-24",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.3971,
+      "target": 263.82,
+      "stop": 245.48,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-24",
+      "ticker": "ALV.DE",
+      "name": "Allianz",
+      "engine": "v4.1",
+      "p_win": 0.3612,
+      "target": 465.91,
+      "stop": 447.06,
+      "shares": 2,
+      "would_trade": false
     }
   ]
 }
