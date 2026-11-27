@@ -1,28 +1,6 @@
 {
   "open": [
     {
-      "signal_bar": "2026-11-18",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.383,
-      "target": 596.66,
-      "stop": 569.6,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-19",
-      "ticker": "MUV2.DE",
-      "name": "Munich Re",
-      "engine": "v4.1",
-      "p_win": 0.3812,
-      "target": 589.28,
-      "stop": 562.66,
-      "shares": 1,
-      "would_trade": false
-    },
-    {
       "signal_bar": "2026-11-23",
       "ticker": "MUV2.DE",
       "name": "Munich Re",
@@ -31,28 +9,6 @@
       "target": 597.06,
       "stop": 570.07,
       "shares": 1,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-23",
-      "ticker": "CBK.DE",
-      "name": "Commerzbank",
-      "engine": "v4.1",
-      "p_win": 0.3431,
-      "target": 38.29,
-      "stop": 35.43,
-      "shares": 17,
-      "would_trade": false
-    },
-    {
-      "signal_bar": "2026-11-23",
-      "ticker": "BAYN.DE",
-      "name": "Bayer",
-      "engine": "v4.1",
-      "p_win": 0.3484,
-      "target": 55.41,
-      "stop": 51.24,
-      "shares": 12,
       "would_trade": false
     },
     {
@@ -141,6 +97,50 @@
       "target": 254.32,
       "stop": 236.37,
       "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-26",
+      "ticker": "MUV2.DE",
+      "name": "Munich Re",
+      "engine": "v4.1",
+      "p_win": 0.3335,
+      "target": 603.97,
+      "stop": 579.83,
+      "shares": 1,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-26",
+      "ticker": "IFX.DE",
+      "name": "Infineon",
+      "engine": "v4.1",
+      "p_win": 0.4253,
+      "target": 44.66,
+      "stop": 39.36,
+      "shares": 7,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-26",
+      "ticker": "SIE.DE",
+      "name": "Siemens",
+      "engine": "v4.1",
+      "p_win": 0.3963,
+      "target": 259.24,
+      "stop": 241.45,
+      "shares": 2,
+      "would_trade": false
+    },
+    {
+      "signal_bar": "2026-11-26",
+      "ticker": "BAYN.DE",
+      "name": "Bayer",
+      "engine": "v4.1",
+      "p_win": 0.3653,
+      "target": 55.24,
+      "stop": 51.06,
+      "shares": 12,
       "would_trade": false
     }
   ]

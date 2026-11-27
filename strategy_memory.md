@@ -236,3 +236,10 @@
 - CBK.DE: STOP after 3 session(s); stated P(win) 34.6%, move -2.04%
 - SIE.DE: STOP after 1 session(s); stated P(win) 39.1%, move -3.07%
 - Running record: 136 resolved | stated 35.6% vs actual 41.9% | Brier 0.2535 | Under-confident: outcomes beat the stated odds.
+
+## 2026-11-27 - 4 probe(s) resolved
+- MUV2.DE: EXPIRED after 5 session(s); stated P(win) 38.3%, move 0.34%
+- MUV2.DE: TARGET after 4 session(s); stated P(win) 38.1%, move 1.39%
+- CBK.DE: STOP after 2 session(s); stated P(win) 34.3%, move -3.38%
+- BAYN.DE: STOP after 2 session(s); stated P(win) 34.8%, move -2.95%
+- Running record: 140 resolved | stated 35.6% vs actual 41.4% | Brier 0.2518 | Under-confident: outcomes beat the stated odds.
