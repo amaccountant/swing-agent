@@ -243,3 +243,8 @@
 - CBK.DE: STOP after 2 session(s); stated P(win) 34.3%, move -3.38%
 - BAYN.DE: STOP after 2 session(s); stated P(win) 34.8%, move -2.95%
 - Running record: 140 resolved | stated 35.6% vs actual 41.4% | Brier 0.2518 | Under-confident: outcomes beat the stated odds.
+
+## 2026-11-28 - 2 probe(s) resolved
+- IFX.DE: TARGET after 1 session(s); stated P(win) 42.9%, move -0.74%
+- BAYN.DE: TARGET after 1 session(s); stated P(win) 35.8%, move 3.11%
+- Running record: 142 resolved | stated 35.7% vs actual 42.3% | Brier 0.2534 | Under-confident: outcomes beat the stated odds.
